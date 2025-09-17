@@ -248,9 +248,6 @@ class HabitacionesSlider {
     this.isScrolling = false;
 
     this.init();
-
-    // Guardar referencia de la instancia en el DOM (para acceder en resize)
-    document.getElementById("habi-slider").__instance = this;
   }
 
   init() {
@@ -292,6 +289,7 @@ class HabitacionesSlider {
       });
     });
 
+    // También manejar el redimensionamiento
     window.addEventListener("resize", () => {
       this.handleScrollResize();
     });
@@ -304,15 +302,18 @@ class HabitacionesSlider {
     const rect = this.section.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
+    // Calcular el progreso del scroll cuando la sección está visible
     let progress = 0;
 
     if (rect.top <= windowHeight && rect.bottom >= 0) {
+      // La sección está en viewport
       const visibleHeight =
         Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
       const sectionHeight = rect.height;
       progress = Math.min(visibleHeight / sectionHeight, 1);
     }
 
+    // Interpolar entre 70% y 100% basado en el progreso
     const startWidth = 70;
     const endWidth = 100;
     const currentWidth = startWidth + (endWidth - startWidth) * progress;
@@ -338,10 +339,8 @@ class HabitacionesSlider {
       });
     });
 
-    // 🔧 Esperar a que el navegador calcule bien el layout antes de posicionar el indicador
-    requestAnimationFrame(() => {
-      this.updateNavIndicator();
-    });
+    // Configurar el indicador de navegación
+    this.updateNavIndicator();
   }
 
   updateNavIndicator() {
@@ -355,12 +354,15 @@ class HabitacionesSlider {
   }
 
   goToSlide(index) {
+    // Validar índice
     if (index < 0) index = this.slides.length - 1;
     if (index >= this.slides.length) index = 0;
 
+    // Ocultar slide actual
     this.slides[this.currentSlide].classList.remove("active");
     this.indicators[this.currentSlide].classList.remove("active");
 
+    // Mostrar nuevo slide
     this.slides[index].classList.add("active");
     this.indicators[index].classList.add("active");
 
@@ -371,7 +373,7 @@ class HabitacionesSlider {
   startAutoSlide() {
     this.autoSlideInterval = setInterval(() => {
       this.goToSlide(this.currentSlide + 1);
-    }, 5000);
+    }, 5000); // Cambia cada 5 segundos
   }
 
   resetAutoSlide() {
@@ -393,11 +395,5 @@ window.addEventListener("resize", () => {
     // Re-calcular el efecto de scroll en resize
     const event = new Event("scroll");
     window.dispatchEvent(event);
-
-    // 🔧 Reposicionar el navIndicator en resize
-    const slider = document.querySelector("#habi-slider");
-    if (slider && slider.__instance) {
-      slider.__instance.updateNavIndicator();
-    }
   }, 100);
 });
