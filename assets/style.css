@@ -2271,6 +2271,296 @@ nav {
     padding: 8px 20px;
   }
 }
+/***********************--Sesccion de testimonios - Testimonios--****************************/
+/* Sección de testimonios */
+.sec-section {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 600px;
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.sec-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.sec-container {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sec-title {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 500;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 40px;
+  text-align: center;
+  font-family: "Lexend Zetta", sans-serif;
+}
+
+.sec-slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 320px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.sec-slider {
+  display: flex;
+  transition: transform 0.5s ease;
+  height: 100%;
+}
+
+.sec-card {
+  flex: 0 0 33.33%;
+  padding: 0 15px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.sec-card-inner {
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 100%;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sec-rating {
+  font-size: 64px;
+  font-weight: 400;
+  background: linear-gradient(
+    0deg,
+    rgba(94, 64, 7, 1) 19%,
+    rgba(191, 128, 11, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 15px;
+  font-family: "Eras Medium ITC", sans-serif;
+  line-height: 1;
+}
+
+.sec-review {
+  font-size: 16px;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  font-family: "Eras Medium ITC", sans-serif;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.sec-author {
+  font-size: 11px;
+  font-weight: 700;
+  background: linear-gradient(
+    180deg,
+    rgba(128, 104, 43, 1) 0%,
+    rgba(41, 38, 38, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Lexend Zetta", sans-serif;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-top: auto;
+}
+
+.sec-nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 43px;
+  height: 42px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.sec-nav-button:hover {
+  opacity: 0.8;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.sec-prev {
+  left: 10px;
+}
+
+.sec-next {
+  right: 10px;
+}
+
+.sec-nav-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.sec-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.sec-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sec-dot.active {
+  background-color: #ffffff;
+  transform: scale(1.2);
+}
+
+/* Animación de entrada */
+.sec-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.sec-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .sec-card {
+    flex: 0 0 50%;
+  }
+
+  .sec-slider-container {
+    height: 300px;
+  }
+
+  .sec-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .sec-rating {
+    font-size: 54px;
+  }
+}
+
+/* Responsive - Móvil */
+@media (max-width: 768px) {
+  .sec-section {
+    padding: 40px 0;
+    min-height: 500px;
+  }
+
+  .sec-card {
+    flex: 0 0 100%;
+  }
+
+  .sec-slider-container {
+    height: 350px;
+  }
+
+  .sec-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+    padding: 0 15px;
+  }
+
+  .sec-rating {
+    font-size: 48px;
+  }
+
+  .sec-review {
+    font-size: 15px;
+  }
+
+  .sec-nav-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .sec-nav-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .sec-prev {
+    left: 5px;
+  }
+
+  .sec-next {
+    right: 5px;
+  }
+
+  .sec-dots {
+    bottom: 10px;
+  }
+}
+
+/* Pequeños móviles */
+@media (max-width: 480px) {
+  .sec-slider-container {
+    height: 380px;
+  }
+
+  .sec-card-inner {
+    padding: 20px 15px;
+  }
+
+  .sec-rating {
+    font-size: 42px;
+    margin-bottom: 10px;
+  }
+
+  .sec-review {
+    font-size: 14px;
+    margin-bottom: 10px;
+    -webkit-line-clamp: 5;
+  }
+}
 /*************** Redes sociales - Efecto floral a la derecha ***************/
 /*.social-flower {
   position: fixed;

@@ -529,3 +529,161 @@ document.addEventListener("DOMContentLoaded", function () {
     window.removeEventListener("scroll", handleScroll);
   }
 });
+/************************--Seccion de testimonios--************************/
+document.addEventListener("DOMContentLoaded", function () {
+  // Variables para el slider
+  const slider = document.getElementById("sec-slider");
+  const cards = document.querySelectorAll(".sec-card");
+  const prevButton = document.querySelector(".sec-prev");
+  const nextButton = document.querySelector(".sec-next");
+  const dotsContainer = document.getElementById("sec-dots");
+
+  let currentIndex = 0;
+  let cardsPerView = getCardsPerView();
+  let isAnimating = false;
+  let totalSlides = cards.length - cardsPerView + 1;
+
+  // Inicializar el slider
+  function initSlider() {
+    cardsPerView = getCardsPerView();
+    totalSlides = cards.length - cardsPerView + 1;
+
+    // Limpiar puntos existentes
+    dotsContainer.innerHTML = "";
+
+    // Crear puntos de navegación
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement("div");
+      dot.classList.add("sec-dot");
+      if (i === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => {
+        if (!isAnimating) goToSlide(i);
+      });
+      dotsContainer.appendChild(dot);
+    }
+
+    updateSlider();
+  }
+
+  // Función para determinar cuántas tarjetas mostrar según el ancho de pantalla
+  function getCardsPerView() {
+    if (window.innerWidth <= 768) return 1;
+    if (window.innerWidth <= 1024) return 2;
+    return 3;
+  }
+
+  // Función para actualizar el slider
+  function updateSlider() {
+    if (isAnimating) return;
+
+    isAnimating = true;
+    const cardWidth = 100 / cardsPerView;
+    slider.style.transform = `translateX(-${currentIndex * cardWidth}%)`;
+
+    // Actualizar puntos activos
+    const dots = document.querySelectorAll(".sec-dot");
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === currentIndex);
+    });
+
+    // Habilitar botones después de la animación
+    setTimeout(() => {
+      isAnimating = false;
+    }, 500);
+  }
+
+  // Función para ir a una diapositiva específica
+  function goToSlide(index) {
+    // Asegurarse de que el índice esté dentro de los límites
+    if (index < 0) index = 0;
+    if (index >= totalSlides) index = totalSlides - 1;
+
+    currentIndex = index;
+    updateSlider();
+  }
+
+  // Event listeners para los botones de navegación
+  prevButton.addEventListener("click", () => {
+    if (isAnimating) return;
+    goToSlide(currentIndex - 1);
+  });
+
+  nextButton.addEventListener("click", () => {
+    if (isAnimating) return;
+    goToSlide(currentIndex + 1);
+  });
+
+  // Actualizar en redimensionamiento de ventana
+  window.addEventListener("resize", () => {
+    const newCardsPerView = getCardsPerView();
+    if (newCardsPerView !== cardsPerView) {
+      currentIndex = 0;
+      initSlider();
+    }
+  });
+
+  // Animación de entrada al hacer scroll
+  function checkVisibility() {
+    const section = document.querySelector(".sec-section");
+    const sectionTop = section.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (sectionTop < windowHeight * 0.85) {
+      section.classList.add("visible");
+      window.removeEventListener("scroll", checkVisibility);
+    }
+  }
+
+  // Swipe para móviles
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  slider.addEventListener(
+    "touchstart",
+    (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    },
+    false
+  );
+
+  slider.addEventListener(
+    "touchend",
+    (e) => {
+      if (isAnimating) return;
+
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    },
+    false
+  );
+
+  function handleSwipe() {
+    const minSwipeDistance = 50;
+
+    if (touchEndX < touchStartX && touchStartX - touchEndX > minSwipeDistance) {
+      // Swipe izquierda - siguiente
+      goToSlide(currentIndex + 1);
+    }
+
+    if (touchEndX > touchStartX && touchEndX - touchStartX > minSwipeDistance) {
+      // Swipe derecha - anterior
+      goToSlide(currentIndex - 1);
+    }
+  }
+
+  // Inicializar
+  initSlider();
+  window.addEventListener("scroll", checkVisibility);
+  checkVisibility(); // Verificar al cargar la página
+
+  // Auto slide cada 5 segundos
+  setInterval(() => {
+    if (!isAnimating) {
+      if (currentIndex < totalSlides - 1) {
+        goToSlide(currentIndex + 1);
+      } else {
+        goToSlide(0); // Volver al inicio
+      }
+    }
+  }, 5000);
+});
