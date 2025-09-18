@@ -397,3 +397,135 @@ window.addEventListener("resize", () => {
     window.dispatchEvent(event);
   }, 100);
 });
+/*******************************--seccion de paquetes--***********************************/
+class PromSlider {
+  constructor() {
+    this.currentSlide = 0;
+    this.slides = document.querySelectorAll(".prom-slide");
+    this.dots = document.querySelectorAll(".prom-dot");
+    this.prevBtn = document.querySelector(".prom-nav-prev");
+    this.nextBtn = document.querySelector(".prom-nav-next");
+    this.totalSlides = this.slides.length;
+    this.isAnimating = false;
+
+    this.init();
+  }
+
+  init() {
+    this.prevBtn.addEventListener("click", () => this.prevSlide());
+    this.nextBtn.addEventListener("click", () => this.nextSlide());
+
+    this.dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => this.goToSlide(index));
+    });
+
+    // Initialize first slide
+    this.initializeSlide(this.slides[0]);
+
+    // Auto-slide every 8 seconds
+    this.autoSlide = setInterval(() => {
+      if (!this.isAnimating) {
+        this.nextSlide();
+      }
+    }, 8000);
+
+    // Pause auto-slide on hover
+    const section = document.querySelector(".prom-section");
+    section.addEventListener("mouseenter", () => {
+      clearInterval(this.autoSlide);
+    });
+
+    section.addEventListener("mouseleave", () => {
+      this.autoSlide = setInterval(() => {
+        if (!this.isAnimating) {
+          this.nextSlide();
+        }
+      }, 8000);
+    });
+  }
+
+  initializeSlide(slide) {
+    // Force reflow to ensure transitions work
+    void slide.offsetWidth;
+  }
+
+  goToSlide(slideIndex) {
+    if (this.isAnimating || slideIndex === this.currentSlide) return;
+
+    this.isAnimating = true;
+
+    const currentSlide = this.slides[this.currentSlide];
+    const nextSlide = this.slides[slideIndex];
+
+    // Remove active classes from current slide
+    currentSlide.classList.remove("active");
+    this.dots[this.currentSlide].classList.remove("active");
+
+    // Add exiting class for transition
+    currentSlide.classList.add("exiting");
+
+    // Update current slide
+    this.currentSlide = slideIndex;
+
+    // Add active classes to new slide
+    nextSlide.classList.add("active");
+    this.dots[this.currentSlide].classList.add("active");
+
+    // Reset animations by forcing reflow
+    this.initializeSlide(nextSlide);
+
+    // Allow next transition after animations complete
+    setTimeout(() => {
+      currentSlide.classList.remove("exiting");
+      this.isAnimating = false;
+    }, 1000);
+  }
+
+  nextSlide() {
+    const nextIndex = (this.currentSlide + 1) % this.totalSlides;
+    this.goToSlide(nextIndex);
+  }
+
+  prevSlide() {
+    const prevIndex =
+      (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+    this.goToSlide(prevIndex);
+  }
+}
+
+// Initialize slider when DOM is loaded
+document.addEventListener("DOMContentLoaded", () => {
+  new PromSlider();
+});
+/***********************--Seccion de reserva-- ****************************/
+document.addEventListener("DOMContentLoaded", function () {
+  const resSection = document.querySelector(".res-section");
+
+  // Función para verificar si el elemento está en el viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <=
+        (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+      rect.bottom >= 0
+    );
+  }
+
+  // Función para manejar el scroll
+  function handleScroll() {
+    if (isInViewport(resSection)) {
+      resSection.classList.add("res-visible");
+      // Remover el event listener después de que la animación se active
+      window.removeEventListener("scroll", handleScroll);
+    }
+  }
+
+  // Agregar event listener para el scroll
+  window.addEventListener("scroll", handleScroll);
+
+  // Verificar si ya está en el viewport al cargar la página
+  if (isInViewport(resSection)) {
+    resSection.classList.add("res-visible");
+    window.removeEventListener("scroll", handleScroll);
+  }
+});

@@ -1220,7 +1220,7 @@ nav {
 .serv-card-desc {
   font-family: "Eras Medium ITC", "Eras Medium ITC-Regular", Helvetica,
     sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   color: #000000;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   line-height: 15px;
@@ -1330,7 +1330,16 @@ nav {
   align-items: center;
   justify-content: center;
 }
-
+.habi-slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Ajusta la opacidad aquí */
+  z-index: 0;
+}
 .habi-slide.active {
   opacity: 1;
   z-index: 1;
@@ -1647,6 +1656,619 @@ nav {
 
   .habi-slider-indicators {
     bottom: 40px !important;
+  }
+}
+/*****************************--Seccion de paquetes--*******************************/
+.prom-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 777px;
+}
+
+.prom-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 177px;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  z-index: 10;
+}
+
+.prom-experience-label {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Lexend Zetta", sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  background: linear-gradient(
+    0deg,
+    rgba(94, 64, 7, 1) 19%,
+    rgba(191, 128, 11, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  letter-spacing: 2px;
+}
+
+.prom-main-title {
+  position: absolute;
+  top: 59px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Eras Medium ITC", Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  color: #000000;
+  line-height: 38px;
+  text-align: center;
+}
+
+.prom-subtitle {
+  position: absolute;
+  top: 113px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 554px;
+  font-family: "Eras Medium ITC", Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  text-align: center;
+  line-height: 18px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.prom-slider-container {
+  /*position: absolute;*/
+  top: 177px;
+  left: 0;
+  width: 100%;
+  height: 721px;
+  overflow: hidden;
+}
+
+.prom-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.prom-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.prom-slide.exiting {
+  opacity: 0;
+  z-index: 1;
+}
+
+.prom-slide-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 1.2s ease-out, opacity 1.2s ease-out;
+  opacity: 0;
+}
+
+.prom-slide.active .prom-slide-image {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.prom-content-panel {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  width: 425px;
+  height: 100%;
+  min-height: 450px;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 1px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+  transition-delay: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.prom-slide.active .prom-content-panel {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.prom-package-title {
+  font-family: "Eras Medium ITC", Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  color: #580404;
+  text-align: center;
+  line-height: 30px;
+  margin-bottom: 30px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  transition-delay: 0.8s;
+}
+
+.prom-package-description {
+  font-family: "Eras Medium ITC", Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+  line-height: 26px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 40px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  transition-delay: 1s;
+}
+
+.prom-button-container {
+  display: flex;
+  /*flex-direction: column;*/ /*cambio para pantallas grandes*/
+  gap: 15px;
+  align-items: center;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  transition-delay: 1.2s;
+}
+
+.prom-slide.active .prom-package-title,
+.prom-slide.active .prom-package-description,
+.prom-slide.active .prom-button-container {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.prom-button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Segoe UI", Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  min-width: 180px;
+}
+
+.prom-button-primary {
+  background: linear-gradient(
+    180deg,
+    rgba(142, 96, 35, 1) 70%,
+    rgba(94, 60, 16, 1) 100%
+  );
+  color: white;
+  box-shadow: 0 4px 15px rgba(142, 96, 35, 0.3);
+}
+
+.prom-button-secondary {
+  background: linear-gradient(
+    180deg,
+    rgba(142, 96, 35, 1) 70%,
+    rgba(94, 60, 16, 1) 100%
+  );
+  color: white;
+  box-shadow: 0 4px 15px rgba(142, 96, 35, 0.3);
+}
+
+.prom-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(142, 96, 35, 0.4);
+}
+
+.prom-navigation {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 20;
+}
+
+.prom-nav-button {
+  width: 52px;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.prom-nav-button:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+.prom-nav-button::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.prom-nav-prev::before {
+  border-width: 8px 12px 8px 0;
+  border-color: transparent #333 transparent transparent;
+  margin-right: 2px;
+}
+
+.prom-nav-next::before {
+  border-width: 8px 0 8px 12px;
+  border-color: transparent transparent transparent #333;
+  margin-left: 2px;
+}
+
+.prom-dots {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 20;
+}
+
+.prom-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.prom-dot.active {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.2);
+}
+
+/* Media queries para responsive */
+@media (max-width: 1200px) {
+  .prom-content-panel {
+    right: 5%;
+    width: 380px;
+  }
+}
+
+@media (max-width: 992px) {
+  .prom-content-panel {
+    width: 340px;
+    padding: 30px 20px;
+  }
+
+  .prom-package-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .prom-package-description {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .prom-section {
+    height: auto;
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+
+  .prom-header {
+    position: relative;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .prom-experience-label {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .prom-main-title {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .prom-subtitle {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+
+  .prom-slider-container {
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: 500px;
+  }
+
+  /* CORRECCIÓN: En móviles, todos los slides deben estar en posición absoluta */
+  .prom-slide {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    min-height: 800px;
+  }
+
+  .prom-slide-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    flex-shrink: 0;
+  }
+
+  .prom-content-panel {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    margin: -50px auto 50px;
+    transform: translateY(30px);
+    transition: transform 1s ease-out, opacity 1s ease-out;
+  }
+
+  .prom-slide.active .prom-content-panel {
+    transform: translateY(0);
+  }
+
+  .prom-navigation {
+    position: relative;
+    bottom: auto;
+    margin: 20px 0 40px;
+  }
+
+  .prom-dots {
+    position: relative;
+    bottom: auto;
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .prom-main-title {
+    font-size: 28px;
+  }
+
+  .prom-subtitle {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .prom-content-panel {
+    width: 95%;
+    padding: 25px 15px;
+    margin-top: -30px;
+  }
+
+  .prom-package-title {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .prom-package-description {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 25px;
+  }
+
+  .prom-button {
+    padding: 10px 20px;
+    min-width: 160px;
+    font-size: 14px;
+  }
+
+  .prom-slide-image {
+    height: 350px;
+  }
+
+  .prom-nav-button {
+    width: 45px;
+    height: 45px;
+  }
+
+  .prom-dots {
+    bottom: 80px;
+  }
+
+  /* Asegurar que el slider container tenga altura suficiente */
+  .prom-slider-container {
+    min-height: 750px;
+  }
+}
+/***********************************Seccion de servas*********************************/
+/* Estilos para la sección de reserva */
+.res-section {
+  position: relative;
+  width: 100%;
+  height: 30vh; /* 30% de la altura de la pantalla */
+  min-height: 283px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.res-section.res-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.res-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #383029;
+  z-index: -1;
+}
+
+.res-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.res-title {
+  font-family: "Eras Medium ITC", "Eras Medium ITC-Regular", Helvetica, Arial,
+    sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 48px;
+  letter-spacing: 0;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  max-width: 90%;
+}
+
+.res-description {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Eras Medium ITC", "Eras Medium ITC-Regular", Helvetica, Arial,
+    sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 826px;
+  margin-bottom: 30px;
+}
+
+.res-button-container {
+  position: relative;
+  display: inline-block;
+}
+
+.res-button-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #8b8b8b;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.res-button {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  padding: 12px 30px;
+  font-family: "Segoe UI Variable", "Segoe UI Variable-Regular", Helvetica,
+    Arial, sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.res-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.res-button:active {
+  transform: translateY(0);
+}
+
+.res-button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Media queries para responsive */
+@media (max-width: 1024px) {
+  .res-title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .res-title {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .res-description {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  .res-button {
+    font-size: 14px;
+    padding: 10px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .res-title {
+    font-size: 28px;
+  }
+
+  .res-description {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .res-button {
+    padding: 8px 20px;
   }
 }
 /*************** Redes sociales - Efecto floral a la derecha ***************/
