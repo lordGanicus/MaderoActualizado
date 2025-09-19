@@ -29,6 +29,10 @@
   --tiktok: #000000;
   --whatsapp: #25d366;
   --instagram: #e1306c;
+  --text-light: #cccccc;
+  --text-white: #ffffff;
+
+  --gold: #e4b074;
 
   --ff-poppins: "Poppins", sans-serif;
   --ff-montserrat: "Montserrat", sans-serif;
@@ -2663,6 +2667,1321 @@ nav {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/*****************container*******************/
+/*****************--Seccion info --*******************/
+/**** Sección principal de ubicación ****/
+.ubi-section {
+  width: 100%;
+  background-color: white;
+  padding: 40px 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
 
+.ubi-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ubi-container {
+  max-width: 1436px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.ubi-background {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  position: relative;
+  padding: 20px 0;
+}
+
+/* Encabezado */
+.ubi-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-top: 20px;
+}
+
+.ubi-subtitle {
+  font-family: "Genos", sans-serif;
+  font-weight: 600;
+  color: #e4b074;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.ubi-title {
+  font-family: "Eras Medium ITC", Helvetica, sans-serif;
+  font-weight: 400;
+  color: #000000;
+  font-size: 36px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 15px;
+}
+
+.ubi-line {
+  width: 159px;
+  height: 2px;
+  background-color: #e4b074;
+  margin: 0 auto;
+}
+
+/* Contenido principal */
+.ubi-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0 20px;
+  margin-top: 30px;
+}
+
+.ubi-left {
+  width: 100%;
+  padding-right: 0;
+}
+
+.ubi-right {
+  width: 100%;
+  position: relative;
+}
+
+/* Lista de contacto */
+.ubi-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ubi-contact-item {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.ubi-contact-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-item-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-item-header:hover {
+  background-color: #f0f0f0;
+}
+
+.contact-item-header.active {
+  background-color: #f5f5f5;
+}
+
+.ubi-icon-container {
+  position: relative;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.ubi-icon-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ubi-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.contact-header-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ubi-contact-title {
+  font-family: "Genos", sans-serif;
+  font-weight: 600;
+  color: #e4b074;
+  font-size: 18px;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+.contact-toggle-icon {
+  font-size: 20px;
+  color: #e4b074;
+  transition: transform 0.3s ease;
+}
+
+.contact-toggle-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.contact-item-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.contact-item-content.open {
+  max-height: 200px;
+}
+
+.ubi-contact-info {
+  padding: 0 15px 15px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ubi-contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ubi-contact-text {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 400;
+  color: #000000;
+  font-size: 15px;
+  line-height: 18px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.ubi-contact-link {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 400;
+  color: #000000;
+  font-size: 15px;
+  line-height: 18px;
+  text-decoration: underline;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.ubi-contact-link:hover {
+  opacity: 0.8;
+}
+
+/* Slider de imágenes */
+.ubi-slider {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.ubi-slider.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ubi-slider-container {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.ubi-slide {
+  width: 33.333%;
+  height: 100%;
+  position: relative;
+}
+
+.ubi-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ubi-slider-nav {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.ubi-slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ubi-slider-dot.active {
+  background-color: #e4b074;
+  transform: scale(1.2);
+}
+
+.ubi-slider-arrows {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.ubi-slider-arrows:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.ubi-prev {
+  left: 10px;
+}
+
+.ubi-next {
+  right: 10px;
+}
+
+/* Modal del mapa */
+.ubi-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ubi-modal.show {
+  opacity: 1;
+}
+
+.ubi-modal-content {
+  position: relative;
+  margin: 10% auto;
+  width: 90%;
+  max-width: 800px;
+  height: 70vh;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.ubi-modal.show .ubi-modal-content {
+  transform: scale(1);
+}
+
+.ubi-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ubi-modal iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive para tablets */
+@media (min-width: 768px) {
+  .ubi-section {
+    padding: 60px 30px;
+  }
+
+  .ubi-background {
+    padding: 30px 0;
+  }
+
+  .ubi-content {
+    padding: 0 40px;
+  }
+
+  .ubi-contact-list {
+    gap: 20px;
+  }
+
+  .contact-item-header {
+    gap: 20px;
+    padding: 20px;
+    cursor: auto;
+  }
+
+  .contact-item-header:hover {
+    background-color: #f9f9f9;
+  }
+
+  .contact-toggle-icon {
+    display: none;
+  }
+
+  .ubi-contact-item {
+    box-shadow: none;
+    border-radius: 0;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .contact-item-content {
+    max-height: none !important;
+    flex: 1;
+  }
+
+  .ubi-contact-info {
+    padding: 0;
+    padding-left: 20px;
+  }
+
+  .ubi-icon-container {
+    width: 55px;
+    height: 55px;
+  }
+
+  .ubi-slider {
+    height: 400px;
+  }
+
+  .ubi-slider-arrows {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .ubi-slider-dot {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Responsive para desktop - Diseño original */
+@media (min-width: 1024px) {
+  .ubi-icon-container {
+    position: absolute;
+    width: 70px;
+    height: 55px;
+    left: -15%;
+    bottom: 20%;
+  }
+  .ubi-section {
+    padding: 60px 20px;
+  }
+
+  .ubi-content {
+    flex-direction: row;
+    padding: 0 60px;
+  }
+
+  .ubi-left {
+    width: 45%;
+    padding-right: 30px;
+  }
+
+  .ubi-right {
+    width: 55%;
+  }
+
+  .ubi-slider {
+    height: 100%;
+  }
+
+  /* Revertir al diseño original para desktop */
+  .ubi-contact-item {
+    flex-direction: column;
+    box-shadow: none;
+    border-radius: 0;
+    align-items: flex-start;
+    transform: translateX(-30px);
+    display: flex;
+    overflow: visible;
+  }
+
+  .ubi-contact-item.visible {
+    transform: translateX(0);
+  }
+
+  .contact-item-header {
+    padding: 0;
+    background-color: transparent;
+    cursor: auto;
+    flex: 0 0 auto;
+  }
+
+  .contact-item-content {
+    max-height: none !important;
+    flex: 1;
+  }
+
+  .ubi-contact-info {
+    padding: 0;
+    padding-left: 20px;
+  }
+
+  .ubi-contact-details {
+    gap: 8px;
+  }
+
+  .contact-toggle-icon {
+    display: none;
+  }
+
+  .ubi-contact-item:nth-child(2) {
+    transition-delay: 0.1s;
+  }
+
+  .ubi-contact-item:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+
+  .ubi-contact-item:nth-child(4) {
+    transition-delay: 0.3s;
+  }
+
+  .ubi-contact-item:nth-child(5) {
+    transition-delay: 0.4s;
+  }
+
+  .ubi-contact-item:nth-child(6) {
+    transition-delay: 0.5s;
+  }
+}
+/********************Fotter here !  ***********************/
+
+.footer {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f5f5f5;
+  background: linear-gradient(
+    to top right,
+    var(--backgound-brown),
+    var(--backgound-lite)
+  );
+  color: var(--text-white);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.footer-main {
+  padding: 50px 0 30px;
+}
+
+.container-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+/* Sección Izquierda - Logo y Brand */
+.footer-left {
+  flex: 1;
+  max-width: 400px;
+}
+
+.footer-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.footer-logo {
+  width: 60px;
+  height: auto;
+}
+
+.footer-divider {
+  width: 2px;
+  height: 50px;
+  background: linear-gradient(to bottom, var(--gold), rgba(197, 164, 126, 0.3));
+  border-radius: 1px;
+}
+
+.footer-brand-text {
+  text-align: left;
+}
+
+.hotel-name {
+  font-family: "Arial", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 3px;
+  color: var(--text-white);
+  line-height: 1;
+}
+
+.hotel-subtitle {
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+}
+
+.footer-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-light);
+  text-align: left;
+}
+
+/* Sección Derecha - Información en 3 Columnas */
+.footer-right {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.info-section {
+  text-align: left;
+}
+
+.info-title {
+  font-family: "Lexend Zeta", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: var(--text-white);
+  border-bottom: 2px solid var(--gold);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.info-content {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.contact-item,
+.social-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 8px;
+}
+
+.contact-item ion-icon,
+.social-item ion-icon {
+  font-size: 16px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.contact-link,
+.social-link {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 13px;
+}
+
+.contact-link:hover,
+.social-link:hover {
+  color: var(--gold);
+}
+
+address {
+  font-style: normal;
+  color: var(--text-light);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Sección de Métodos de Pago */
+.payment-section {
+  grid-column: span 3;
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(197, 164, 126, 0.3);
+  text-align: center;
+}
+
+.payment-title {
+  font-family: "Lexend Zeta", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.payment-methods {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.payment-icon {
+  height: 30px;
+  width: auto;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.payment-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background-color: rgba(26, 26, 26, 0.8);
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid rgba(197, 164, 126, 0.2);
+}
+
+.footer-bottom .container-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.copyright {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .container-footer {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .footer-left {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .footer-description {
+    text-align: center;
+  }
+
+  .footer-right {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .payment-section {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-right {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .payment-section {
+    grid-column: span 1;
+    margin-top: 20px;
+  }
+
+  .info-section {
+    text-align: center;
+  }
+
+  .contact-item,
+  .social-item {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-main {
+    padding: 30px 0 20px;
+  }
+
+  .container-footer {
+    padding: 0 20px;
+  }
+
+  .footer-brand-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-divider {
+    width: 50px;
+    height: 2px;
+  }
+
+  .hotel-name {
+    font-size: 24px;
+  }
+
+  .payment-methods {
+    gap: 10px;
+  }
+
+  .payment-icon {
+    height: 25px;
+  }
+}
+/************************seccion hero hab dentro de la habitacion***********************/
+/* Sección Hero */
+.heroHab-container {
+  font-family: "Eras Medium ITC", "Segoe UI", Arial, sans-serif;
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroHab-image {
+  width: 100%;
+  height: 100%;
+  background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213336/SUITE_MATRIMONIAL3_yzbwbx.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.heroHab-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 7vh;
+}
+
+.heroHab-text {
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: heroHab-appear 1.2s forwards 0.5s;
+}
+
+.heroHab-text h2 {
+  font-size: 3.5rem;
+  font-weight: normal;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.heroHab-text p {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Efecto de ventana que se abre */
+.heroHab-window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: heroHab-window-open 1s forwards;
+}
+
+/* Animaciones */
+@keyframes heroHab-window-open {
+  0% {
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  51% {
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+@keyframes heroHab-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 1024px) {
+  .heroHab-text h2 {
+    font-size: 3rem;
+  }
+
+  .heroHab-text p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroHab-container {
+    height: 60vh;
+  }
+
+  .heroHab-text h2 {
+    font-size: 2.5rem;
+  }
+
+  .heroHab-text p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroHab-container {
+    height: 50vh;
+  }
+
+  .heroHab-text h2 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .heroHab-text p {
+    font-size: 1.1rem;
+  }
+
+  .heroHab-overlay {
+    padding-bottom: 5vh;
+  }
+}
+/***********--Seccion hab info dentro--***************/
+.habInfo-container {
+  font-family: "Eras Medium ITC", "Arial", sans-serif;
+  background: #f5f5f5;
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f5f0 0%, #e8e1d6 100%);
+}
+
+.habInfo-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213336/SUITE_MATRIMONIAL3_yzbwbx.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.habInfo-header {
+  position: relative;
+  z-index: 10;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.habInfo-main-title {
+  font-family: "Lexend Zetta", sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(
+    0deg,
+    rgba(94, 64, 7, 1) 19%,
+    rgba(191, 128, 11, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+}
+
+.habInfo-cards-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  min-height: 800px;
+}
+
+.habInfo-cards-grid {
+  display: none;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-in-out;
+}
+
+.habInfo-cards-grid.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.habInfo-section-intro {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+
+.habInfo-section-title {
+  font-family: "Lexend Zetta", sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  background: linear-gradient(
+    0deg,
+    rgba(94, 64, 7, 1) 19%,
+    rgba(191, 128, 11, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.habInfo-section-subtitle {
+  font-family: "Eras Medium ITC", Arial, sans-serif;
+  font-size: 40px;
+  color: #000;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.habInfo-section-description {
+  font-family: "Eras Medium ITC", Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  max-width: 610px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+.habInfo-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.habInfo-nav-button {
+  font-family: "Lexend Zetta", sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  background: linear-gradient(
+    0deg,
+    rgba(94, 64, 7, 1) 19%,
+    rgba(191, 128, 11, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.habInfo-nav-button:hover {
+  transform: scale(1.1);
+}
+
+.habInfo-nav-button.active::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(185, 141, 28, 1) 8%,
+    rgba(213, 150, 49, 1) 57%,
+    rgba(143, 103, 0, 1) 100%
+  );
+}
+
+.habInfo-suites-grid,
+.habInfo-business-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.habInfo-card {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 10px 8px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.habInfo-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.habInfo-card-content {
+  display: flex;
+  height: 400px;
+}
+
+.habInfo-card-info {
+  flex: 1;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.habInfo-card-image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.habInfo-card-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+}
+
+.habInfo-card-title {
+  font-family: "Eras Medium ITC", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  background: linear-gradient(
+    180deg,
+    rgba(173, 107, 22, 1) 0%,
+    rgba(95, 55, 3, 1) 85%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 15px;
+}
+
+.habInfo-card-description {
+  font-family: "Eras Medium ITC", Arial, sans-serif;
+  font-size: 13px;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.habInfo-amenities {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding: 15px 0;
+  border-top: 2px solid #f0f0f0;
+}
+
+.habInfo-amenity-icon {
+  width: 24px;
+  height: 24px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.habInfo-amenity-icon:hover {
+  opacity: 1;
+}
+
+.habInfo-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.habInfo-button {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Lexend Zetta", sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  color: #fff8f8;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(
+    90deg,
+    rgba(185, 141, 28, 1) 8%,
+    rgba(213, 150, 49, 1) 57%,
+    rgba(143, 103, 0, 1) 100%
+  );
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.habInfo-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(185, 141, 28, 0.4);
+}
+
+.habInfo-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .habInfo-card-content {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .habInfo-card-image {
+    height: 200px;
+  }
+
+  .habInfo-navigation {
+    gap: 30px;
+  }
+
+  .habInfo-nav-button {
+    font-size: 10px;
+  }
+
+  .habInfo-section-subtitle {
+    font-size: 28px;
+  }
+}
+
+/* Loading Animation */
+.habInfo-card {
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.habInfo-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.habInfo-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.habInfo-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
 /****************PAQUETES******************/

@@ -687,3 +687,118 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }, 5000);
 });
+/****************Ubicacion  y contacto **********************/
+// Slider functionality
+let currentSlideIndex = 0;
+const totalSlides = 3;
+
+function changeSlide(direction) {
+  currentSlideIndex += direction;
+
+  if (currentSlideIndex >= totalSlides) {
+    currentSlideIndex = 0;
+  } else if (currentSlideIndex < 0) {
+    currentSlideIndex = totalSlides - 1;
+  }
+
+  updateSlider();
+}
+
+function currentSlide(n) {
+  currentSlideIndex = n - 1;
+  updateSlider();
+}
+
+function updateSlider() {
+  const container = document.getElementById("slider-container");
+  const translateX = -currentSlideIndex * (100 / totalSlides);
+  container.style.transform = `translateX(${translateX}%)`;
+
+  // Update dots
+  const dots = document.querySelectorAll(".ubi-slider-dot");
+  dots.forEach((dot, index) => {
+    dot.classList.toggle("active", index === currentSlideIndex);
+  });
+}
+
+// Auto slide
+setInterval(() => {
+  changeSlide(1);
+}, 5000);
+
+// Map modal functionality
+function openMap() {
+  const modal = document.getElementById("mapModal");
+  modal.style.display = "block";
+  document.body.style.overflow = "hidden";
+
+  // Pequeño retraso para permitir que el display:block se aplique antes de añadir la clase
+  setTimeout(() => {
+    modal.classList.add("show");
+  }, 10);
+}
+
+function closeMap() {
+  const modal = document.getElementById("mapModal");
+  modal.classList.remove("show");
+
+  // Esperar a que termine la transición antes de ocultar completamente
+  setTimeout(() => {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+  }, 300);
+}
+
+// Close modal when clicking outside
+window.onclick = function (event) {
+  const modal = document.getElementById("mapModal");
+  if (event.target === modal) {
+    closeMap();
+  }
+};
+
+// Close modal with Escape key
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeMap();
+  }
+});
+
+// Toggle contact items on mobile
+function toggleContactItem(element) {
+  // Only toggle on mobile devices
+  if (window.innerWidth >= 768) return;
+
+  const content = element.nextElementSibling;
+  const icon = element.querySelector(".contact-toggle-icon");
+
+  element.classList.toggle("active");
+  content.classList.toggle("open");
+  icon.classList.toggle("rotated");
+}
+
+// Animación al hacer scroll
+function checkScroll() {
+  const section = document.getElementById("ubicacion-section");
+  const slider = document.getElementById("image-slider");
+  const contactItems = document.querySelectorAll(".ubi-contact-item");
+
+  const sectionPosition = section.getBoundingClientRect().top;
+  const screenPosition = window.innerHeight / 1.3;
+
+  if (sectionPosition < screenPosition) {
+    section.classList.add("visible");
+    slider.classList.add("visible");
+
+    // Animamos cada elemento de contacto con un pequeño retraso entre ellos
+    contactItems.forEach((item, index) => {
+      setTimeout(() => {
+        item.classList.add("visible");
+      }, index * 150);
+    });
+  }
+}
+
+// Verificar scroll al cargar y al hacer scroll
+window.addEventListener("load", checkScroll);
+window.addEventListener("scroll", checkScroll);

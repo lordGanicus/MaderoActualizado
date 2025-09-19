@@ -3,643 +3,487 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ubicación - Madero Suites</title>
+    <title>Footer Madero Hotel & Suites</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Genos:wght@600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lexend+Zeta:wght@400&family=Segoe+UI:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
     <style>
+      :root {
+        --backgound-brown: #2c1810;
+        --backgound-lite: #4a3424;
+        --gold: #c5a47e;
+        --text-light: #cccccc;
+        --text-white: #ffffff;
+      }
+
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
 
-      /* Sección principal de ubicación */
-      .ubi-section {
-        display: none;
-        width: 100%;
-        background-color: white;
-        padding: 60px 20px;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f5f5f5;
+        padding-top: 100px;
       }
 
-      .ubi-container {
-        max-width: 1436px;
+      .footer {
+        background: linear-gradient(
+          to top right,
+          var(--backgound-brown),
+          var(--backgound-lite)
+        );
+        color: var(--text-white);
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .footer-main {
+        padding: 50px 0 30px;
+      }
+
+      .container-footer {
+        max-width: 1200px;
         margin: 0 auto;
-        position: relative;
-      }
-
-      .ubi-background {
-        width: 100%;
-        height: 614px;
-        background-color: rgba(255, 255, 255, 0.4);
-        border-radius: 10px;
-        position: relative;
-      }
-
-      /* Encabezado */
-      .ubi-header {
-        text-align: center;
-        margin-bottom: 40px;
-        padding-top: 40px;
-      }
-
-      .ubi-subtitle {
-        font-family: "Genos", sans-serif;
-        font-weight: 600;
-        color: #e4b074;
-        font-size: 18px;
-        margin-bottom: 5px;
-      }
-
-      .ubi-title {
-        font-family: "Eras Medium ITC", Helvetica, sans-serif;
-        font-weight: 400;
-        color: #000000;
-        font-size: 36px;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        margin-bottom: 15px;
-      }
-
-      .ubi-line {
-        width: 159px;
-        height: 2px;
-        background-color: #e4b074;
-        margin: 0 auto;
-      }
-
-      /* Contenido principal */
-      .ubi-content {
+        padding: 0 30px;
         display: flex;
-        gap: 40px;
-        padding: 0 60px;
-        margin-top: 30px;
-      }
-
-      .ubi-left {
-        width: 40%;
-        padding-right: 20px;
-      }
-
-      .ubi-right {
-        width: 60%;
-        position: relative;
-      }
-
-      /* Lista de contacto */
-      .ubi-contact-list {
-        display: flex;
-        flex-direction: column;
-        gap: 35px;
-      }
-
-      .ubi-contact-item {
-        display: flex;
+        justify-content: space-between;
         align-items: flex-start;
-        gap: 20px;
+        gap: 60px;
       }
 
-      .ubi-icon-container {
-        position: relative;
-        flex-shrink: 0;
-        width: 61px;
-        height: 58px;
-      }
-
-      .ubi-icon-bg {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .ubi-icon {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 30px;
-        height: 30px;
-        object-fit: contain;
-      }
-
-      .ubi-contact-info {
+      /* Sección Izquierda - Logo y Brand */
+      .footer-left {
         flex: 1;
+        max-width: 400px;
+      }
+
+      .footer-brand-header {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 25px;
+      }
+
+      .footer-logo {
+        width: 60px;
+        height: auto;
+      }
+
+      .footer-divider {
+        width: 2px;
+        height: 50px;
+        background: linear-gradient(
+          to bottom,
+          var(--gold),
+          rgba(197, 164, 126, 0.3)
+        );
+        border-radius: 1px;
+      }
+
+      .footer-brand-text {
+        text-align: left;
+      }
+
+      .hotel-name {
+        font-family: "Arial", sans-serif;
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin-bottom: 3px;
+        color: var(--text-white);
+        line-height: 1;
+      }
+
+      .hotel-subtitle {
+        font-family: "Arial", sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: 1.5px;
+        color: var(--gold);
+      }
+
+      .footer-description {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--text-light);
+        text-align: left;
+      }
+
+      /* Sección Derecha - Información en 3 Columnas */
+      .footer-right {
+        flex: 2;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+      }
+
+      .info-section {
+        text-align: left;
+      }
+
+      .info-title {
+        font-family: "Lexend Zeta", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 15px;
+        color: var(--text-white);
+        border-bottom: 2px solid var(--gold);
+        display: inline-block;
+        padding-bottom: 5px;
+      }
+
+      .info-content {
+        font-family: "Segoe UI", sans-serif;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .contact-item,
+      .social-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
         gap: 8px;
       }
 
-      .ubi-contact-title {
-        font-family: "Genos", sans-serif;
-        font-weight: 600;
-        color: #e4b074;
-        font-size: 20px;
-        line-height: 1.2;
-        margin-bottom: 5px;
+      .contact-item ion-icon,
+      .social-item ion-icon {
+        font-size: 16px;
+        color: var(--gold);
+        flex-shrink: 0;
       }
 
-      .ubi-contact-details {
+      .contact-link,
+      .social-link {
+        color: var(--text-light);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 13px;
+      }
+
+      .contact-link:hover,
+      .social-link:hover {
+        color: var(--gold);
+      }
+
+      address {
+        font-style: normal;
+        color: var(--text-light);
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      /* Sección de Métodos de Pago */
+      .payment-section {
+        grid-column: span 3;
+        margin-top: 30px;
+        padding-top: 25px;
+        border-top: 1px solid rgba(197, 164, 126, 0.3);
+        text-align: center;
+      }
+
+      .payment-title {
+        font-family: "Lexend Zeta", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--gold);
+        margin-bottom: 15px;
+      }
+
+      .payment-methods {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .payment-icon {
+        height: 30px;
+        width: auto;
+        border-radius: 4px;
+        transition: transform 0.3s ease;
+      }
+
+      .payment-icon:hover {
+        transform: scale(1.1);
+      }
+
+      /* Footer Bottom */
+      .footer-bottom {
+        background-color: rgba(26, 26, 26, 0.8);
+        padding: 20px 0;
+        text-align: center;
+        border-top: 1px solid rgba(197, 164, 126, 0.2);
+      }
+
+      .footer-bottom .container-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
-        gap: 3px;
-      }
-
-      .ubi-contact-text {
-        font-family: "Segoe UI", sans-serif;
-        font-weight: 400;
-        color: #000000;
-        font-size: 15px;
-        line-height: 18px;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      }
-
-      .ubi-contact-link {
-        font-family: "Segoe UI", sans-serif;
-        font-weight: 400;
-        color: #000000;
-        font-size: 15px;
-        line-height: 18px;
-        text-decoration: underline;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        cursor: pointer;
-        transition: opacity 0.3s ease;
-      }
-
-      .ubi-contact-link:hover {
-        opacity: 0.8;
-      }
-
-      /* Slider de imágenes */
-      .ubi-slider {
-        width: 100%;
-        height: 492px;
-        position: relative;
-        overflow: hidden;
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .ubi-slider-container {
-        display: flex;
-        width: 300%;
-        height: 100%;
-        transition: transform 0.5s ease;
-      }
-
-      .ubi-slide {
-        width: 33.333%;
-        height: 100%;
-        position: relative;
-      }
-
-      .ubi-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .ubi-slider-nav {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
         gap: 10px;
       }
 
-      .ubi-slider-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.5);
-        cursor: pointer;
-        transition: background-color 0.3s ease;
+      .copyright {
+        font-size: 14px;
+        color: var(--text-light);
       }
 
-      .ubi-slider-dot.active {
-        background-color: #e4b074;
-      }
-
-      .ubi-slider-arrows {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        cursor: pointer;
-        font-size: 18px;
+      .footer-links {
         display: flex;
-        align-items: center;
         justify-content: center;
-        transition: background-color 0.3s ease;
+        gap: 20px;
+        flex-wrap: wrap;
       }
 
-      .ubi-slider-arrows:hover {
-        background-color: rgba(0, 0, 0, 0.7);
+      .footer-links a {
+        color: var(--gold);
+        text-decoration: none;
+        font-size: 14px;
+        transition: opacity 0.3s ease;
       }
 
-      .ubi-prev {
-        left: 15px;
+      .footer-links a:hover {
+        opacity: 0.8;
       }
 
-      .ubi-next {
-        right: 15px;
-      }
-
-      /* Modal del mapa */
-      .ubi-modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-      }
-
-      .ubi-modal-content {
-        position: relative;
-        margin: 5% auto;
-        width: 90%;
-        max-width: 800px;
-        height: 500px;
-        background-color: white;
-        border-radius: 10px;
-        overflow: hidden;
-      }
-
-      .ubi-modal-close {
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.7);
-        border: none;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        cursor: pointer;
-        font-size: 18px;
-        z-index: 1001;
-      }
-
-      .ubi-modal iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .ubi-content {
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .container-footer {
           flex-direction: column;
+          gap: 40px;
+          text-align: center;
+        }
+
+        .footer-left {
+          max-width: 100%;
+          text-align: center;
+        }
+
+        .footer-description {
+          text-align: center;
+        }
+
+        .footer-right {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 30px;
+        }
+
+        .payment-section {
+          grid-column: span 2;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .footer-right {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+
+        .payment-section {
+          grid-column: span 1;
+          margin-top: 20px;
+        }
+
+        .info-section {
+          text-align: center;
+        }
+
+        .contact-item,
+        .social-item {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .footer-main {
+          padding: 30px 0 20px;
+        }
+
+        .container-footer {
           padding: 0 20px;
         }
 
-        .ubi-left,
-        .ubi-right {
-          width: 100%;
+        .footer-brand-header {
+          flex-direction: column;
+          text-align: center;
+          gap: 10px;
         }
 
-        .ubi-slider {
-          height: 300px;
-          margin-top: 30px;
-        }
-
-        .ubi-title {
-          font-size: 28px;
-        }
-
-        .ubi-contact-item {
-          gap: 15px;
-        }
-
-        .ubi-icon-container {
+        .footer-divider {
           width: 50px;
-          height: 48px;
+          height: 2px;
+        }
+
+        .hotel-name {
+          font-size: 24px;
+        }
+
+        .payment-methods {
+          gap: 10px;
+        }
+
+        .payment-icon {
+          height: 25px;
         }
       }
     </style>
   </head>
   <body>
-    <section class="ubi-section">
-      <div class="ubi-container">
-        <div class="ubi-background">
-          <!-- Encabezado -->
-          <div class="ubi-header">
-            <div class="ubi-subtitle">Nuestra</div>
-            <h1 class="ubi-title">Ubicación</h1>
-            <div class="ubi-line"></div>
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="container-footer">
+          <!-- Sección Izquierda - Logo y Brand -->
+          <div class="footer-left">
+            <div class="footer-brand-header">
+              <img
+                src="https://res.cloudinary.com/ds9subkxg/image/upload/v1749841174/MaderoLogo_brozxx.png"
+                class="footer-logo"
+                alt="Madero Hotel & Suites - Logo oficial"
+              />
+              <div class="footer-divider"></div>
+              <div class="footer-brand-text">
+                <h2 class="hotel-name">MADERO</h2>
+                <span class="hotel-subtitle">HOTEL & SUITES</span>
+              </div>
+            </div>
+            <p class="footer-description">
+              Vive la mejor <strong>experiencia de hospedaje</strong> en La Paz,
+              Bolivia. En Madero Hotel & Suites, te ofrecemos un
+              <strong>servicio excepcional</strong>.
+            </p>
           </div>
 
-          <!-- Contenido principal -->
-          <div class="ubi-content">
-            <!-- Lado izquierdo - Lista de contacto -->
-            <div class="ubi-left">
-              <div class="ubi-contact-list">
-                <!-- Dirección -->
-                <div class="ubi-contact-item">
-                  <div class="ubi-icon-container">
-                    <img
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758232479/51819459-5ff9-4936-8023-cb23a3792867.png"
-                      alt="Icono dirección"
-                      class="ubi-icon-bg"
-                    />
-                  </div>
-                  <div class="ubi-contact-info">
-                    <h3 class="ubi-contact-title">DIRECCIÓN</h3>
-                    <div class="ubi-contact-details">
-                      <div class="ubi-contact-text">
-                        Calle México Nro. 1822, Zona Central La Paz, Bolivia
-                      </div>
-                      <div class="ubi-contact-link" onclick="openMap()">
-                        Ver en Google Maps
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Recepción -->
-                <div class="ubi-contact-item">
-                  <div class="ubi-icon-container">
-                    <img
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758232522/46dedc26-ec62-4f42-a6fa-151059f8b065.png"
-                      alt="Icono recepción"
-                      class="ubi-icon-bg"
-                    />
-                  </div>
-                  <div class="ubi-contact-info">
-                    <h3 class="ubi-contact-title">RECEPCIÓN</h3>
-                    <div class="ubi-contact-details">
-                      <a
-                        href="https://wa.me/59177220181?text=Hola, me gustaría hacer una reserva en Madero Suites"
-                        class="ubi-contact-link"
-                        target="_blank"
-                        >+591 77220181</a
-                      >
-                      <a
-                        href="mailto:recepcion@maderosuites.com"
-                        class="ubi-contact-link"
-                        target="_blank"
-                        >recepcion@maderosuites.com</a
-                      >
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Ventas & Reservas -->
-                <div class="ubi-contact-item">
-                  <div class="ubi-icon-container">
-                    <img
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758232623/b508b12e-eda8-4b6c-acd3-68b55ba4e744.png"
-                      alt="Icono reservas"
-                      class="ubi-icon-bg"
-                    />
-                  </div>
-                  <div class="ubi-contact-info">
-                    <h3 class="ubi-contact-title">VENTAS & RESERVAS</h3>
-                    <div class="ubi-contact-details">
-                      <a
-                        href="https://wa.me/59167160515?text=Hola, me gustaría hacer una reserva en Madero Suites"
-                        class="ubi-contact-link"
-                        target="_blank"
-                        >+591 67160515</a
-                      >
-                      <a
-                        href="mailto:reservas@maderosuites.com"
-                        class="ubi-contact-link"
-                        target="_blank"
-                        >reservas@maderosuites.com</a
-                      >
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Restaurante Urban Center -->
-                <div class="ubi-contact-item">
-                  <div class="ubi-icon-container">
-                    <img
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758232930/310f9f0a-0aa0-4ec8-bafb-d1ec8126d504.png"
-                      alt="Icono restaurante"
-                      class="ubi-icon-bg"
-                    />
-                  </div>
-                  <div class="ubi-contact-info">
-                    <h3 class="ubi-contact-title">
-                      RESTAURANTE URBAN CENTER SPORT BAR
-                    </h3>
-                    <div class="ubi-contact-details">
-                      <a
-                        href="https://wa.me/59167176963?text=Hola, me gustaría hacer una reserva en el restaurante"
-                        class="ubi-contact-link"
-                        target="_blank"
-                        >+591 67176963</a
-                      >
-                      <a
-                        href="mailto:urbancenterrestobar@gmail.com"
-                        class="ubi-contact-link"
-                        target="_blank"
-                        >urbancenterrestobar@gmail.com</a
-                      >
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Restaurante Cielo Urbano -->
-                <div class="ubi-contact-item">
-                  <div class="ubi-icon-container">
-                    <img
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758234894/268b1eb4-2fb3-4920-90aa-630c26c181bf.png"
-                      alt="Icono restaurante cielo"
-                      class="ubi-icon-bg"
-                    />
-                  </div>
-                  <div class="ubi-contact-info">
-                    <h3 class="ubi-contact-title">RESTAURANTE CIELO URBANO</h3>
-                    <div class="ubi-contact-details">
-                      <a
-                        href="https://wa.me/59161239790?text=Hola, me gustaría hacer una reserva en el restaurante"
-                        class="ubi-contact-link"
-                        target="_blank"
-                        >+591 61239790</a
-                      >
-                      <a
-                        href="mailto:cielourbanorestobar@gmail.com"
-                        class="ubi-contact-link"
-                        target="_blank"
-                        >cielourbanorestobar@gmail.com</a
-                      >
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Salón de Eventos -->
-                <div class="ubi-contact-item">
-                  <div class="ubi-icon-container">
-                    <img
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758234914/c5f3d69e-5e82-4d73-8841-d12e9bddb346.png"
-                      alt="Icono eventos"
-                      class="ubi-icon-bg"
-                    />
-                  </div>
-                  <div class="ubi-contact-info">
-                    <h3 class="ubi-contact-title">SALÓN DE EVENTOS ROBLES</h3>
-                    <div class="ubi-contact-details">
-                      <a
-                        href="https://wa.me/59168016789?text=Hola, me gustaría hacer una reserva para un evento"
-                        class="ubi-contact-link"
-                        target="_blank"
-                        >+591 68016789</a
-                      >
-                      <a
-                        href="mailto:informacionsalonesrobles@gmail.com"
-                        class="ubi-contact-link"
-                        target="_blank"
-                        >informacionsalonesrobles@gmail.com</a
-                      >
-                    </div>
-                  </div>
+          <!-- Sección Derecha - 3 Columnas de Información -->
+          <div class="footer-right">
+            <!-- Dirección -->
+            <div class="info-section">
+              <h3 class="info-title">Dirección</h3>
+              <div class="info-content">
+                <div class="contact-item">
+                  <ion-icon name="location-outline"></ion-icon>
+                  <address>
+                    Calle México Nro. 1822, Zona Central La Paz, Bolivia
+                  </address>
                 </div>
               </div>
             </div>
 
-            <!-- Lado derecho - Slider de imágenes -->
-            <div class="ubi-right">
-              <div class="ubi-slider">
-                <div class="ubi-slider-container" id="slider-container">
-                  <div class="ubi-slide">
-                    <img
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758221036/RECEPCION2_ehonce.jpg"
-                      alt="Recepción del hotel"
-                    />
-                  </div>
-                  <div class="ubi-slide">
-                    <img
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758221034/MADERO_RECEPCION_mpawze.jpg"
-                      alt="Recepción Madero"
-                    />
-                  </div>
-                  <div class="ubi-slide">
-                    <img
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758221034/HAB_4_pc4tga.jpg"
-                      alt="Habitación del hotel"
-                    />
-                  </div>
+            <!-- Contacto -->
+            <div class="info-section">
+              <h3 class="info-title">Contacto</h3>
+              <div class="info-content">
+                <div class="contact-item">
+                  <ion-icon name="call-outline"></ion-icon>
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=73501495&text=Hola%2C%20necesito%20más%20información."
+                    target="_blank"
+                    class="contact-link"
+                    >+591 77220181</a
+                  >
                 </div>
-
-                <!-- Navegación del slider -->
-                <button
-                  class="ubi-slider-arrows ubi-prev"
-                  onclick="changeSlide(-1)"
-                >
-                  ‹
-                </button>
-                <button
-                  class="ubi-slider-arrows ubi-next"
-                  onclick="changeSlide(1)"
-                >
-                  ›
-                </button>
-
-                <div class="ubi-slider-nav">
-                  <div
-                    class="ubi-slider-dot active"
-                    onclick="currentSlide(1)"
-                  ></div>
-                  <div class="ubi-slider-dot" onclick="currentSlide(2)"></div>
-                  <div class="ubi-slider-dot" onclick="currentSlide(3)"></div>
+                <div class="contact-item">
+                  <ion-icon name="mail-outline"></ion-icon>
+                  <a
+                    href="mailto:reservas@maderosuites.com"
+                    class="contact-link"
+                  >
+                    reservas@maderosuites.com
+                  </a>
                 </div>
+              </div>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="info-section">
+              <h3 class="info-title">Redes Sociales</h3>
+              <div class="info-content">
+                <div class="social-item">
+                  <ion-icon name="logo-tiktok"></ion-icon>
+                  <a
+                    href="https://www.tiktok.com/@maderohotelsuites?_t=ZM-8wNg5LJcS3y&_r=1"
+                    class="social-link"
+                    target="_blank"
+                    >TikTok</a
+                  >
+                </div>
+                <div class="social-item">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                  <a
+                    href="https://www.facebook.com/MaderoHotelySuites"
+                    class="social-link"
+                    target="_blank"
+                    >Facebook</a
+                  >
+                </div>
+                <div class="social-item">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                  <a
+                    href="https://www.instagram.com/maderohotelysuites?igsh=OWMxcXZqNXUxYmU0"
+                    class="social-link"
+                    target="_blank"
+                    >Instagram</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Métodos de Pago -->
+            <div class="payment-section">
+              <h3 class="payment-title">Transacción confiable</h3>
+              <div class="payment-methods">
+                <img
+                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758297601/2b50fbe8-82a5-4481-9e71-7b6c5698431c.png"
+                  alt="Visa"
+                  class="payment-icon"
+                />
+                <img
+                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758297702/8566f63b-299b-42f0-bb0c-7c3f8824e1f2.png"
+                  alt="Maestro"
+                  class="payment-icon"
+                />
+                <img
+                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758297641/5428dd4a-4297-44ff-a472-a388f78259b7.png"
+                  alt="Mastercard"
+                  class="payment-icon"
+                />
+                <img
+                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758297630/eec29b3e-5a2e-4ac9-8410-add268be81a5.png"
+                  alt="American Express"
+                  class="payment-icon"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Modal del mapa -->
-      <div id="mapModal" class="ubi-modal">
-        <div class="ubi-modal-content">
-          <button class="ubi-modal-close" onclick="closeMap()">×</button>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1912.7230908422387!2d-68.13344992690175!3d-16.503557319190936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915f219597d60ef7%3A0x741064311511bbc9!2sMadero%20Hotel%20%26%20Suites!5e0!3m2!1ses-419!2sbo!4v1758234354725!5m2!1ses-419!2sbo"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="container-footer">
+          <p class="copyright">
+            &copy; 2025 Madero Hotel & Suites. Todos los derechos reservados.
+          </p>
+          <div class="footer-links">
+            <a href="/politica-privacidad">Política de Privacidad</a>
+            <a href="/terminos-condiciones">Términos y Condiciones</a>
+          </div>
         </div>
       </div>
-    </section>
-
-    <script>
-      // Slider functionality
-      let currentSlideIndex = 0;
-      const totalSlides = 3;
-
-      function changeSlide(direction) {
-        currentSlideIndex += direction;
-
-        if (currentSlideIndex >= totalSlides) {
-          currentSlideIndex = 0;
-        } else if (currentSlideIndex < 0) {
-          currentSlideIndex = totalSlides - 1;
-        }
-
-        updateSlider();
-      }
-
-      function currentSlide(n) {
-        currentSlideIndex = n - 1;
-        updateSlider();
-      }
-
-      function updateSlider() {
-        const container = document.getElementById("slider-container");
-        const translateX = -currentSlideIndex * (100 / totalSlides);
-        container.style.transform = `translateX(${translateX}%)`;
-
-        // Update dots
-        const dots = document.querySelectorAll(".ubi-slider-dot");
-        dots.forEach((dot, index) => {
-          dot.classList.toggle("active", index === currentSlideIndex);
-        });
-      }
-
-      // Auto slide
-      setInterval(() => {
-        changeSlide(1);
-      }, 5000);
-
-      // Map modal functionality
-      function openMap() {
-        document.getElementById("mapModal").style.display = "block";
-        document.body.style.overflow = "hidden";
-      }
-
-      function closeMap() {
-        document.getElementById("mapModal").style.display = "none";
-        document.body.style.overflow = "auto";
-      }
-
-      // Close modal when clicking outside
-      window.onclick = function (event) {
-        const modal = document.getElementById("mapModal");
-        if (event.target === modal) {
-          closeMap();
-        }
-      };
-
-      // Close modal with Escape key
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-          closeMap();
-        }
-      });
-    </script>
+    </footer>
   </body>
 </html>
