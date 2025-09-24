@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <title>Tu evento perfecto - Slider de Servicios</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plan Luna de Miel - Paquete V.I.P</title>
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@800&family=Eras+Medium+ITC&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Eras+Medium+ITC:wght@400&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -19,507 +15,642 @@
         box-sizing: border-box;
       }
 
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #ffffff;
-        overflow-x: hidden;
-      }
-
-      .PQcomple-section {
+      .promVip-section {
         position: relative;
         width: 100%;
-        min-height: 665px;
-        background-color: #ffffff;
-        padding: 40px 20px;
+        min-height: 70vh;
+        height: auto;
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-      }
-
-      .PQcomple-header {
-        text-align: center;
-        margin-bottom: 60px;
-      }
-
-      .PQcomple-title {
-        font-family: "Lexend Zetta", sans-serif;
-        font-weight: 800;
-        font-size: 16px;
-        letter-spacing: 0;
-        line-height: 25px;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        background: linear-gradient(
-          0deg,
-          rgba(94, 64, 7, 1) 19%,
-          rgba(191, 128, 11, 1) 100%
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 15px;
-        text-transform: uppercase;
-      }
-
-      .PQcomple-subtitle {
-        font-family: "Eras Medium ITC", Helvetica, sans-serif;
-        font-weight: 400;
-        color: #000000;
-        font-size: 40px;
-        letter-spacing: 0;
-        line-height: 45px;
-      }
-
-      .PQcomple-slider-container {
-        position: relative;
-        width: 100%;
-        max-width: 1400px;
         overflow: hidden;
+        background: #000;
+        padding: 3rem 0;
       }
 
-      .PQcomple-slider {
-        display: flex;
-        transition: transform 0.5s ease;
-        gap: 20px;
-      }
-
-      .PQcomple-card {
-        position: relative;
-        width: 415px;
-        height: 443px;
-        flex-shrink: 0;
-        border-radius: 10px;
-        overflow: hidden;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-      }
-
-      .PQcomple-card:hover {
-        transform: scale(1.02);
-      }
-
-      .PQcomple-card-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: filter 0.3s ease;
-      }
-
-      .PQcomple-card-overlay {
+      .promVip-background {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(
-          45deg,
-          rgba(0, 0, 0, 0.7),
-          rgba(0, 0, 0, 0.4)
-        );
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        padding: 40px;
+        background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758208689/3eb5ee62-c7be-4e13-bcc5-6caf5a23f9ae.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 1;
+      }
+
+      .promVip-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 2;
+      }
+
+      .promVip-content {
+        position: relative;
+        z-index: 3;
         text-align: center;
-      }
-
-      .PQcomple-card:hover .PQcomple-card-overlay {
-        opacity: 1;
-      }
-
-      .PQcomple-card-icon {
-        font-size: 48px;
-        color: #ffffff;
-        margin-bottom: 20px;
-        text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-      }
-
-      .PQcomple-card-title {
-        font-family: "Eras Medium ITC", Helvetica, sans-serif;
-        font-weight: 400;
-        color: #ffffff;
-        font-size: 32px;
-        line-height: 36px;
-        margin-bottom: 15px;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
-      }
-
-      .PQcomple-card-description {
-        font-family: "Eras Medium ITC", Helvetica, sans-serif;
-        font-weight: 400;
-        color: #ffffff;
-        font-size: 16px;
-        line-height: 20px;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
-        max-width: 280px;
-      }
-
-      .PQcomple-navigation {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        margin-top: 40px;
-      }
-
-      .PQcomple-nav-button {
-        background: linear-gradient(
-          45deg,
-          rgba(94, 64, 7, 1),
-          rgba(191, 128, 11, 1)
-        );
-        border: none;
         color: white;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        cursor: pointer;
-        font-size: 20px;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        padding: 2rem;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .promVip-content.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .promVip-title {
+        font-family: "Eras Medium ITC", "Times New Roman", serif;
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+        text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+        animation-delay: 0.2s;
+      }
+
+      .promVip-subtitle-container {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 1.5rem 0;
+        gap: 1rem;
+        animation-delay: 0.4s;
       }
 
-      .PQcomple-nav-button:hover {
+      .promVip-line {
+        width: clamp(60px, 15vw, 120px);
+        height: 1px;
+        background: white;
+        opacity: 0.8;
+      }
+
+      .promVip-subtitle {
+        font-family: "Lexend Zetta", "Arial Black", sans-serif;
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #fff8f8;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+        white-space: nowrap;
+      }
+
+      .promVip-description {
+        font-family: "Eras Medium ITC", "Times New Roman", serif;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        font-weight: 400;
+        line-height: 1.6;
+        margin: 1.5rem auto;
+        max-width: 400px;
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+        animation-delay: 0.6s;
+      }
+
+      .promVip-buttons {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+        animation-delay: 0.8s;
+      }
+
+      .promVip-button {
+        background: transparent;
+        border: 2px solid white;
+        border-radius: 4px;
+        color: white;
+        padding: 1rem 2rem;
+        font-family: "Lexend Zetta", "Arial Black", sans-serif;
+        font-weight: 700;
+        font-size: clamp(0.8rem, 1.5vw, 1rem);
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 200px;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+      }
+
+      .promVip-button:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .promVip-button:active {
+        transform: translateY(-1px);
+        background-color: rgba(255, 255, 255, 0.25);
+      }
+
+      /* Modal Styles */
+      .promVip-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .promVip-modal.show {
+        display: flex;
+        animation: fadeIn 0.3s ease;
+      }
+
+      .promVip-modal-content {
+        position: relative;
+        width: 90%;
+        max-width: 600px;
+        aspect-ratio: 1;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .promVip-close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        z-index: 1001;
+        background: rgba(0, 0, 0, 0.7);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .promVip-close:hover {
+        background: rgba(0, 0, 0, 0.9);
         transform: scale(1.1);
-        box-shadow: 0 4px 15px rgba(191, 128, 11, 0.4);
       }
 
-      .PQcomple-nav-button:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-        transform: none;
+      .promVip-slider-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
       }
 
-      .PQcomple-indicators {
+      .promVip-slider {
+        display: flex;
+        width: 300%;
+        height: 100%;
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .promVip-slide {
+        flex: 0 0 33.333%;
+        height: 100%;
+      }
+
+      .promVip-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .promVip-nav {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
         display: flex;
         gap: 10px;
-        margin: 0 20px;
       }
 
-      .PQcomple-indicator {
+      .promVip-dot {
         width: 12px;
         height: 12px;
         border-radius: 50%;
-        background: rgba(191, 128, 11, 0.3);
+        background: rgba(255, 255, 255, 0.5);
         cursor: pointer;
-        transition: background 0.2s ease;
+        transition: all 0.3s ease;
       }
 
-      .PQcomple-indicator.active {
-        background: rgba(191, 128, 11, 1);
+      .promVip-dot.active {
+        background: white;
+        transform: scale(1.2);
       }
 
-      /* Responsive */
-      @media (max-width: 1200px) {
-        .PQcomple-card {
-          width: 350px;
-          height: 400px;
+      .promVip-arrows {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px 15px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        user-select: none;
+      }
+
+      .promVip-prev {
+        left: 20px;
+      }
+
+      .promVip-next {
+        right: 20px;
+      }
+
+      .promVip-arrows:hover {
+        background: rgba(0, 0, 0, 0.8);
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
         }
       }
 
+      /* Responsive Design */
       @media (max-width: 768px) {
-        .PQcomple-title {
-          font-size: 14px;
+        .promVip-content {
+          padding: 1rem;
         }
 
-        .PQcomple-subtitle {
-          font-size: 28px;
+        .promVip-buttons {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
         }
 
-        .PQcomple-card {
-          width: 300px;
-          height: 350px;
+        .promVip-button {
+          width: 100%;
+          max-width: 300px;
+          padding: 1rem;
         }
 
-        .PQcomple-card-title {
-          font-size: 24px;
+        .promVip-subtitle-container {
+          flex-direction: column;
+          gap: 0.5rem;
         }
 
-        .PQcomple-card-description {
-          font-size: 14px;
+        .promVip-line {
+          width: 80px;
+        }
+
+        .promVip-modal-content {
+          width: 95%;
+          margin: 1rem;
+        }
+
+        .promVip-arrows {
+          font-size: 1.5rem;
+          padding: 8px 12px;
+        }
+
+        .promVip-prev {
+          left: 10px;
+        }
+
+        .promVip-next {
+          right: 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .promVip-section {
+          min-height: 60vh;
+          padding: 2rem 0;
+        }
+
+        .promVip-title {
+          font-size: 1.8rem;
+          margin-bottom: 1rem;
+        }
+
+        .promVip-description {
+          font-size: 0.9rem;
+          margin: 1rem auto;
+        }
+
+        .promVip-buttons {
+          margin-top: 1.5rem;
+        }
+      }
+
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .promVip-buttons {
+          gap: 1.5rem;
         }
       }
     </style>
   </head>
   <body>
-    <section class="PQcomple-section">
-      <div class="PQcomple-header">
-        <h1 class="PQcomple-title">
-          Todo lo que tu evento necesita, en un solo lugar
-        </h1>
-        <h2 class="PQcomple-subtitle">Tu evento perfecto</h2>
-      </div>
+    <section class="promVip-section" id="promVipSection">
+      <div class="promVip-background"></div>
+      <div class="promVip-overlay"></div>
 
-      <div class="PQcomple-slider-container">
-        <div class="PQcomple-slider" id="PQcomple-slider">
-          <!-- Card 1: Meseros -->
-          <div class="PQcomple-card">
-            <img
-              class="PQcomple-card-image"
-              src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758645918/cb536c0f-e1a0-4b45-8258-4354937b507e.png"
-              alt="Meseros profesionales"
-            />
-            <div class="PQcomple-card-overlay">
-              <i class="fas fa-user-tie PQcomple-card-icon"></i>
-              <h3 class="PQcomple-card-title">Meseros</h3>
-              <p class="PQcomple-card-description">
-                Personal de servicio profesional para atender a tus invitados
-                durante el evento
-              </p>
-            </div>
-          </div>
+      <div class="promVip-content" id="promVipContent">
+        <h1 class="promVip-title">Plan Luna de miel</h1>
 
-          <!-- Card 2: Micrófonos -->
-          <div class="PQcomple-card">
-            <img
-              class="PQcomple-card-image"
-              src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758645946/2764d8a5-19df-450f-87fa-99da62832f52.png"
-              alt="Micrófonos JBL UHF"
-            />
-            <div class="PQcomple-card-overlay">
-              <i class="fas fa-microphone PQcomple-card-icon"></i>
-              <h3 class="PQcomple-card-title">Micrófonos JBL UHF</h3>
-              <p class="PQcomple-card-description">
-                Cobertura >10m, 6h de autonomía y alta fidelidad (100 dB A) para
-                discursos y presentaciones claras
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 3: Fotografía -->
-          <div class="PQcomple-card">
-            <img
-              class="PQcomple-card-image"
-              src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213632/SalonRobles2.2_jpdgqx.jpg"
-              alt="Fotografía profesional"
-            />
-            <div class="PQcomple-card-overlay">
-              <i class="fas fa-camera PQcomple-card-icon"></i>
-              <h3 class="PQcomple-card-title">Fotografía Profesional</h3>
-              <p class="PQcomple-card-description">
-                Captura los momentos especiales de tu evento con nuestro
-                servicio de fotografía y edición de alta calidad
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 4: Sonido -->
-          <div class="PQcomple-card">
-            <img
-              class="PQcomple-card-image"
-              src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758221087/parlante_n7cvzx_1_llzswe.jpg"
-              alt="Sonido Bose S1 Pro+"
-            />
-            <div class="PQcomple-card-overlay">
-              <i class="fas fa-volume-up PQcomple-card-icon"></i>
-              <h3 class="PQcomple-card-title">Sonido Bose S1 Pro+</h3>
-              <p class="PQcomple-card-description">
-                Calidad profesional para eventos exigentes. Potencia 160W RMS,
-                Bluetooth, USB-C, batería de 11h y 2 transmisores inalámbricos
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 5: Candy Bar -->
-          <div class="PQcomple-card">
-            <img
-              class="PQcomple-card-image"
-              src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213635/SalonRobles3.3_pm0ngr.jpg"
-              alt="Candy Bar"
-            />
-            <div class="PQcomple-card-overlay">
-              <i class="fas fa-candy-cane PQcomple-card-icon"></i>
-              <h3 class="PQcomple-card-title">Candy Bar</h3>
-              <p class="PQcomple-card-description">
-                Dulces y postres personalizados que complementan la temática de
-                tu evento y deleitan a tus invitados
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 6: Decoración -->
-          <div class="PQcomple-card">
-            <img
-              class="PQcomple-card-image"
-              src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213628/15-A%C3%91OS-ABRIL3_getirq.jpg"
-              alt="Decoración temática"
-            />
-            <div class="PQcomple-card-overlay">
-              <i class="fas fa-palette PQcomple-card-icon"></i>
-              <h3 class="PQcomple-card-title">Decoración Temática</h3>
-              <p class="PQcomple-card-description">
-                Transformamos el espacio según tu tema preferido, desde elegante
-                y minimalista hasta extravagante y colorido
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="PQcomple-navigation">
-        <button class="PQcomple-nav-button" id="PQcomple-prev-btn">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-
-        <div class="PQcomple-indicators" id="PQcomple-indicators">
-          <div class="PQcomple-indicator active"></div>
-          <div class="PQcomple-indicator"></div>
+        <div class="promVip-subtitle-container">
+          <div class="promVip-line"></div>
+          <h2 class="promVip-subtitle">PAQUETE V.I.P</h2>
+          <div class="promVip-line"></div>
         </div>
 
-        <button class="PQcomple-nav-button" id="PQcomple-next-btn">
-          <i class="fas fa-chevron-right"></i>
-        </button>
+        <p class="promVip-description">
+          La experiencia de luna de miel que redefine el romance
+        </p>
+
+        <div class="promVip-buttons">
+          <button class="promVip-button" id="promVipReserve">
+            RESERVAR PAQUETE
+          </button>
+          <button class="promVip-button" id="promVipExplore">
+            EXPLORAR DETALLES
+          </button>
+        </div>
       </div>
     </section>
 
+    <!-- Modal para el slider -->
+    <div class="promVip-modal" id="promVipModal">
+      <div class="promVip-modal-content">
+        <span class="promVip-close" id="promVipClose">&times;</span>
+
+        <div class="promVip-slider-container">
+          <div class="promVip-slider" id="promVipSlider">
+            <div class="promVip-slide">
+              <img
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758285833/7085aa70-01c6-4c21-96a1-f2f58868d7ac.png"
+                alt="Imagen 1 del paquete"
+              />
+            </div>
+            <div class="promVip-slide">
+              <img
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758285818/7a9390e1-e9f2-45ea-bb12-97e3efc805a8.png"
+                alt="Imagen 2 del paquete"
+              />
+            </div>
+            <div class="promVip-slide">
+              <img
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758285801/cd22fcab-c633-44fd-bb10-89307154f39b.png"
+                alt="Imagen 3 del paquete"
+              />
+            </div>
+          </div>
+
+          <div class="promVip-arrows promVip-prev" id="promVipPrev">
+            &#10094;
+          </div>
+          <div class="promVip-arrows promVip-next" id="promVipNext">
+            &#10095;
+          </div>
+
+          <div class="promVip-nav">
+            <div class="promVip-dot active" data-slide="0"></div>
+            <div class="promVip-dot" data-slide="1"></div>
+            <div class="promVip-dot" data-slide="2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script>
-      class PQcompleteSlider {
+      class HoneymoonVIP {
         constructor() {
-          this.slider = document.getElementById("PQcomple-slider");
-          this.prevBtn = document.getElementById("PQcomple-prev-btn");
-          this.nextBtn = document.getElementById("PQcomple-next-btn");
-          this.indicators = document.getElementById("PQcomple-indicators");
-          this.cards = document.querySelectorAll(".PQcomple-card");
-
-          this.currentIndex = 0;
-          this.cardsPerView = 3;
-          this.totalCards = this.cards.length;
-          this.maxIndex = Math.ceil(this.totalCards / this.cardsPerView) - 1;
-
+          this.currentSlide = 0;
+          this.totalSlides = 3;
+          this.touchStartX = 0;
+          this.touchEndX = 0;
           this.init();
         }
 
         init() {
-          this.createIndicators();
-          this.bindEvents();
-          this.updateSlider();
-          this.startAutoSlide();
+          this.setupIntersectionObserver();
+          this.setupEventListeners();
         }
 
-        createIndicators() {
-          this.indicators.innerHTML = "";
-          for (let i = 0; i <= this.maxIndex; i++) {
-            const indicator = document.createElement("div");
-            indicator.className = `PQcomple-indicator ${
-              i === 0 ? "active" : ""
-            }`;
-            indicator.addEventListener("click", () => this.goToSlide(i));
-            this.indicators.appendChild(indicator);
-          }
+        setupIntersectionObserver() {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  setTimeout(() => {
+                    document
+                      .getElementById("promVipContent")
+                      .classList.add("animate");
+                  }, 200);
+                }
+              });
+            },
+            {
+              threshold: 0.3,
+            }
+          );
+
+          observer.observe(document.getElementById("promVipSection"));
         }
 
-        bindEvents() {
-          this.prevBtn.addEventListener("click", () => this.prevSlide());
-          this.nextBtn.addEventListener("click", () => this.nextSlide());
+        setupEventListeners() {
+          // Botón reservar
+          document
+            .getElementById("promVipReserve")
+            .addEventListener("click", () => {
+              this.openWhatsApp();
+            });
 
-          // Touch/swipe events
-          let startX = 0;
-          let isDragging = false;
+          // Botón explorar detalles
+          document
+            .getElementById("promVipExplore")
+            .addEventListener("click", () => {
+              this.openModal();
+            });
 
-          this.slider.addEventListener("touchstart", (e) => {
-            startX = e.touches[0].clientX;
-            isDragging = true;
-          });
+          // Cerrar modal
+          document
+            .getElementById("promVipClose")
+            .addEventListener("click", () => {
+              this.closeModal();
+            });
 
-          this.slider.addEventListener("touchmove", (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-          });
-
-          this.slider.addEventListener("touchend", (e) => {
-            if (!isDragging) return;
-            isDragging = false;
-
-            const endX = e.changedTouches[0].clientX;
-            const diff = startX - endX;
-
-            if (Math.abs(diff) > 50) {
-              if (diff > 0) {
-                this.nextSlide();
-              } else {
-                this.prevSlide();
+          // Cerrar modal al hacer clic fuera
+          document
+            .getElementById("promVipModal")
+            .addEventListener("click", (e) => {
+              if (e.target.id === "promVipModal") {
+                this.closeModal();
               }
+            });
+
+          // Navegación del slider
+          document
+            .getElementById("promVipPrev")
+            .addEventListener("click", () => {
+              this.prevSlide();
+            });
+
+          document
+            .getElementById("promVipNext")
+            .addEventListener("click", () => {
+              this.nextSlide();
+            });
+
+          // Dots navigation
+          document.querySelectorAll(".promVip-dot").forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+              this.goToSlide(index);
+            });
+          });
+
+          // Touch events para móvil
+          const slider = document.getElementById("promVipSlider");
+          slider.addEventListener(
+            "touchstart",
+            (e) => {
+              this.touchStartX = e.touches[0].clientX;
+            },
+            { passive: true }
+          );
+
+          slider.addEventListener(
+            "touchend",
+            (e) => {
+              this.touchEndX = e.changedTouches[0].clientX;
+              this.handleSwipe();
+            },
+            { passive: true }
+          );
+
+          // Keyboard navigation
+          document.addEventListener("keydown", (e) => {
+            if (
+              document.getElementById("promVipModal").classList.contains("show")
+            ) {
+              if (e.key === "ArrowLeft") this.prevSlide();
+              if (e.key === "ArrowRight") this.nextSlide();
+              if (e.key === "Escape") this.closeModal();
             }
           });
 
-          // Pause auto-slide on hover
-          this.slider.addEventListener("mouseenter", () =>
-            this.pauseAutoSlide()
-          );
-          this.slider.addEventListener("mouseleave", () =>
-            this.startAutoSlide()
-          );
+          // Auto-slide (opcional)
+          this.autoSlideInterval = null;
         }
 
-        updateSlider() {
-          const cardWidth = 415; // Width of each card
-          const gap = 20; // Gap between cards
-          const offset =
-            this.currentIndex * (cardWidth + gap) * this.cardsPerView;
-
-          this.slider.style.transform = `translateX(-${offset}px)`;
-
-          // Update indicators
-          const indicatorElements = this.indicators.querySelectorAll(
-            ".PQcomple-indicator"
-          );
-          indicatorElements.forEach((indicator, index) => {
-            indicator.classList.toggle("active", index === this.currentIndex);
-          });
-
-          // Update navigation buttons
-          this.prevBtn.disabled = this.currentIndex === 0;
-          this.nextBtn.disabled = this.currentIndex === this.maxIndex;
+        openWhatsApp() {
+          const phoneNumber = "67160315";
+          const message =
+            "Hola! Estoy interesado en reservar el Paquete V.I.P que vi en la página web. ¿Podrían brindarme más información?";
+          const whatsappURL = `https://wa.me/591${phoneNumber}?text=${encodeURIComponent(
+            message
+          )}`;
+          window.open(whatsappURL, "_blank");
         }
 
-        nextSlide() {
-          if (this.currentIndex < this.maxIndex) {
-            this.currentIndex++;
-          } else {
-            this.currentIndex = 0; // Loop back to start
-          }
-          this.updateSlider();
+        openModal() {
+          document.getElementById("promVipModal").classList.add("show");
+          document.body.style.overflow = "hidden";
+          this.startAutoSlide();
+        }
+
+        closeModal() {
+          document.getElementById("promVipModal").classList.remove("show");
+          document.body.style.overflow = "auto";
+          this.stopAutoSlide();
         }
 
         prevSlide() {
-          if (this.currentIndex > 0) {
-            this.currentIndex--;
-          } else {
-            this.currentIndex = this.maxIndex; // Loop to end
-          }
+          this.currentSlide =
+            this.currentSlide === 0
+              ? this.totalSlides - 1
+              : this.currentSlide - 1;
           this.updateSlider();
         }
 
-        goToSlide(index) {
-          this.currentIndex = index;
+        nextSlide() {
+          this.currentSlide =
+            this.currentSlide === this.totalSlides - 1
+              ? 0
+              : this.currentSlide + 1;
           this.updateSlider();
+        }
+
+        goToSlide(slideIndex) {
+          this.currentSlide = slideIndex;
+          this.updateSlider();
+        }
+
+        updateSlider() {
+          const slider = document.getElementById("promVipSlider");
+          const translateX = -this.currentSlide * (100 / this.totalSlides);
+          slider.style.transform = `translateX(${translateX}%)`;
+
+          // Update dots
+          document.querySelectorAll(".promVip-dot").forEach((dot, index) => {
+            dot.classList.toggle("active", index === this.currentSlide);
+          });
+        }
+
+        handleSwipe() {
+          const swipeThreshold = 50;
+          const diff = this.touchStartX - this.touchEndX;
+
+          if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+              this.nextSlide();
+            } else {
+              this.prevSlide();
+            }
+          }
         }
 
         startAutoSlide() {
+          this.stopAutoSlide();
           this.autoSlideInterval = setInterval(() => {
             this.nextSlide();
           }, 4000);
         }
 
-        pauseAutoSlide() {
-          clearInterval(this.autoSlideInterval);
+        stopAutoSlide() {
+          if (this.autoSlideInterval) {
+            clearInterval(this.autoSlideInterval);
+            this.autoSlideInterval = null;
+          }
         }
       }
 
-      // Initialize slider when DOM is loaded
+      // Inicializar cuando el DOM esté listo
       document.addEventListener("DOMContentLoaded", () => {
-        new PQcompleteSlider();
+        new HoneymoonVIP();
       });
 
-      // Handle window resize
-      window.addEventListener("resize", () => {
-        // Reinitialize slider on resize to handle responsive changes
-        const slider = new PQcompleteSlider();
+      // Pausar auto-slide cuando el usuario interactúa
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+          // Pausar cuando la pestaña no está visible
+        }
       });
     </script>
   </body>

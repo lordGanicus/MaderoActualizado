@@ -5863,3 +5863,1385 @@ address {
 #habPort-Salones {
   background-image: url(https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213630/SALON-ROBLES_ucrpms.jpg) !important;
 }
+/********************************Promociones// paquetes//***********************************************/
+/* Sección promocional - Cambio clave: overflow visible */
+.promHero-section {
+  font-family: "Eras Medium ITC", Arial, sans-serif;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: visible; /* Cambiado de hidden a visible */
+}
+
+/* Imagen de fondo con efecto parallax */
+.promHero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758209259/06504d8c-de98-4439-a24c-95348a2983b8.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+  transform: translateY(0);
+  transition: transform 0.1s ease-out;
+  overflow: hidden; /* El fondo sí puede tener overflow hidden */
+}
+/******estrella hero*******/
+.promHero-background2 {
+  background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758726258/Oro3_vfxhix.jpg") !important;
+}
+/************Luna hero***********/
+/* Contenedor del contenido */
+.promHero-background3 {
+  background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758726261/PLATA2_z2v1tu.jpg") !important;
+}
+.promHero-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 100;
+}
+
+/* Tarjeta blanca - Mantenemos el margen negativo pero con clip-path */
+.promHero-card {
+  background-color: #ffffff;
+  width: 80%;
+  max-width: 1200px;
+  padding: 40px;
+  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  margin-bottom: -150px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+  position: relative;
+  z-index: 3;
+
+  /* Solución: clip-path que se remueve al hacer scroll */
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  transition: transform 1s ease-out, opacity 1s ease-out,
+    clip-path 0.5s ease-out;
+}
+
+/* Cuando la tarjeta es visible, mostramos toda */
+.promHero-card.visible {
+  transform: translateY(0);
+  opacity: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Título */
+.promHero-title {
+  font-family: "Eras Medium ITC", Helvetica, sans-serif;
+  font-weight: 400;
+  color: #580404;
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Descripción */
+.promHero-description {
+  font-family: "Eras Medium ITC", Helvetica, sans-serif;
+  font-weight: 400;
+  color: #000000;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Sección de contenido adicional con más espacio */
+.promHero-additional-content {
+  position: relative;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 250px; /* Más espacio para la tarjeta */
+  z-index: 4;
+}
+
+.promHero-additional-content p {
+  font-size: 1.5rem;
+  color: #580404;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .promHero-card {
+    width: 90%;
+    padding: 30px;
+    margin-bottom: -120px;
+  }
+
+  .promHero-title {
+    font-size: 2.8rem;
+  }
+
+  .promHero-description {
+    font-size: 1.1rem;
+  }
+
+  .promHero-additional-content {
+    padding-top: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .promHero-card {
+    width: 95%;
+    padding: 25px;
+    margin-bottom: -100px;
+  }
+
+  .promHero-title {
+    font-size: 2.2rem;
+  }
+
+  .promHero-description {
+    font-size: 1rem;
+  }
+
+  .promHero-additional-content {
+    padding-top: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promHero-card {
+    width: 98%;
+    padding: 20px;
+    margin-bottom: -80px;
+  }
+
+  .promHero-title {
+    font-size: 1.8rem;
+  }
+
+  .promHero-description {
+    font-size: 0.9rem;
+  }
+
+  .promHero-additional-content {
+    padding-top: 150px;
+  }
+
+  .promHero-additional-content p {
+    font-size: 1.2rem;
+  }
+}
+/*************************Promociones info dentro // paquetes ****************************/
+/* Sección principal del paquete */
+.promInfo-section {
+  position: relative;
+  background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758726257/DIAMANTE2_ktvqz2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  position: relative;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 200px;
+  z-index: 4;
+}
+
+.promInfo-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 1;
+}
+
+.promInfo-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  position: relative;
+  z-index: 2;
+}
+
+/* Parte izquierda */
+.promInfo-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.promInfo-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.promInfo-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 15px 35px rgba(88, 4, 4, 0.3);
+  transform: scale(0.9);
+  transition: all 0.6s ease;
+}
+
+.promInfo-image.animate {
+  transform: scale(1);
+}
+
+.promInfo-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(88, 4, 4, 0.1);
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.8s ease;
+  transition-delay: 0.3s;
+}
+
+.promInfo-card.animate {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.promInfo-title {
+  font-family: "Lexend Zetta", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #580404;
+  text-align: center;
+  margin-bottom: 15px;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.promInfo-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background: linear-gradient(90deg, #580404, transparent);
+  border-radius: 2px;
+}
+
+.promInfo-features {
+  margin-top: 30px;
+}
+
+.promInfo-feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+  padding: 2px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.promInfo-feature-item.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.promInfo-feature-item:hover {
+  background: rgba(88, 4, 4, 0.05);
+  transform: translateX(5px);
+}
+
+.promInfo-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  background: rgba(91, 0, 0, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.promInfo-feature-item:hover .promInfo-icon-wrapper {
+  background: #580404;
+  transform: scale(1.1);
+}
+
+.promInfo-icon {
+  color: white;
+  font-size: 18px;
+}
+
+.promInfo-feature-text {
+  font-size: 16px;
+  color: #333;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.promInfo-button {
+  background: linear-gradient(90deg, #810707 8%, #810808 57%, #4a0202 100%);
+  border: none;
+  border-radius: 12px;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.promInfo-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.promInfo-button:hover::before {
+  left: 100%;
+}
+
+.promInfo-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(88, 4, 4, 0.4);
+}
+
+.promInfo-button-text {
+  font-family: "Lexend Zetta", sans-serif;
+  font-weight: 300;
+  color: #fff8f8;
+  font-size: 14px;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.promInfo-button-icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+/* Parte derecha */
+.promInfo-right {
+  position: relative;
+  height: 900px;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: 0.4s;
+}
+
+.promInfo-right.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.promInfo-moving-image {
+  width: 120%;
+  height: 100%;
+  object-fit: cover;
+  animation: slideRight 15s linear infinite;
+  transition: transform 0.3s ease;
+}
+
+.promInfo-right:hover .promInfo-moving-image {
+  transform: scale(1.05);
+  animation-play-state: paused;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-10%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-10%);
+  }
+}
+
+/* Efectos adicionales */
+.promInfo-floating-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.promInfo-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(88, 4, 4, 0.3);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .promInfo-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 800px;
+  }
+
+  .promInfo-right {
+    height: 400px;
+  }
+
+  .promInfo-title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .promInfo-section {
+    margin-top: 20%;
+    padding: 30px 0;
+    background-attachment: scroll;
+  }
+
+  .promInfo-container {
+    padding: 0 15px;
+    gap: 30px;
+  }
+
+  .promInfo-right {
+    display: none;
+  }
+
+  .promInfo-card {
+    padding: 30px 20px;
+  }
+
+  .promInfo-title {
+    font-size: 18px;
+  }
+
+  .promInfo-feature-text {
+    font-size: 14px;
+  }
+
+  .promInfo-image {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promInfo-section {
+    margin-top: 25%;
+  }
+
+  .promInfo-title {
+    font-size: 16px;
+  }
+
+  .promInfo-feature-item {
+    margin-bottom: 15px;
+  }
+
+  .promInfo-icon-wrapper {
+    width: 35px;
+    height: 35px;
+  }
+
+  .promInfo-icon {
+    font-size: 16px;
+  }
+}
+
+/* Animaciones de entrada adicionales */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/****** Promociones slider dentro // paquetes ******/
+.promSlider-container {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  overflow: hidden;
+  margin: 1px 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.promSlider-container.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.promSlider-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.promSlider-slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.promSlider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.promSlider-caption {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px 30px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.promSlider-slide.active .promSlider-caption {
+  opacity: 1;
+  display: none;
+}
+
+.promSlider-nav {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.promSlider-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.promSlider-dot.active {
+  background-color: white;
+}
+
+.promSlider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.promSlider-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.promSlider-prev {
+  left: 20px;
+}
+
+.promSlider-next {
+  right: 20px;
+}
+
+/* Efectos de entrada para las imágenes */
+.promSlider-slide {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.promSlider-slide.active {
+  opacity: 1;
+}
+
+/* Responsive para tablets */
+@media (max-width: 1024px) {
+  .promSlider-container {
+    height: 60vh;
+  }
+
+  .promSlider-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .promSlider-container {
+    height: 50vh;
+  }
+
+  .promSlider-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .promSlider-caption {
+    padding: 10px 20px;
+    font-size: 14px;
+    bottom: 15%;
+  }
+
+  .promSlider-nav {
+    bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promSlider-container {
+    height: 40vh;
+  }
+
+  .promSlider-btn {
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+  }
+
+  .promSlider-caption {
+    padding: 8px 15px;
+    font-size: 12px;
+    bottom: 10%;
+  }
+
+  .promSlider-nav {
+    bottom: 10px;
+  }
+}
+/****************************Other paquetes // otros paquetes *********************************/
+.promOther-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+.promOther-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.promOther-header {
+  text-align: center;
+  margin-bottom: 80px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: promOther-fadeInUp 1s ease-out forwards;
+}
+
+.promOther-subtitle {
+  font-family: "Lexend Zetta", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: transparent;
+  background: linear-gradient(0deg, rgba(71, 47, 3, 1) 94%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.promOther-title {
+  font-family: "Eras Medium ITC", "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 64px;
+  color: #580404;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.promOther-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.promOther-card {
+  position: relative;
+  height: 600px;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.promOther-card:nth-child(1) {
+  animation: promOther-fadeInUp 1s ease-out 0.3s forwards;
+}
+
+.promOther-card:nth-child(2) {
+  animation: promOther-fadeInUp 1s ease-out 0.6s forwards;
+}
+
+.promOther-card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.promOther-card:hover .promOther-card-image {
+  transform: scale(1.05);
+}
+
+.promOther-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(27, 18, 12, 0);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.promOther-card:hover .promOther-overlay {
+  background: rgba(27, 18, 12, 0.85);
+}
+
+.promOther-card-title {
+  font-family: "Eras Medium ITC", "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 30px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  line-height: 1.2;
+  margin-bottom: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.promOther-card:hover .promOther-card-title {
+  transform: translateY(-30px);
+  margin-bottom: 20px;
+}
+
+.promOther-card-description {
+  font-family: "Eras Medium ITC", "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 30px;
+}
+
+.promOther-card:hover .promOther-card-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.promOther-button-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.promOther-card:hover .promOther-button-container {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.promOther-button {
+  font-family: "Lexend Zetta", sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  color: #fff8f8;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 248, 248, 0.5);
+  text-transform: uppercase;
+}
+
+.promOther-button:hover {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.promOther-heart-icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+}
+
+.promOther-button-container:hover .promOther-heart-icon {
+  transform: scale(1.1);
+}
+
+/* Animaciones */
+@keyframes promOther-fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .promOther-cards-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .promOther-title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .promOther-section {
+    padding: 60px 15px;
+  }
+
+  .promOther-title {
+    font-size: 36px;
+  }
+
+  .promOther-subtitle {
+    font-size: 12px;
+  }
+
+  .promOther-card {
+    height: 500px;
+  }
+
+  .promOther-card-title {
+    font-size: 24px;
+  }
+
+  .promOther-overlay {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promOther-section {
+    padding: 40px 10px;
+  }
+
+  .promOther-title {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .promOther-card {
+    height: 400px;
+  }
+
+  .promOther-card-title {
+    font-size: 20px;
+  }
+
+  .promOther-card-description {
+    font-size: 14px;
+  }
+}
+
+/* Intersection Observer para animaciones */
+.promOther-section:not(.promOther-animated) .promOther-header,
+.promOther-section:not(.promOther-animated) .promOther-card {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: none;
+}
+
+.promOther-section.promOther-animated .promOther-header {
+  animation: promOther-fadeInUp 1s ease-out forwards;
+}
+
+.promOther-section.promOther-animated .promOther-card:nth-child(1) {
+  animation: promOther-fadeInUp 1s ease-out 0.3s forwards;
+}
+
+.promOther-section.promOther-animated .promOther-card:nth-child(2) {
+  animation: promOther-fadeInUp 1s ease-out 0.6s forwards;
+}
+/************************Paquete VIP*************************/
+.promVip-section {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #000;
+  padding: 3rem 0;
+}
+
+.promVip-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758208689/3eb5ee62-c7be-4e13-bcc5-6caf5a23f9ae.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.promVip-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.promVip-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.promVip-content.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.promVip-title {
+  font-family: "Eras Medium ITC", "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+  animation-delay: 0.2s;
+}
+
+.promVip-subtitle-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
+  gap: 1rem;
+  animation-delay: 0.4s;
+}
+
+.promVip-line {
+  width: clamp(60px, 15vw, 120px);
+  height: 1px;
+  background: white;
+  opacity: 0.8;
+}
+
+.promVip-subtitle {
+  font-family: "Lexend Zetta", "Arial Black", sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff8f8;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+}
+
+.promVip-description {
+  font-family: "Eras Medium ITC", "Times New Roman", serif;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 1.5rem auto;
+  max-width: 400px;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  animation-delay: 0.6s;
+}
+
+.promVip-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  animation-delay: 0.8s;
+}
+
+.promVip-button {
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 4px;
+  color: white;
+  padding: 1rem 2rem;
+  font-family: "Lexend Zetta", "Arial Black", sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.promVip-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.promVip-button:active {
+  transform: translateY(-1px);
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Modal Styles */
+.promVip-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.promVip-modal.show {
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+
+.promVip-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  aspect-ratio: 1;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.promVip-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+  background: rgba(0, 0, 0, 0.7);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.promVip-close:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}
+
+.promVip-slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.promVip-slider {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.promVip-slide {
+  flex: 0 0 33.333%;
+  height: 100%;
+}
+
+.promVip-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.promVip-nav {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.promVip-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.promVip-dot.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+.promVip-arrows {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.promVip-prev {
+  left: 20px;
+}
+
+.promVip-next {
+  right: 20px;
+}
+
+.promVip-arrows:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .promVip-content {
+    padding: 1rem;
+  }
+
+  .promVip-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .promVip-button {
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem;
+  }
+
+  .promVip-subtitle-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .promVip-line {
+    width: 80px;
+  }
+
+  .promVip-modal-content {
+    width: 95%;
+    margin: 1rem;
+  }
+
+  .promVip-arrows {
+    font-size: 1.5rem;
+    padding: 8px 12px;
+  }
+
+  .promVip-prev {
+    left: 10px;
+  }
+
+  .promVip-next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promVip-section {
+    min-height: 60vh;
+    padding: 2rem 0;
+  }
+
+  .promVip-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .promVip-description {
+    font-size: 0.9rem;
+    margin: 1rem auto;
+  }
+
+  .promVip-buttons {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .promVip-buttons {
+    gap: 1.5rem;
+  }
+}

@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Salón Robles - El Escenario Perfecto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Paquete romántico premium con suite matrimonial, decoración exclusiva y servicios especiales"
+    />
+    <title>Paquete Romántico Premium</title>
     <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@300;400&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
     />
     <style>
       * {
@@ -16,1685 +24,640 @@
       }
 
       body {
-        font-family: "Arial", sans-serif;
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
         overflow-x: hidden;
       }
 
-      .PQinfo-section {
+      /* Sección principal del paquete */
+      .promInfo-section {
+        margin-top: 15%;
+        padding: 50px 0;
         position: relative;
-        width: 100%;
-        height: 400vh; /* 4 sections × 100vh */
-      }
-
-      /* Contenedor principal que limita la parte izquierda */
-      .PQinfo-container {
-        position: relative;
-        width: 100%;
-        height: 400vh; /* Misma altura que PQinfo-section */
-      }
-
-      /* Parte Izquierda - Fija pero limitada al contenedor */
-      .PQinfo-left-fixed {
-        position: sticky;
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 100vh;
-        z-index: 0;
-        overflow: hidden;
-      }
-
-      .PQinfo-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213628/15-A%C3%91OS-ABRIL3_getirq.jpg");
+        background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758726257/DIAMANTE2_ktvqz2.jpg");
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
-        animation: PQinfo-zoom 15s ease-in-out infinite alternate;
       }
 
-      @keyframes PQinfo-zoom {
+      .promInfo-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.85);
+        z-index: 1;
+      }
+
+      .promInfo-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Parte izquierda */
+      .promInfo-left {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .promInfo-left.animate {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .promInfo-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(88, 4, 4, 0.3);
+        transform: scale(0.9);
+        transition: all 0.6s ease;
+      }
+
+      .promInfo-image.animate {
+        transform: scale(1);
+      }
+
+      .promInfo-card {
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(88, 4, 4, 0.1);
+        transform: translateY(50px);
+        opacity: 0;
+        transition: all 0.8s ease;
+        transition-delay: 0.3s;
+      }
+
+      .promInfo-card.animate {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .promInfo-title {
+        font-family: "Lexend Zetta", sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        color: #580404;
+        text-align: center;
+        margin-bottom: 15px;
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      .promInfo-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 50%;
+        height: 3px;
+        background: linear-gradient(90deg, #580404, transparent);
+        border-radius: 2px;
+      }
+
+      .promInfo-features {
+        margin-top: 30px;
+      }
+
+      .promInfo-feature-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 18px;
+        padding: 10px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+
+      .promInfo-feature-item.animate {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .promInfo-feature-item:hover {
+        background: rgba(88, 4, 4, 0.05);
+        transform: translateX(5px);
+      }
+
+      .promInfo-icon-wrapper {
+        width: 40px;
+        height: 40px;
+        background: rgba(91, 0, 0, 0.8);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+      }
+
+      .promInfo-feature-item:hover .promInfo-icon-wrapper {
+        background: #580404;
+        transform: scale(1.1);
+      }
+
+      .promInfo-icon {
+        color: white;
+        font-size: 18px;
+      }
+
+      .promInfo-feature-text {
+        font-size: 16px;
+        color: #333;
+        font-weight: 400;
+        line-height: 1.4;
+      }
+
+      .promInfo-button {
+        background: linear-gradient(
+          90deg,
+          #810707 8%,
+          #810808 57%,
+          #4a0202 100%
+        );
+        border: none;
+        border-radius: 12px;
+        padding: 15px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 30px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .promInfo-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .promInfo-button:hover::before {
+        left: 100%;
+      }
+
+      .promInfo-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(88, 4, 4, 0.4);
+      }
+
+      .promInfo-button-text {
+        font-family: "Lexend Zetta", sans-serif;
+        font-weight: 300;
+        color: #fff8f8;
+        font-size: 14px;
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .promInfo-button-icon {
+        width: 24px;
+        height: 24px;
+        filter: brightness(0) invert(1);
+      }
+
+      /* Parte derecha */
+      .promInfo-right {
+        position: relative;
+        height: 600px;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transform: translateX(100px);
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition-delay: 0.4s;
+      }
+
+      .promInfo-right.animate {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .promInfo-moving-image {
+        width: 120%;
+        height: 100%;
+        object-fit: cover;
+        animation: slideRight 15s linear infinite;
+        transition: transform 0.3s ease;
+      }
+
+      .promInfo-right:hover .promInfo-moving-image {
+        transform: scale(1.05);
+        animation-play-state: paused;
+      }
+
+      @keyframes slideRight {
         0% {
-          transform: scale(1);
+          transform: translateX(-10%);
+        }
+        50% {
+          transform: translateX(0%);
         }
         100% {
-          transform: scale(1.1);
+          transform: translateX(-10%);
         }
       }
 
-      .PQinfo-overlay {
+      /* Efectos adicionales */
+      .promInfo-floating-particles {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(255, 255, 255, 0.85);
-        z-index: 2;
+        pointer-events: none;
+        z-index: 0;
       }
 
-      .PQinfo-salon-image {
+      .promInfo-particle {
         position: absolute;
-        top: 5%;
-        left: 5%;
-        width: 90%;
-        height: 50%;
-        background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213630/SALON-ROBLES_ucrpms.jpg");
-        background-size: cover;
-        background-position: center;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        z-index: 3;
-        opacity: 0;
-        transform: translateY(30px);
-        animation: PQinfo-fadeInUp 1s ease-out 0.5s forwards;
+        width: 4px;
+        height: 4px;
+        background: rgba(88, 4, 4, 0.3);
+        border-radius: 50%;
+        animation: float 6s ease-in-out infinite;
       }
 
-      @keyframes PQinfo-fadeInUp {
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+          opacity: 0;
+        }
+        50% {
+          transform: translateY(-20px) rotate(180deg);
+          opacity: 1;
+        }
+      }
+
+      /* Responsivo */
+      @media (max-width: 1024px) {
+        .promInfo-container {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          max-width: 800px;
+        }
+
+        .promInfo-right {
+          height: 400px;
+        }
+
+        .promInfo-title {
+          font-size: 20px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .promInfo-section {
+          margin-top: 20%;
+          padding: 30px 0;
+          background-attachment: scroll;
+        }
+
+        .promInfo-container {
+          padding: 0 15px;
+          gap: 30px;
+        }
+
+        .promInfo-right {
+          display: none;
+        }
+
+        .promInfo-card {
+          padding: 30px 20px;
+        }
+
+        .promInfo-title {
+          font-size: 18px;
+        }
+
+        .promInfo-feature-text {
+          font-size: 14px;
+        }
+
+        .promInfo-image {
+          height: 250px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .promInfo-section {
+          margin-top: 25%;
+        }
+
+        .promInfo-title {
+          font-size: 16px;
+        }
+
+        .promInfo-feature-item {
+          margin-bottom: 15px;
+        }
+
+        .promInfo-icon-wrapper {
+          width: 35px;
+          height: 35px;
+        }
+
+        .promInfo-icon {
+          font-size: 16px;
+        }
+      }
+
+      /* Animaciones de entrada adicionales */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
         to {
           opacity: 1;
           transform: translateY(0);
         }
       }
 
-      .PQinfo-content {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 40px;
-        z-index: 3;
-        color: #000;
-      }
-
-      .PQinfo-tagline {
-        font-family: "Lexend Zetta", Arial, sans-serif;
-        font-weight: 800;
-        font-size: 16px;
-        line-height: 24px;
-        text-align: center;
-        background: linear-gradient(
-          0deg,
-          rgba(94, 64, 7, 1) 19%,
-          rgba(191, 128, 11, 1) 100%
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        margin-bottom: 20px;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: PQinfo-fadeInUp 1s ease-out 1s forwards;
-      }
-
-      .PQinfo-title {
-        font-family: "Eras Medium ITC", Arial, sans-serif;
-        font-size: 48px;
-        font-weight: 400;
-        text-align: center;
-        margin-bottom: 20px;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: PQinfo-fadeInUp 1s ease-out 1.2s forwards;
-      }
-
-      .PQinfo-description {
-        font-family: "Eras Medium ITC", Arial, sans-serif;
-        font-size: 16px;
-        line-height: 25px;
-        text-align: center;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: PQinfo-fadeInUp 1s ease-out 1.4s forwards;
-      }
-
-      /* Parte Derecha - Deslizante */
-      .PQinfo-right-container {
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 50%;
-        height: 400vh;
-        overflow: hidden;
-      }
-
-      .PQinfo-slide {
-        position: sticky;
-        top: 0;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        background: white;
-        padding: 40px;
-        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-      }
-
-      .PQinfo-slide-header {
-        text-align: center;
-        margin-bottom: 40px;
-      }
-
-      .PQinfo-slide-subtitle {
-        font-family: "Lexend Zetta", Arial, sans-serif;
-        font-weight: 700;
-        font-size: 14px;
-        background: linear-gradient(
-          0deg,
-          rgba(94, 64, 7, 1) 19%,
-          rgba(191, 128, 11, 1) 100%
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 10px;
-      }
-
-      .PQinfo-slide-title {
-        font-family: "Eras Medium ITC", Arial, sans-serif;
-        font-size: 40px;
-        font-weight: 400;
-        margin-bottom: 15px;
-        color: #000;
-      }
-
-      .PQinfo-slide-description {
-        font-family: "Eras Medium ITC", Arial, sans-serif;
-        font-size: 16px;
-        line-height: 25px;
-        color: #000;
-      }
-
-      .PQinfo-image-container {
-        position: relative;
-        width: 100%;
-        margin: 2px 0;
-        border-radius: 10px;
-        overflow: hidden;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-        max-height: 35%;
-      }
-
-      .PQinfo-image-container:hover {
-        transform: scale(1.02);
-      }
-
-      .PQinfo-slide-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-
-      .PQinfo-magnifier {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 50px;
-        height: 50px;
-        background: rgba(0, 0, 0, 0.884);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-
-      .PQinfo-image-container:hover .PQinfo-magnifier {
-        opacity: 1;
-      }
-
-      .PQinfo-magnifier img {
-        width: 25px;
-        height: 25px;
-      }
-
-      .PQinfo-amenities {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        margin: 30px 0;
-        flex-grow: 1;
-      }
-
-      .PQinfo-amenity-card {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .PQinfo-amenity-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-      }
-
-      .PQinfo-amenity-icon {
-        font-size: 24px;
-        color: #bf800b;
-        margin-bottom: 10px;
-      }
-
-      .PQinfo-amenity-title {
-        font-weight: bold;
-        font-size: 14px;
-        margin-bottom: 5px;
-        color: #000;
-      }
-
-      .PQinfo-amenity-desc {
-        font-size: 12px;
-        color: #666;
-      }
-
-      .PQinfo-cta-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        background: linear-gradient(
-          157deg,
-          rgba(0, 0, 0, 1) 0%,
-          rgba(49, 48, 46, 1) 100%
-        );
-        color: white;
-        padding: 15px 30px;
-        border: none;
-        border-radius: 4px;
-        font-family: "Outfit", Arial, sans-serif;
-        font-size: 20px;
-        font-weight: 400;
-        cursor: pointer;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        text-decoration: none;
-        margin-top: auto;
-        width: 300px;
-      }
-
-      .PQinfo-cta-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      }
-
-      .PQinfo-cta-icon {
-        width: 20px;
-        height: 20px;
-      }
-
-      /* Modales para las imágenes */
-      .PQinfo-modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
-        z-index: 1000;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .PQinfo-modal-content {
-        width: 90%;
-        max-width: 1200px;
-        max-height: 90%;
-        border: 5px solid white;
-        border-radius: 10px;
-        box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .PQinfo-modal-slider {
-        display: flex;
-        transition: transform 0.5s ease;
-        width: 300%; /* 3 imágenes por modal */
-        height: 100%;
-      }
-
-      .PQinfo-modal-slide {
-        width: 33.333%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .PQinfo-modal-slide img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-      }
-
-      .PQinfo-modal-close {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        color: white;
-        font-size: 40px;
-        cursor: pointer;
-        z-index: 1001;
-      }
-
-      .PQinfo-modal-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0, 0, 0, 0.5);
-        color: white;
-        font-size: 30px;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        border-radius: 50%;
-        transition: background 0.3s;
-        z-index: 1001;
-      }
-
-      .PQinfo-modal-nav:hover {
-        background: rgba(0, 0, 0, 0.8);
-      }
-
-      .PQinfo-modal-prev {
-        left: 20px;
-      }
-
-      .PQinfo-modal-next {
-        right: 20px;
-      }
-
-      .PQinfo-modal-dots {
-        position: absolute;
-        bottom: 20px;
-        left: 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        z-index: 1001;
-      }
-
-      .PQinfo-modal-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.5);
-        cursor: pointer;
-        transition: background-color 0.3s;
-      }
-
-      .PQinfo-modal-dot.active {
-        background-color: white;
-      }
-
-      /* Slider para móviles y tablets */
-      .PQinfo-mobile-slider {
-        display: none;
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-      }
-
-      .PQinfo-slider-container {
-        display: flex;
-        width: 400%;
-        height: 100%;
-        transition: transform 0.5s ease;
-      }
-
-      .PQinfo-slider-slide {
-        width: 25%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        background: white;
-      }
-
-      .PQinfo-slider-dots {
-        position: absolute;
-        bottom: 20px;
-        left: 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-      }
-
-      .PQinfo-slider-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.5);
-        cursor: pointer;
-        transition: background-color 0.3s;
-      }
-
-      .PQinfo-slider-dot.active {
-        background-color: white;
-      }
-
-      /* Media Queries para pantallas de TV (1300px a 1500px) */
-      @media (min-width: 1200px) and (max-width: 1500px) {
-        .PQinfo-cta-button {
-          font-size: 15px;
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
         }
-
-        .PQinfo-amenities {
-          font-size: 10px;
-        }
-        .PQinfo-amenity-desc {
-          font-size: 10px;
-        }
-        .PQinfo-image-container {
-          height: 300px;
-          max-height: 30%;
-        }
-        .PQinfo-amenity-title {
-          font-size: 10px;
-        }
-        .PQinfo-slide-title {
-          font-size: 20px;
-          margin-bottom: 8px;
-        }
-        .PQinfo-amenity-icon {
-          font-size: 14px;
-        }
-        .PQinfo-slide-header {
-          margin-bottom: 10px;
-        }
-        .PQinfo-slide-subtitle {
-          font-size: 10px;
-        }
-        .PQinfo-slide-description {
-          font-size: 11px;
+        to {
+          opacity: 1;
+          transform: translateX(0);
         }
       }
 
-      /* Responsive Design */
-      @media (max-width: 1024px) {
-        .PQinfo-container {
-          height: auto;
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
         }
-
-        .PQinfo-left-fixed {
-          width: 100%;
-          height: 40vh;
-          position: relative;
-        }
-
-        .PQinfo-right-container {
-          display: none;
-        }
-
-        .PQinfo-mobile-slider {
-          display: block;
-        }
-
-        .PQinfo-section {
-          height: auto;
-        }
-
-        .PQinfo-background {
-          animation: PQinfo-zoom-mobile 15s ease-in-out infinite alternate;
-        }
-
-        @keyframes PQinfo-zoom-mobile {
-          0% {
-            transform: scale(1);
-          }
-          100% {
-            transform: scale(1.05);
-          }
-        }
-
-        .PQinfo-salon-image {
-          height: 70%;
-          top: 10%;
-        }
-
-        .PQinfo-content {
-          padding: 20px;
-        }
-
-        .PQinfo-title {
-          font-size: 32px;
-        }
-
-        .PQinfo-description {
-          font-size: 14px;
-          line-height: 20px;
-        }
-
-        .PQinfo-slider-slide {
-          padding: 15px;
-        }
-
-        .PQinfo-slide-title {
-          font-size: 28px;
-        }
-
-        .PQinfo-slide-description {
-          font-size: 14px;
-          line-height: 20px;
-        }
-
-        .PQinfo-image-container {
-          height: 200px;
-        }
-
-        .PQinfo-amenities {
-          grid-template-columns: 1fr;
-          gap: 15px;
-        }
-
-        .PQinfo-amenity-card {
-          padding: 15px;
-        }
-
-        .PQinfo-cta-button {
-          font-size: 16px;
-          padding: 12px 20px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .PQinfo-left-fixed {
-          height: 35vh;
-        }
-
-        .PQinfo-salon-image {
-          height: 60%;
-        }
-
-        .PQinfo-title {
-          font-size: 28px;
-        }
-
-        .PQinfo-tagline {
-          font-size: 14px;
-          line-height: 18px;
-        }
-
-        .PQinfo-description {
-          font-size: 12px;
-          line-height: 18px;
-        }
-
-        .PQinfo-slider-slide {
-          padding: 10px;
-        }
-
-        .PQinfo-slide-title {
-          font-size: 24px;
-        }
-
-        .PQinfo-slide-description {
-          font-size: 12px;
-          line-height: 18px;
-        }
-
-        .PQinfo-image-container {
-          height: 180px;
-        }
-
-        .PQinfo-amenity-card {
-          padding: 10px;
-        }
-
-        .PQinfo-amenity-icon {
-          font-size: 20px;
-        }
-
-        .PQinfo-amenity-title {
-          font-size: 12px;
-        }
-
-        .PQinfo-amenity-desc {
-          font-size: 10px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .PQinfo-left-fixed {
-          height: 30vh;
-        }
-
-        .PQinfo-salon-image {
-          height: 50%;
-        }
-
-        .PQinfo-title {
-          font-size: 24px;
-        }
-
-        .PQinfo-tagline {
-          font-size: 12px;
-          line-height: 16px;
-        }
-
-        .PQinfo-description {
-          font-size: 10px;
-          line-height: 16px;
-        }
-
-        .PQinfo-slide-title {
-          font-size: 20px;
-        }
-
-        .PQinfo-slide-description {
-          font-size: 10px;
-          line-height: 16px;
-        }
-
-        .PQinfo-image-container {
-          height: 150px;
-        }
-
-        .PQinfo-amenity-card {
-          padding: 8px;
-        }
-
-        .PQinfo-amenity-icon {
-          font-size: 18px;
-        }
-
-        .PQinfo-amenity-title {
-          font-size: 11px;
-        }
-
-        .PQinfo-amenity-desc {
-          font-size: 9px;
-        }
-
-        .PQinfo-cta-button {
-          font-size: 14px;
-          padding: 10px 15px;
+        to {
+          opacity: 1;
+          transform: translateX(0);
         }
       }
     </style>
   </head>
   <body>
-    <section class="PQinfo-section">
-      <!-- Contenedor principal que limita la parte izquierda -->
-      <div class="PQinfo-container">
-        <!-- Parte Izquierda - Fija pero limitada al contenedor -->
-        <div class="PQinfo-left-fixed">
-          <div class="PQinfo-background"></div>
-          <div class="PQinfo-overlay"></div>
-          <div class="PQinfo-salon-image"></div>
-          <div class="PQinfo-content">
-            <h2 class="PQinfo-tagline">
-              MÁS QUE UN ESPACIO, CREAMOS MOMENTOS INOLVIDABLES
-            </h2>
-            <h1 class="PQinfo-title">Salón Robles</h1>
-            <p class="PQinfo-description">
-              En Salón Robles te ofrecemos mucho más que un espacio: brindamos
-              experiencias memorables en el corazón de La Paz. Nuestro salón
-              tiene capacidad para 140 personas, baños diferenciados, área de
-              cocina y todos los servicios que necesitas para un evento sin
-              preocupaciones.<br /><br />Con una ubicación privilegiada y un
-              diseño versátil, nos adaptamos a tus necesidades para bodas,
-              eventos corporativos, fiestas de 15 años y más.
-            </p>
+    <section class="promInfo-section" id="promInfo-section">
+      <!-- Partículas flotantes -->
+      <div class="promInfo-floating-particles" id="particles"></div>
+
+      <div class="promInfo-container">
+        <!-- Parte izquierda -->
+        <div class="promInfo-left" id="promInfo-left">
+          <!-- Imagen principal -->
+          <img
+            class="promInfo-image"
+            id="promInfo-image"
+            src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758726257/DIAMANTE2_ktvqz2.jpg"
+            alt="Suite matrimonial premium con decoración romántica"
+          />
+
+          <!-- Card con información -->
+          <div class="promInfo-card" id="promInfo-card">
+            <h2 class="promInfo-title">LO QUE INCLUYE EL PAQUETE</h2>
+
+            <div class="promInfo-features">
+              <div class="promInfo-feature-item" style="animation-delay: 0.1s">
+                <div class="promInfo-icon-wrapper">
+                  <i class="fas fa-bed promInfo-icon"></i>
+                </div>
+                <span class="promInfo-feature-text"
+                  >Suite Matrimonial Premium con decoración exclusiva</span
+                >
+              </div>
+
+              <div class="promInfo-feature-item" style="animation-delay: 0.2s">
+                <div class="promInfo-icon-wrapper">
+                  <i class="fas fa-seedling promInfo-icon"></i>
+                </div>
+                <span class="promInfo-feature-text"
+                  >Pétalos de rosas frescas y elegante arreglo de cisnes en la
+                  cama</span
+                >
+              </div>
+
+              <div class="promInfo-feature-item" style="animation-delay: 0.3s">
+                <div class="promInfo-icon-wrapper">
+                  <i class="fas fa-star promInfo-icon"></i>
+                </div>
+                <span class="promInfo-feature-text"
+                  >Iluminación especial con letras "LOVE" e iniciales
+                  personalizadas</span
+                >
+              </div>
+
+              <div class="promInfo-feature-item" style="animation-delay: 0.4s">
+                <div class="promInfo-icon-wrapper">
+                  <i class="fas fa-camera promInfo-icon"></i>
+                </div>
+                <span class="promInfo-feature-text"
+                  >Decoración con fotografías de la pareja (coordinación
+                  previa)</span
+                >
+              </div>
+
+              <div class="promInfo-feature-item" style="animation-delay: 0.5s">
+                <div class="promInfo-icon-wrapper">
+                  <i class="fas fa-glass-cheers promInfo-icon"></i>
+                </div>
+                <span class="promInfo-feature-text"
+                  >Mesa romántica con pétalos y selección de piqueos
+                  gourmet</span
+                >
+              </div>
+
+              <div class="promInfo-feature-item" style="animation-delay: 0.6s">
+                <div class="promInfo-icon-wrapper">
+                  <i class="fas fa-coffee promInfo-icon"></i>
+                </div>
+                <span class="promInfo-feature-text"
+                  >Desayuno buffet completo para dos personas</span
+                >
+              </div>
+
+              <div class="promInfo-feature-item" style="animation-delay: 0.7s">
+                <div class="promInfo-icon-wrapper">
+                  <i class="fas fa-wine-bottle promInfo-icon"></i>
+                </div>
+                <span class="promInfo-feature-text"
+                  >Bebidas premium: Vino tinto o Espumante</span
+                >
+              </div>
+
+              <div class="promInfo-feature-item" style="animation-delay: 0.8s">
+                <div class="promInfo-icon-wrapper">
+                  <i class="fas fa-clock promInfo-icon"></i>
+                </div>
+                <span class="promInfo-feature-text"
+                  >Check out extendido hasta las 6:00 p.m.</span
+                >
+              </div>
+            </div>
+
+            <!-- Botón de reserva -->
+            <button class="promInfo-button" type="button">
+              <span class="promInfo-button-text">RESERVAR AHORA</span>
+              <img
+                class="promInfo-button-icon"
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758730166/fdaca82f-2b9f-432e-bc6e-4d83db728ea2.png"
+                alt=""
+              />
+            </button>
           </div>
         </div>
 
-        <!-- Parte Derecha - Deslizante (Desktop) -->
-        <div class="PQinfo-right-container">
-          <!-- Slide 1: Bodas -->
-          <div class="PQinfo-slide">
-            <div class="PQinfo-slide-header">
-              <h3 class="PQinfo-slide-subtitle">
-                EL ESCENARIO PERFECTO PARA TU BODA
-              </h3>
-              <h2 class="PQinfo-slide-title">BODAS</h2>
-              <p class="PQinfo-slide-description">
-                Celebra el amor con elegancia en un ambiente íntimo y romántico
-                diseñado para hacer de tu día especial algo inolvidable.
-              </p>
-            </div>
-
-            <div class="PQinfo-image-container" data-slide="1">
-              <img
-                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758221092/BODA1_epag7c.jpg"
-                alt="Salón decorado para boda"
-                class="PQinfo-slide-image"
-              />
-              <div class="PQinfo-magnifier">
-                <img
-                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758645527/dcf25992-f2a5-4afd-ae18-41e63a27cfa4.png"
-                  alt="Ver más"
-                />
-              </div>
-            </div>
-
-            <div class="PQinfo-amenities">
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-heart"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Decoración</div>
-                <div class="PQinfo-amenity-desc">Romántica y elegante</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-volume-up"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Sonido</div>
-                <div class="PQinfo-amenity-desc">Equipo Bose profesional</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-camera"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Fotografía</div>
-                <div class="PQinfo-amenity-desc">Sesión profesional</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-cocktail"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Barra</div>
-                <div class="PQinfo-amenity-desc">Bebidas premium</div>
-              </div>
-            </div>
-
-            <a
-              href="https://wa.me/59168016789?text=Hola,%20estoy%20interesado%20en%20reservar%20el%20paquete%20de%20BODAS%20en%20Salón%20Robles"
-              class="PQinfo-cta-button"
-              target="_blank"
-            >
-              <i class="fas fa-bell PQinfo-cta-icon"></i>
-              COTIZAR PAQUETE
-            </a>
-          </div>
-
-          <!-- Slide 2: Fiesta de 15 Años -->
-          <div class="PQinfo-slide">
-            <div class="PQinfo-slide-header">
-              <h3 class="PQinfo-slide-subtitle">
-                EL ESCENARIO PERFECTO PARA TU BODA
-              </h3>
-              <h2 class="PQinfo-slide-title">Fiesta de 15 Años</h2>
-              <p class="PQinfo-slide-description">
-                Un espacio mágico para una noche soñada. Nuestro salón cuenta
-                con una sutil división perfecta para diferenciar áreas para
-                jóvenes y adultos.
-              </p>
-            </div>
-
-            <div class="PQinfo-image-container" data-slide="2">
-              <img
-                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758221083/15_e54jak.jpg"
-                alt="Salón para fiesta de 15 años"
-                class="PQinfo-slide-image"
-              />
-              <div class="PQinfo-magnifier">
-                <img
-                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758645527/dcf25992-f2a5-4afd-ae18-41e63a27cfa4.png"
-                  alt="Ver más"
-                />
-              </div>
-            </div>
-
-            <div class="PQinfo-amenities">
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-palette"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Decoración</div>
-                <div class="PQinfo-amenity-desc">Temática a elección</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-music"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Música</div>
-                <div class="PQinfo-amenity-desc">Sonido profesional</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-glass-martini-alt"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Barra</div>
-                <div class="PQinfo-amenity-desc">Mocktails y bebidas</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-candy-cane"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Candy Bar</div>
-                <div class="PQinfo-amenity-desc">Personalizado</div>
-              </div>
-            </div>
-
-            <a
-              href="https://wa.me/59168016789?text=Hola,%20estoy%20interesado%20en%20reservar%20el%20paquete%20de%20FIESTA%20DE%2015%20AÑOS%20en%20Salón%20Robles"
-              class="PQinfo-cta-button"
-              target="_blank"
-            >
-              <i class="fas fa-bell PQinfo-cta-icon"></i>
-              COTIZAR PAQUETE
-            </a>
-          </div>
-
-          <!-- Slide 3: Graduaciones -->
-          <div class="PQinfo-slide">
-            <div class="PQinfo-slide-header">
-              <h3 class="PQinfo-slide-subtitle">
-                EL ESCENARIO PERFECTO PARA TU BODA
-              </h3>
-              <h2 class="PQinfo-slide-title">Graduaciones</h2>
-              <p class="PQinfo-slide-description">
-                ¡Haz que ese esfuerzo valga una gran fiesta! Celebra este logro
-                importante con tus compañeros y familiares en un ambiente
-                diseñado para la diversión.
-              </p>
-            </div>
-
-            <div class="PQinfo-image-container" data-slide="3">
-              <img
-                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758221075/PROMO_yxvxdq.jpg"
-                alt="Salón para graduaciones"
-                class="PQinfo-slide-image"
-              />
-              <div class="PQinfo-magnifier">
-                <img
-                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758645527/dcf25992-f2a5-4afd-ae18-41e63a27cfa4.png"
-                  alt="Ver más"
-                />
-              </div>
-            </div>
-
-            <div class="PQinfo-amenities">
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-graduation-cap"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Decoración</div>
-                <div class="PQinfo-amenity-desc">Por promo o carrera</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-headphones"></i>
-                </div>
-                <div class="PQinfo-amenity-title">DJ</div>
-                <div class="PQinfo-amenity-desc">Música y animación</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-ban"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Barra</div>
-                <div class="PQinfo-amenity-desc">Sin alcohol</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-users"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Fotografía</div>
-                <div class="PQinfo-amenity-desc">Grupal y momentos clave</div>
-              </div>
-            </div>
-
-            <a
-              href="https://wa.me/59168016789?text=Hola,%20estoy%20interesado%20en%20reservar%20el%20paquete%20de%20GRADUACIONES%20en%20Salón%20Robles"
-              class="PQinfo-cta-button"
-              target="_blank"
-            >
-              <i class="fas fa-bell PQinfo-cta-icon"></i>
-              COTIZAR PAQUETE
-            </a>
-          </div>
-
-          <!-- Slide 4: Baby Shower -->
-          <div class="PQinfo-slide">
-            <div class="PQinfo-slide-header">
-              <h3 class="PQinfo-slide-subtitle">
-                EL ESCENARIO PERFECTO PARA TU BODA
-              </h3>
-              <h2 class="PQinfo-slide-title">Baby Shower</h2>
-              <p class="PQinfo-slide-description">
-                Dale la bienvenida a tu pequeño con ternura en un ambiente
-                cálido y acogedor diseñado para esta celebración especial.
-              </p>
-            </div>
-
-            <div class="PQinfo-image-container" data-slide="4">
-              <img
-                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758221074/BEBE_vfbrlq.jpg"
-                alt="Salón para baby shower"
-                class="PQinfo-slide-image"
-              />
-              <div class="PQinfo-magnifier">
-                <img
-                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758645527/dcf25992-f2a5-4afd-ae18-41e63a27cfa4.png"
-                  alt="Ver más"
-                />
-              </div>
-            </div>
-
-            <div class="PQinfo-amenities">
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-dove"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Decoración</div>
-                <div class="PQinfo-amenity-desc">Temática espiritual</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-volume-down"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Música</div>
-                <div class="PQinfo-amenity-desc">Ambiental suave</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-birthday-cake"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Pastelería</div>
-                <div class="PQinfo-amenity-desc">Diseño personalizado</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-gamepad"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Actividades</div>
-                <div class="PQinfo-amenity-desc">Juegos y dinámicas</div>
-              </div>
-            </div>
-
-            <a
-              href="https://wa.me/59168016789?text=Hola,%20estoy%20interesado%20en%20reservar%20el%20paquete%20de%20BABY%20SHOWER%20en%20Salón%20Robles"
-              class="PQinfo-cta-button"
-              target="_blank"
-            >
-              <i class="fas fa-bell PQinfo-cta-icon"></i>
-              COTIZAR PAQUETE
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slider para móviles y tablets -->
-      <div class="PQinfo-mobile-slider">
-        <div class="PQinfo-slider-container">
-          <!-- Slide 1: Bodas -->
-          <div class="PQinfo-slider-slide">
-            <div class="PQinfo-slide-header">
-              <h3 class="PQinfo-slide-subtitle">
-                EL ESCENARIO PERFECTO PARA TU BODA
-              </h3>
-              <h2 class="PQinfo-slide-title">BODAS</h2>
-              <p class="PQinfo-slide-description">
-                Celebra el amor con elegancia en un ambiente íntimo y romántico
-                diseñado para hacer de tu día especial algo inolvidable.
-              </p>
-            </div>
-
-            <div class="PQinfo-image-container" data-slide="1">
-              <img
-                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758221092/BODA1_epag7c.jpg"
-                alt="Salón decorado para boda"
-                class="PQinfo-slide-image"
-              />
-              <div class="PQinfo-magnifier">
-                <img
-                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758645527/dcf25992-f2a5-4afd-ae18-41e63a27cfa4.png"
-                  alt="Ver más"
-                />
-              </div>
-            </div>
-
-            <div class="PQinfo-amenities">
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-heart"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Decoración</div>
-                <div class="PQinfo-amenity-desc">Romántica y elegante</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-volume-up"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Sonido</div>
-                <div class="PQinfo-amenity-desc">Equipo Bose profesional</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-camera"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Fotografía</div>
-                <div class="PQinfo-amenity-desc">Sesión profesional</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-cocktail"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Barra</div>
-                <div class="PQinfo-amenity-desc">Bebidas premium</div>
-              </div>
-            </div>
-
-            <a
-              href="https://wa.me/59168016789?text=Hola,%20estoy%20interesado%20en%20reservar%20el%20paquete%20de%20BODAS%20en%20Salón%20Robles"
-              class="PQinfo-cta-button"
-              target="_blank"
-            >
-              <i class="fas fa-bell PQinfo-cta-icon"></i>
-              COTIZAR PAQUETE
-            </a>
-          </div>
-
-          <!-- Slide 2: Fiesta de 15 Años -->
-          <div class="PQinfo-slider-slide">
-            <div class="PQinfo-slide-header">
-              <h3 class="PQinfo-slide-subtitle">
-                EL ESCENARIO PERFECTO PARA TU BODA
-              </h3>
-              <h2 class="PQinfo-slide-title">Fiesta de 15 Años</h2>
-              <p class="PQinfo-slide-description">
-                Un espacio mágico para una noche soñada. Nuestro salón cuenta
-                con una sutil división perfecta para diferenciar áreas para
-                jóvenes y adultos.
-              </p>
-            </div>
-
-            <div class="PQinfo-image-container" data-slide="2">
-              <img
-                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758221083/15_e54jak.jpg"
-                alt="Salón para fiesta de 15 años"
-                class="PQinfo-slide-image"
-              />
-              <div class="PQinfo-magnifier">
-                <img
-                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758645527/dcf25992-f2a5-4afd-ae18-41e63a27cfa4.png"
-                  alt="Ver más"
-                />
-              </div>
-            </div>
-
-            <div class="PQinfo-amenities">
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-palette"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Decoración</div>
-                <div class="PQinfo-amenity-desc">Temática a elección</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-music"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Música</div>
-                <div class="PQinfo-amenity-desc">Sonido profesional</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-glass-martini-alt"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Barra</div>
-                <div class="PQinfo-amenity-desc">Mocktails y bebidas</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-candy-cane"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Candy Bar</div>
-                <div class="PQinfo-amenity-desc">Personalizado</div>
-              </div>
-            </div>
-
-            <a
-              href="https://wa.me/59168016789?text=Hola,%20estoy%20interesado%20en%20reservar%20el%20paquete%20de%20FIESTA%20DE%2015%20AÑOS%20en%20Salón%20Robles"
-              class="PQinfo-cta-button"
-              target="_blank"
-            >
-              <i class="fas fa-bell PQinfo-cta-icon"></i>
-              COTIZAR PAQUETE
-            </a>
-          </div>
-
-          <!-- Slide 3: Graduaciones -->
-          <div class="PQinfo-slider-slide">
-            <div class="PQinfo-slide-header">
-              <h3 class="PQinfo-slide-subtitle">
-                EL ESCENARIO PERFECTO PARA TU BODA
-              </h3>
-              <h2 class="PQinfo-slide-title">Graduaciones</h2>
-              <p class="PQinfo-slide-description">
-                ¡Haz que ese esfuerzo valga una gran fiesta! Celebra este logro
-                importante con tus compañeros y familiares en un ambiente
-                diseñado para la diversión.
-              </p>
-            </div>
-
-            <div class="PQinfo-image-container" data-slide="3">
-              <img
-                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758221075/PROMO_yxvxdq.jpg"
-                alt="Salón para graduaciones"
-                class="PQinfo-slide-image"
-              />
-              <div class="PQinfo-magnifier">
-                <img
-                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758645527/dcf25992-f2a5-4afd-ae18-41e63a27cfa4.png"
-                  alt="Ver más"
-                />
-              </div>
-            </div>
-
-            <div class="PQinfo-amenities">
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-graduation-cap"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Decoración</div>
-                <div class="PQinfo-amenity-desc">Por promo o carrera</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-headphones"></i>
-                </div>
-                <div class="PQinfo-amenity-title">DJ</div>
-                <div class="PQinfo-amenity-desc">Música y animación</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-ban"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Barra</div>
-                <div class="PQinfo-amenity-desc">Sin alcohol</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-users"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Fotografía</div>
-                <div class="PQinfo-amenity-desc">Grupal y momentos clave</div>
-              </div>
-            </div>
-
-            <a
-              href="https://wa.me/59168016789?text=Hola,%20estoy%20interesado%20en%20reservar%20el%20paquete%20de%20GRADUACIONES%20en%20Salón%20Robles"
-              class="PQinfo-cta-button"
-              target="_blank"
-            >
-              <i class="fas fa-bell PQinfo-cta-icon"></i>
-              COTIZAR PAQUETE
-            </a>
-          </div>
-
-          <!-- Slide 4: Baby Shower -->
-          <div class="PQinfo-slider-slide">
-            <div class="PQinfo-slide-header">
-              <h3 class="PQinfo-slide-subtitle">
-                EL ESCENARIO PERFECTO PARA TU BODA
-              </h3>
-              <h2 class="PQinfo-slide-title">Baby Shower</h2>
-              <p class="PQinfo-slide-description">
-                Dale la bienvenida a tu pequeño con ternura en un ambiente
-                cálido y acogedor diseñado para esta celebración especial.
-              </p>
-            </div>
-
-            <div class="PQinfo-image-container" data-slide="4">
-              <img
-                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758221074/BEBE_vfbrlq.jpg"
-                alt="Salón para baby shower"
-                class="PQinfo-slide-image"
-              />
-              <div class="PQinfo-magnifier">
-                <img
-                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758645527/dcf25992-f2a5-4afd-ae18-41e63a27cfa4.png"
-                  alt="Ver más"
-                />
-              </div>
-            </div>
-
-            <div class="PQinfo-amenities">
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-dove"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Decoración</div>
-                <div class="PQinfo-amenity-desc">Temática espiritual</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-volume-down"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Música</div>
-                <div class="PQinfo-amenity-desc">Ambiental suave</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-birthday-cake"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Pastelería</div>
-                <div class="PQinfo-amenity-desc">Diseño personalizado</div>
-              </div>
-              <div class="PQinfo-amenity-card">
-                <div class="PQinfo-amenity-icon">
-                  <i class="fas fa-gamepad"></i>
-                </div>
-                <div class="PQinfo-amenity-title">Actividades</div>
-                <div class="PQinfo-amenity-desc">Juegos y dinámicas</div>
-              </div>
-            </div>
-
-            <a
-              href="https://wa.me/59168016789?text=Hola,%20estoy%20interesado%20en%20reservar%20el%20paquete%20de%20BABY%20SHOWER%20en%20Salón%20Robles"
-              class="PQinfo-cta-button"
-              target="_blank"
-            >
-              <i class="fas fa-bell PQinfo-cta-icon"></i>
-              COTIZAR PAQUETE
-            </a>
-          </div>
-        </div>
-
-        <!-- Dots del slider -->
-        <div class="PQinfo-slider-dots">
-          <div class="PQinfo-slider-dot active" data-slide="0"></div>
-          <div class="PQinfo-slider-dot" data-slide="1"></div>
-          <div class="PQinfo-slider-dot" data-slide="2"></div>
-          <div class="PQinfo-slider-dot" data-slide="3"></div>
+        <!-- Parte derecha -->
+        <div class="promInfo-right" id="promInfo-right">
+          <img
+            class="promInfo-moving-image"
+            src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758726257/DIAMANTE2_ktvqz2.jpg"
+            alt="Habitación romántica con decoración especial"
+          />
         </div>
       </div>
     </section>
 
-    <!-- Modales para las imágenes con sliders -->
-    <div id="PQinfo-modal-1" class="PQinfo-modal">
-      <span class="PQinfo-modal-close">&times;</span>
-      <div class="PQinfo-modal-content">
-        <div class="PQinfo-modal-slider">
-          <div class="PQinfo-modal-slide">
-            <img
-              src="https://res.cloudinary.com/ds9subkxg/image/upload/v1749841181/BODA-8_iyk4i2.jpg"
-              alt="Boda imagen 1"
-            />
-          </div>
-          <div class="PQinfo-modal-slide">
-            <img
-              src="https://res.cloudinary.com/ds9subkxg/image/upload/v1749841179/EVENTO-BODA6_sfeocc.jpg"
-              alt="Boda imagen 2"
-            />
-          </div>
-          <div class="PQinfo-modal-slide">
-            <img
-              src="https://res.cloudinary.com/ds9subkxg/image/upload/v1749841178/BODA-1_ginwum.jpg"
-              alt="Boda imagen 3"
-            />
-          </div>
-        </div>
-        <div class="PQinfo-modal-nav PQinfo-modal-prev">&#10094;</div>
-        <div class="PQinfo-modal-nav PQinfo-modal-next">&#10095;</div>
-        <div class="PQinfo-modal-dots">
-          <div class="PQinfo-modal-dot active" data-index="0"></div>
-          <div class="PQinfo-modal-dot" data-index="1"></div>
-          <div class="PQinfo-modal-dot" data-index="2"></div>
-        </div>
-      </div>
-    </div>
-
-    <div id="PQinfo-modal-2" class="PQinfo-modal">
-      <span class="PQinfo-modal-close">&times;</span>
-      <div class="PQinfo-modal-content">
-        <div class="PQinfo-modal-slider">
-          <div class="PQinfo-modal-slide">
-            <img
-              src="https://res.cloudinary.com/ds9subkxg/image/upload/v1749841175/15-A%C3%91OS-15_mmqqhs.jpg"
-              alt="15 años imagen 1"
-            />
-          </div>
-          <div class="PQinfo-modal-slide">
-            <img
-              src="https://res.cloudinary.com/ds9subkxg/image/upload/v1749841182/15-A%C3%91OS-7_m4sx2z.jpg"
-              alt="15 años imagen 2"
-            />
-          </div>
-          <div class="PQinfo-modal-slide">
-            <img
-              src="https://res.cloudinary.com/ds9subkxg/image/upload/v1749841174/15-A%C3%91OS-13_dvseae.jpg"
-              alt="15 años imagen 3"
-            />
-          </div>
-        </div>
-        <div class="PQinfo-modal-nav PQinfo-modal-prev">&#10094;</div>
-        <div class="PQinfo-modal-nav PQinfo-modal-next">&#10095;</div>
-        <div class="PQinfo-modal-dots">
-          <div class="PQinfo-modal-dot active" data-index="0"></div>
-          <div class="PQinfo-modal-dot" data-index="1"></div>
-          <div class="PQinfo-modal-dot" data-index="2"></div>
-        </div>
-      </div>
-    </div>
-
-    <div id="PQinfo-modal-3" class="PQinfo-modal">
-      <span class="PQinfo-modal-close">&times;</span>
-      <div class="PQinfo-modal-content">
-        <div class="PQinfo-modal-slider">
-          <div class="PQinfo-modal-slide">
-            <img
-              src="https://res.cloudinary.com/ds9subkxg/image/upload/v1749841183/GRADUACION4_rpwk58.jpg"
-              alt="Graduación imagen 1"
-            />
-          </div>
-          <div class="PQinfo-modal-slide">
-            <img
-              src="https://res.cloudinary.com/ds9subkxg/image/upload/v1749841181/GRADUACION3_oc7icl.jpg"
-              alt="Graduación imagen 2"
-            />
-          </div>
-          <div class="PQinfo-modal-slide">
-            <img
-              src="https://res.cloudinary.com/ds9subkxg/image/upload/v1749841183/GRADUACION5_w9desy.jpg"
-              alt="Graduación imagen 3"
-            />
-          </div>
-        </div>
-        <div class="PQinfo-modal-nav PQinfo-modal-prev">&#10094;</div>
-        <div class="PQinfo-modal-nav PQinfo-modal-next">&#10095;</div>
-        <div class="PQinfo-modal-dots">
-          <div class="PQinfo-modal-dot active" data-index="0"></div>
-          <div class="PQinfo-modal-dot" data-index="1"></div>
-          <div class="PQinfo-modal-dot" data-index="2"></div>
-        </div>
-      </div>
-    </div>
-
-    <div id="PQinfo-modal-4" class="PQinfo-modal">
-      <span class="PQinfo-modal-close">&times;</span>
-      <div class="PQinfo-modal-content">
-        <div class="PQinfo-modal-slider">
-          <div class="PQinfo-modal-slide">
-            <img
-              src="https://res.cloudinary.com/ds9subkxg/image/upload/v1749841182/15-A%C3%91OS-9_aphksu.jpg"
-              alt="Baby shower imagen 1"
-            />
-          </div>
-          <div class="PQinfo-modal-slide">
-            <img
-              src="https://res.cloudinary.com/ds9subkxg/image/upload/v1749841175/15-A%C3%91OS-14_kpnrqh.jpg"
-              alt="Baby shower imagen 2"
-            />
-          </div>
-          <div class="PQinfo-modal-slide">
-            <img
-              src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758221074/BEBE_vfbrlq.jpg"
-              alt="Baby shower imagen 3"
-            />
-          </div>
-        </div>
-        <div class="PQinfo-modal-nav PQinfo-modal-prev">&#10094;</div>
-        <div class="PQinfo-modal-nav PQinfo-modal-next">&#10095;</div>
-        <div class="PQinfo-modal-dots">
-          <div class="PQinfo-modal-dot active" data-index="0"></div>
-          <div class="PQinfo-modal-dot" data-index="1"></div>
-          <div class="PQinfo-modal-dot" data-index="2"></div>
-        </div>
-      </div>
-    </div>
-
     <script>
-      // Animaciones de entrada cuando la sección sea visible
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("animate");
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
+      // Intersection Observer para animaciones de entrada
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
 
-      // Observar las tarjetas de amenidades para animaciones
-      document
-        .querySelectorAll(".PQinfo-amenity-card")
-        .forEach((card, index) => {
-          card.style.opacity = "0";
-          card.style.transform = "translateY(20px)";
-          card.style.transition = `opacity 0.6s ease ${
-            index * 0.1
-          }s, transform 0.6s ease ${index * 0.1}s`;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Animar elementos principales
+            const leftSection = document.getElementById("promInfo-left");
+            const rightSection = document.getElementById("promInfo-right");
+            const image = document.getElementById("promInfo-image");
+            const card = document.getElementById("promInfo-card");
 
-          observer.observe(card);
+            if (leftSection) leftSection.classList.add("animate");
+            if (rightSection) rightSection.classList.add("animate");
+            if (image) image.classList.add("animate");
+            if (card) card.classList.add("animate");
+
+            // Animar items de características con delay
+            const featureItems = document.querySelectorAll(
+              ".promInfo-feature-item"
+            );
+            featureItems.forEach((item, index) => {
+              setTimeout(() => {
+                item.classList.add("animate");
+              }, 100 + index * 100);
+            });
+
+            // Crear partículas flotantes
+            createFloatingParticles();
+          }
         });
+      }, observerOptions);
 
-      // Agregar clase animate cuando sea visible
-      const style = document.createElement("style");
-      style.textContent = `
-            .animate {
-                opacity: 1 !important;
-                transform: translateY(0) !important;
-            }
-        `;
-      document.head.appendChild(style);
+      // Observar la sección principal
+      const section = document.getElementById("promInfo-section");
+      if (section) {
+        observer.observe(section);
+      }
 
-      // Efecto parallax suave para el fondo
+      // Función para crear partículas flotantes
+      function createFloatingParticles() {
+        const container = document.getElementById("particles");
+        const particleCount = 15;
+
+        for (let i = 0; i < particleCount; i++) {
+          setTimeout(() => {
+            const particle = document.createElement("div");
+            particle.className = "promInfo-particle";
+            particle.style.left = Math.random() * 100 + "%";
+            particle.style.animationDelay = Math.random() * 6 + "s";
+            particle.style.animationDuration = 3 + Math.random() * 6 + "s";
+            container.appendChild(particle);
+
+            // Remover partícula después de la animación
+            setTimeout(() => {
+              if (particle.parentNode) {
+                particle.parentNode.removeChild(particle);
+              }
+            }, 8000);
+          }, i * 200);
+        }
+      }
+
+      // Efecto de paralaje para el fondo
       window.addEventListener("scroll", () => {
         const scrolled = window.pageYOffset;
-        const background = document.querySelector(".PQinfo-background");
-        if (background) {
-          background.style.transform = `translateY(${scrolled * 0.5}px) scale(${
-            1 + scrolled * 0.0001
-          })`;
+        const section = document.getElementById("promInfo-section");
+        if (section) {
+          const rate = scrolled * -0.5;
+          section.style.backgroundPosition = `center ${rate}px`;
         }
       });
 
-      // Slider para móviles y tablets
-      let currentSlide = 0;
-      const sliderContainer = document.querySelector(
-        ".PQinfo-slider-container"
-      );
-      const slides = document.querySelectorAll(".PQinfo-slider-slide");
-      const dots = document.querySelectorAll(".PQinfo-slider-dot");
-      const totalSlides = slides.length;
-      let slideInterval;
+      // Efectos adicionales al hacer hover en el botón
+      const button = document.querySelector(".promInfo-button");
+      if (button) {
+        button.addEventListener("mouseenter", () => {
+          button.style.transform = "translateY(-3px) scale(1.02)";
+        });
 
-      // Función para cambiar de slide
-      function goToSlide(n) {
-        currentSlide = (n + totalSlides) % totalSlides;
-        sliderContainer.style.transform = `translateX(-${currentSlide * 25}%)`;
-
-        // Actualizar dots
-        dots.forEach((dot, index) => {
-          dot.classList.toggle("active", index === currentSlide);
+        button.addEventListener("mouseleave", () => {
+          button.style.transform = "translateY(0) scale(1)";
         });
       }
 
-      // Función para siguiente slide
-      function nextSlide() {
-        goToSlide(currentSlide + 1);
-      }
+      // Efecto de cursor personalizado para elementos interactivos
+      document.addEventListener("mousemove", (e) => {
+        const interactiveElements = document.querySelectorAll(
+          ".promInfo-feature-item, .promInfo-button"
+        );
+        interactiveElements.forEach((element) => {
+          const rect = element.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
 
-      // Iniciar autoplay
-      function startSlider() {
-        slideInterval = setInterval(nextSlide, 4000);
-      }
-
-      // Detener autoplay
-      function stopSlider() {
-        clearInterval(slideInterval);
-      }
-
-      // Eventos para los dots
-      dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          stopSlider();
-          goToSlide(index);
-          startSlider();
-        });
-      });
-
-      // Touch events para el slider
-      let touchStartX = 0;
-      let touchEndX = 0;
-
-      sliderContainer.addEventListener("touchstart", (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-        stopSlider();
-      });
-
-      sliderContainer.addEventListener("touchend", (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-        startSlider();
-      });
-
-      function handleSwipe() {
-        const swipeThreshold = 50;
-
-        if (touchEndX < touchStartX - swipeThreshold) {
-          // Swipe izquierda - siguiente slide
-          nextSlide();
-        } else if (touchEndX > touchStartX + swipeThreshold) {
-          // Swipe derecha - slide anterior
-          goToSlide(currentSlide - 1);
-        }
-      }
-
-      // Iniciar slider si está en vista móvil/tablet
-      if (window.innerWidth <= 1024) {
-        startSlider();
-      }
-
-      // Sliders para modales
-      const modals = document.querySelectorAll(".PQinfo-modal");
-      const closeButtons = document.querySelectorAll(".PQinfo-modal-close");
-      const imageContainers = document.querySelectorAll(
-        ".PQinfo-image-container"
-      );
-
-      // Inicializar sliders para cada modal
-      modals.forEach((modal) => {
-        const slider = modal.querySelector(".PQinfo-modal-slider");
-        const prevBtn = modal.querySelector(".PQinfo-modal-prev");
-        const nextBtn = modal.querySelector(".PQinfo-modal-next");
-        const dots = modal.querySelectorAll(".PQinfo-modal-dot");
-        let currentModalSlide = 0;
-        const totalModalSlides = 3;
-
-        function goToModalSlide(n) {
-          currentModalSlide = (n + totalModalSlides) % totalModalSlides;
-          slider.style.transform = `translateX(-${
-            currentModalSlide * 33.333
-          }%)`;
-
-          // Actualizar dots
-          dots.forEach((dot, index) => {
-            dot.classList.toggle("active", index === currentModalSlide);
-          });
-        }
-
-        function nextModalSlide() {
-          goToModalSlide(currentModalSlide + 1);
-        }
-
-        function prevModalSlide() {
-          goToModalSlide(currentModalSlide - 1);
-        }
-
-        // Event listeners para navegación
-        if (nextBtn) {
-          nextBtn.addEventListener("click", nextModalSlide);
-        }
-
-        if (prevBtn) {
-          prevBtn.addEventListener("click", prevModalSlide);
-        }
-
-        // Event listeners para dots
-        dots.forEach((dot, index) => {
-          dot.addEventListener("click", () => {
-            goToModalSlide(index);
-          });
-        });
-
-        // Touch events para el slider del modal
-        let modalTouchStartX = 0;
-        let modalTouchEndX = 0;
-
-        slider.addEventListener("touchstart", (e) => {
-          modalTouchStartX = e.changedTouches[0].screenX;
-        });
-
-        slider.addEventListener("touchend", (e) => {
-          modalTouchEndX = e.changedTouches[0].screenX;
-          handleModalSwipe();
-        });
-
-        function handleModalSwipe() {
-          const swipeThreshold = 50;
-
-          if (modalTouchEndX < modalTouchStartX - swipeThreshold) {
-            // Swipe izquierda - siguiente slide
-            nextModalSlide();
-          } else if (modalTouchEndX > modalTouchStartX + swipeThreshold) {
-            // Swipe derecha - slide anterior
-            prevModalSlide();
-          }
-        }
-      });
-
-      // Abrir modales al hacer clic en las imágenes
-      imageContainers.forEach((container) => {
-        container.addEventListener("click", () => {
-          const slideNumber = container.getAttribute("data-slide");
-          const modal = document.getElementById(`PQinfo-modal-${slideNumber}`);
-          if (modal) {
-            modal.style.display = "flex";
+          if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+            element.style.boxShadow = `${(x - rect.width / 2) * 0.1}px ${
+              (y - rect.height / 2) * 0.1
+            }px 20px rgba(88, 4, 4, 0.1)`;
           }
         });
-      });
-
-      // Cerrar modales
-      closeButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          modals.forEach((modal) => {
-            modal.style.display = "none";
-          });
-        });
-      });
-
-      // Cerrar modal al hacer clic fuera de la imagen
-      modals.forEach((modal) => {
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) {
-            modal.style.display = "none";
-          }
-        });
-      });
-
-      // Ajustar el slider al cambiar el tamaño de la ventana
-      window.addEventListener("resize", () => {
-        if (window.innerWidth <= 1024) {
-          startSlider();
-        } else {
-          stopSlider();
-        }
       });
     </script>
   </body>
 </html>
+<!--  -->

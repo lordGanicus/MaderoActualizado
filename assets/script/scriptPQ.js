@@ -457,3 +457,100 @@ window.addEventListener("scroll", () => {
     }
   }
 });
+/*******************NavBar para salones*******************/
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("/assets/paginas/navbar.html")
+    .then((res) => res.text())
+    .then((data) => {
+      const navCenter = document.getElementById("nav-center");
+      if (navCenter) {
+        navCenter.innerHTML = data;
+
+        iniciarNavbar();
+      }
+    })
+    .catch((error) => console.error("Error al cargar navbar:", error));
+
+  function iniciarNavbar() {
+    try {
+      const navToggle = document.getElementById("navToggle");
+      const menuLateral = document.getElementById("menuLateral");
+      const overlay = document.getElementById("overlay-header");
+      const reservaBtn = document.getElementById("reservaBtn");
+      const menuItems = document.querySelectorAll(".menu-item");
+
+      if (navToggle && menuLateral && overlay) {
+        navToggle.addEventListener("click", function () {
+          this.classList.toggle("active");
+          menuLateral.classList.toggle("active");
+          overlay.classList.toggle("active");
+          document.body.style.overflow = menuLateral.classList.contains(
+            "active"
+          )
+            ? "hidden"
+            : "";
+        });
+      }
+
+      if (overlay && navToggle && menuLateral) {
+        overlay.addEventListener("click", function () {
+          navToggle.classList.remove("active");
+          menuLateral.classList.remove("active");
+          overlay.classList.remove("active");
+          document.body.style.overflow = "";
+        });
+      }
+
+      if (reservaBtn) {
+        reservaBtn.addEventListener("click", function () {
+          window.open(
+            "https://wa.me/59167160515?text=Hola%2C%20quiero%20realizar%20una%20reserva",
+            "_blank"
+          );
+        });
+      }
+
+      // Para dispositivos móviles
+      if (window.innerWidth <= 992) {
+        menuItems.forEach((item) => {
+          item.addEventListener("click", function (e) {
+            e.stopPropagation();
+            // Cerrar otros submenús abiertos
+            document
+              .querySelectorAll(".menu-item.active")
+              .forEach((activeItem) => {
+                if (activeItem !== this) {
+                  activeItem.classList.remove("active");
+                }
+              });
+
+            this.classList.toggle("active");
+          });
+        });
+
+        // Cerrar menús al hacer clic fuera
+        document.addEventListener("click", function (e) {
+          if (!e.target.closest(".menu-item")) {
+            document.querySelectorAll(".menu-item.active").forEach((item) => {
+              item.classList.remove("active");
+            });
+          }
+        });
+      }
+
+      const menuLinks = document.querySelectorAll(".menu-links a");
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 992) {
+            navToggle.classList.remove("active");
+            menuLateral.classList.remove("active");
+            overlay.classList.remove("active");
+            document.body.style.overflow = "";
+          }
+        });
+      });
+    } catch (error) {
+      console.error("Error en la inicialización del navbar:", error);
+    }
+  }
+});
