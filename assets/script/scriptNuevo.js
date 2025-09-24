@@ -802,3 +802,4 @@ function checkScroll() {
 // Verificar scroll al cargar y al hacer scroll
 window.addEventListener("load", checkScroll);
 window.addEventListener("scroll", checkScroll);
+/*******Habitacion dentro // info  y modal ********/

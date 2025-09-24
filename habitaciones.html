@@ -28,6 +28,19 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+     <!--Iconos-->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </head>
   <body>
     <header>
@@ -44,7 +57,6 @@
         </div>
       </div>
     </section>
-    <!-- habitaciones dentro -->
     <section class="habInfo-container">
       <div class="habInfo-background-image"></div>
 
@@ -56,7 +68,6 @@
         <!-- SUITES SECTION -->
         <div id="suites-section" class="habInfo-cards-grid active">
           <div class="habInfo-section-intro">
-            <p class="habInfo-section-title">El lujo que mereces</p>
             <h2 class="habInfo-section-subtitle">Suites</h2>
             <p class="habInfo-section-description">
               Nuestras suites combinan lujo y comodidad para ofrecerte una
@@ -64,6 +75,9 @@
               pensados para tu descanso y bienestar.
             </p>
             <nav class="habInfo-navigation">
+              <span class="habInfo-section-indicator active"
+                >ACTUALMENTE EN SUITES</span
+              >
               <button class="habInfo-nav-button active" data-section="suites">
                 SUITES
               </button>
@@ -109,8 +123,18 @@
                     />
                   </div>
                   <div class="habInfo-buttons">
-                    <button class="habInfo-button">VER HABITACIÓN</button>
-                    <button class="habInfo-button">RESERVAR AHORA</button>
+                    <button
+                      class="habInfo-button suite-btn-view"
+                      data-modal="suite-matrimonial"
+                    >
+                      VER HABITACIÓN
+                    </button>
+                    <button
+                      class="habInfo-button suite-btn-reserve"
+                      onclick="habInfoReservarAhora('suite matrimonial')"
+                    >
+                      <i class="fas fa-calendar-alt"></i> Reservar ahora
+                    </button>
                   </div>
                 </div>
                 <div
@@ -122,8 +146,14 @@
               </div>
             </article>
 
-            <article class="habInfo-card">
+            <article class="habInfo-card reverse">
               <div class="habInfo-card-content">
+                <div
+                  class="habInfo-card-image"
+                  style="
+                    background-image: url('https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213330/SUITE_FAMILIAR7_g9nnod.jpg');
+                  "
+                ></div>
                 <div class="habInfo-card-info">
                   <div>
                     <h3 class="habInfo-card-title">Suite Familiar</h3>
@@ -158,16 +188,17 @@
                     />
                   </div>
                   <div class="habInfo-buttons">
-                    <button class="habInfo-button">VER HABITACIÓN</button>
-                    <button class="habInfo-button">RESERVAR AHORA</button>
+                    <button class="habInfo-button" data-modal="suite-familiar">
+                      VER HABITACIÓN
+                    </button>
+                    <button
+                      class="habInfo-button"
+                      onclick="habInfoReservarAhora('suite familiar')"
+                    >
+                      <i class="fas fa-calendar-alt"></i> Reservar ahora
+                    </button>
                   </div>
                 </div>
-                <div
-                  class="habInfo-card-image"
-                  style="
-                    background-image: url('https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213330/SUITE_FAMILIAR7_g9nnod.jpg');
-                  "
-                ></div>
               </div>
             </article>
           </div>
@@ -176,7 +207,6 @@
         <!-- BUSINESS SECTION -->
         <div id="business-section" class="habInfo-cards-grid">
           <div class="habInfo-section-intro">
-            <p class="habInfo-section-title">Business</p>
             <h2 class="habInfo-section-subtitle">Business</h2>
             <p class="habInfo-section-description">
               Habitaciones que brindan un refugio de tranquilidad, con detalles
@@ -184,6 +214,9 @@
               en La Paz sea inolvidable.
             </p>
             <nav class="habInfo-navigation">
+              <span class="habInfo-section-indicator active"
+                >ACTUALMENTE EN BUSINESS</span
+              >
               <button class="habInfo-nav-button" data-section="suites">
                 SUITES
               </button>
@@ -230,8 +263,15 @@
                     />
                   </div>
                   <div class="habInfo-buttons">
-                    <button class="habInfo-button">VER HABITACIÓN</button>
-                    <button class="habInfo-button">RESERVAR AHORA</button>
+                    <button class="habInfo-button" data-modal="business-simple">
+                      VER HABITACIÓN
+                    </button>
+                    <button
+                      class="habInfo-button"
+                      onclick="habInfoReservarAhora('habitación business simple')"
+                    >
+                      <i class="fas fa-calendar-alt"></i> Reservar ahora
+                    </button>
                   </div>
                 </div>
                 <div
@@ -243,8 +283,14 @@
               </div>
             </article>
 
-            <article class="habInfo-card">
+            <article class="habInfo-card reverse">
               <div class="habInfo-card-content">
+                <div
+                  class="habInfo-card-image"
+                  style="
+                    background-image: url('https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213329/HAB_MATRIMONIAL3_g5yl4e.jpg');
+                  "
+                ></div>
                 <div class="habInfo-card-info">
                   <div>
                     <h3 class="habInfo-card-title">Business Matrimonial</h3>
@@ -278,16 +324,20 @@
                     />
                   </div>
                   <div class="habInfo-buttons">
-                    <button class="habInfo-button">VER HABITACIÓN</button>
-                    <button class="habInfo-button">RESERVAR AHORA</button>
+                    <button
+                      class="habInfo-button"
+                      data-modal="business-matrimonial"
+                    >
+                      VER HABITACIÓN
+                    </button>
+                    <button
+                      class="habInfo-button"
+                      onclick="habInfoReservarAhora('habitación business matrimonial')"
+                    >
+                      <i class="fas fa-calendar-alt"></i> Reservar ahora
+                    </button>
                   </div>
                 </div>
-                <div
-                  class="habInfo-card-image"
-                  style="
-                    background-image: url('https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213329/HAB_MATRIMONIAL3_g5yl4e.jpg');
-                  "
-                ></div>
               </div>
             </article>
 
@@ -326,8 +376,15 @@
                     />
                   </div>
                   <div class="habInfo-buttons">
-                    <button class="habInfo-button">VER HABITACIÓN</button>
-                    <button class="habInfo-button">RESERVAR AHORA</button>
+                    <button class="habInfo-button" data-modal="business-twin">
+                      VER HABITACIÓN
+                    </button>
+                    <button
+                      class="habInfo-button"
+                      onclick="habInfoReservarAhora('habitación business twin')"
+                    >
+                      <i class="fas fa-calendar-alt"></i> Reservar ahora
+                    </button>
                   </div>
                 </div>
                 <div
@@ -339,8 +396,14 @@
               </div>
             </article>
 
-            <article class="habInfo-card">
+            <article class="habInfo-card reverse">
               <div class="habInfo-card-content">
+                <div
+                  class="habInfo-card-image"
+                  style="
+                    background-image: url('https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213354/HAB_FAMILIAR7_okjpvp.jpg');
+                  "
+                ></div>
                 <div class="habInfo-card-info">
                   <div>
                     <h3 class="habInfo-card-title">Business Familiar</h3>
@@ -374,22 +437,341 @@
                     />
                   </div>
                   <div class="habInfo-buttons">
-                    <button class="habInfo-button">VER HABITACIÓN</button>
-                    <button class="habInfo-button">RESERVAR AHORA</button>
+                    <button
+                      class="habInfo-button"
+                      data-modal="business-familiar"
+                    >
+                      VER HABITACIÓN
+                    </button>
+                    <button
+                      class="habInfo-button"
+                      onclick="habInfoReservarAhora('habitación business familiar')"
+                    >
+                      <i class="fas fa-calendar-alt"></i> Reservar ahora
+                    </button>
                   </div>
                 </div>
-                <div
-                  class="habInfo-card-image"
-                  style="
-                    background-image: url('https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213354/HAB_FAMILIAR7_okjpvp.jpg');
-                  "
-                ></div>
               </div>
             </article>
           </div>
         </div>
       </main>
     </section>
+
+    <!-- Modal Suite Matrimonial - Rediseñado -->
+    <div id="habInfo-modal-suite-matrimonial" class="habInfo-modal">
+      <div class="habInfo-modal-content">
+        <button class="habInfo-modal-close">&times;</button>
+        <div class="habInfo-modal-body">
+          <div class="habInfo-modal-slider">
+            <div class="habInfo-swiper swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213336/SUITE_MATRIMONIAL3_yzbwbx.jpg"
+                    alt="Suite Matrimonial"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213341/SUITE_MATRIMONIAL9_atlwdn.jpg"
+                    alt="Suite Matrimonial"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213354/SUITE_MATRIMONIAL7_wmgzte.jpg"
+                    alt="Suite Matrimonial"
+                  />
+                </div>
+              </div>
+              <div class="habInfo-swiper-button-next"></div>
+              <div class="habInfo-swiper-button-prev"></div>
+            </div>
+          </div>
+          <div class="habInfo-modal-form">
+            <div class="habInfo-modal-logo">
+              <img
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213618/LOGO_NEGRO_HOTEL_MADERO_yvbyeq.png"
+                alt="Madero Hotel"
+              />
+            </div>
+            <form id="habInfo-form-suite-matrimonial">
+              <div class="habInfo-form-group">
+                <label for="habInfo-entrada-matrimonial">Entrada</label>
+                <input
+                  type="date"
+                  id="habInfo-entrada-matrimonial"
+                  class="habInfo-form-input"
+                  required
+                />
+              </div>
+              <div class="habInfo-form-group">
+                <label for="habInfo-salida-matrimonial">Salida</label>
+                <input
+                  type="date"
+                  id="habInfo-salida-matrimonial"
+                  class="habInfo-form-input"
+                  required
+                />
+              </div>
+              <div class="habInfo-form-group">
+                <label for="habInfo-cantidad-matrimonial">Cantidad</label>
+                <input
+                  type="number"
+                  id="habInfo-cantidad-matrimonial"
+                  class="habInfo-form-input"
+                  min="1"
+                  max="2"
+                  value="2"
+                  required
+                />
+              </div>
+              <button type="submit" class="habInfo-form-submit">
+                Consultar disponibilidad
+              </button>
+            </form>
+          </div>
+          <div class="habInfo-modal-details">
+            <table class="habInfo-detail-table">
+              <tr>
+                <th>Habitación:</th>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-user-friends"></i>
+                    <span>Huésped: 2</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-bed"></i>
+                    <span>Cama: dos plazas y media</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Servicios y comodidades:</th>
+                <td>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Cama King Size</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Kitchenette equipada</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Sala de recibidor</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Frigobar</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Baño con box de vidrio</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="habInfo-detail-grid-item" >
+                    <i class="fas fa-wifi" id="habInfo-icon-othercolor"></i>
+                    <span>Conexión a Wi-Fi</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-tv" id="habInfo-icon-othercolor"></i>
+                    <span>TV cable</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-phone" id="habInfo-icon-othercolor"></i>
+                    <span>Telefonía</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-headset" id="habInfo-icon-othercolor"></i>
+                    <span>Asistencia 24 horas</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Entrada y Salida:</th>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Entrada: 12:00 PM</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Salida: 01:00 PM</span>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--hab otro seccion-->
+    <section class="habPort-box" id="hotelSection">
+      <div class="habPort-group">
+        <div class="habPort-div">
+          <div class="habPort-overlay"></div>
+          <div class="habPort-rectangle-2"></div>
+        </div>
+        <header class="habPort-group-2">
+          <h3 class="habPort-text-wrapper">
+            Más que un Hotel, una Experiencia
+          </h3>
+          <p class="habPort-p">
+            Cada detalle de tu estadía está diseñado para brindarte comodidad,
+            elegancia y un servicio que supera tus expectativas. Ideal para
+            quienes buscan disfrutar de la ciudad o concentrarse en los negocios
+          </p>
+        </header>
+      </div>
+    </section>
+    <!--Fotter-->
+        <footer class="footer">
+      <div class="footer-main">
+        <div class="container-footer">
+          <!-- Sección Izquierda - Logo y Brand -->
+          <div class="footer-left">
+            <div class="footer-brand-header">
+              <img
+                src="https://res.cloudinary.com/ds9subkxg/image/upload/v1749841174/MaderoLogo_brozxx.png"
+                class="footer-logo"
+                alt="Madero Hotel & Suites - Logo oficial"
+              />
+              <div class="footer-divider"></div>
+              <div class="footer-brand-text">
+                <h2 class="hotel-name">MADERO</h2>
+                <span class="hotel-subtitle">HOTEL & SUITES</span>
+              </div>
+            </div>
+            <p class="footer-description">
+              Vive la mejor <strong>experiencia de hospedaje</strong> en La Paz,
+              Bolivia. En Madero Hotel & Suites, te ofrecemos un
+              <strong>servicio excepcional</strong>.
+            </p>
+          </div>
+
+          <!-- Sección Derecha - 3 Columnas de Información -->
+          <div class="footer-right">
+            <!-- Dirección -->
+            <div class="info-section">
+              <h3 class="info-title">Dirección</h3>
+              <div class="info-content">
+                <div class="contact-item">
+                  <ion-icon name="location-outline"></ion-icon>
+                  <address>
+                    Calle México Nro. 1822, Zona Central La Paz, Bolivia
+                  </address>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contacto -->
+            <div class="info-section">
+              <h3 class="info-title">Contacto</h3>
+              <div class="info-content">
+                <div class="contact-item">
+                  <ion-icon name="call-outline"></ion-icon>
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=73501495&text=Hola%2C%20necesito%20más%20información."
+                    target="_blank"
+                    class="contact-link"
+                    >+591 77220181</a
+                  >
+                </div>
+                <div class="contact-item">
+                  <ion-icon name="mail-outline"></ion-icon>
+                  <a
+                    href="mailto:reservas@maderosuites.com"
+                    class="contact-link"
+                  >
+                    reservas@maderosuites.com
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="info-section">
+              <h3 class="info-title">Redes Sociales</h3>
+              <div class="info-content">
+                <div class="social-item">
+                  <ion-icon name="logo-tiktok"></ion-icon>
+                  <a
+                    href="https://www.tiktok.com/@maderohotelsuites?_t=ZM-8wNg5LJcS3y&_r=1"
+                    class="social-link"
+                    target="_blank"
+                    >TikTok</a
+                  >
+                </div>
+                <div class="social-item">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                  <a
+                    href="https://www.facebook.com/MaderoHotelySuites"
+                    class="social-link"
+                    target="_blank"
+                    >Facebook</a
+                  >
+                </div>
+                <div class="social-item">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                  <a
+                    href="https://www.instagram.com/maderohotelysuites?igsh=OWMxcXZqNXUxYmU0"
+                    class="social-link"
+                    target="_blank"
+                    >Instagram</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Métodos de Pago -->
+            <div class="payment-section">
+              <h3 class="payment-title">Transacción confiable</h3>
+              <div class="payment-methods">
+                <img
+                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758297601/2b50fbe8-82a5-4481-9e71-7b6c5698431c.png"
+                  alt="Visa"
+                  class="payment-icon"
+                />
+                <img
+                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758297702/8566f63b-299b-42f0-bb0c-7c3f8824e1f2.png"
+                  alt="Maestro"
+                  class="payment-icon"
+                />
+                <img
+                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758297641/5428dd4a-4297-44ff-a472-a388f78259b7.png"
+                  alt="Mastercard"
+                  class="payment-icon"
+                />
+                <img
+                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758297630/eec29b3e-5a2e-4ac9-8410-add268be81a5.png"
+                  alt="American Express"
+                  class="payment-icon"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="container-footer">
+          <p class="copyright">
+            &copy; 2025 Madero <div class="footer-links"> <a href="">Hotel & Suites.</a> </div> Todos los derechos reservados.
+          </p>
+          
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/script/scriptNuevo.js"></script>
     <script src="assets/script/scriptHab.js"></script>
   </body>

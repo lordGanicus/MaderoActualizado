@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Business Suites - El lujo que mereces</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Tu evento perfecto - Slider de Servicios</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@400;700;800&family=Eras+Medium+ITC&display=swap"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@800&family=Eras+Medium+ITC&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -16,763 +20,506 @@
       }
 
       body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
         overflow-x: hidden;
       }
 
-      .habInfo-container {
-        font-family: "Eras Medium ITC", "Arial", sans-serif;
-        background: #f5f5f5;
+      .PQcomple-section {
         position: relative;
-        width: 100vw;
-        min-height: 100vh;
-        background: linear-gradient(135deg, #f8f5f0 0%, #e8e1d6 100%);
+        width: 100%;
+        min-height: 665px;
+        background-color: #ffffff;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
 
-      .habInfo-background-image {
+      .PQcomple-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .PQcomple-title {
+        font-family: "Lexend Zetta", sans-serif;
+        font-weight: 800;
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: 25px;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        background: linear-gradient(
+          0deg,
+          rgba(94, 64, 7, 1) 19%,
+          rgba(191, 128, 11, 1) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+
+      .PQcomple-subtitle {
+        font-family: "Eras Medium ITC", Helvetica, sans-serif;
+        font-weight: 400;
+        color: #000000;
+        font-size: 40px;
+        letter-spacing: 0;
+        line-height: 45px;
+      }
+
+      .PQcomple-slider-container {
+        position: relative;
+        width: 100%;
+        max-width: 1400px;
+        overflow: hidden;
+      }
+
+      .PQcomple-slider {
+        display: flex;
+        transition: transform 0.5s ease;
+        gap: 20px;
+      }
+
+      .PQcomple-card {
+        position: relative;
+        width: 415px;
+        height: 443px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .PQcomple-card:hover {
+        transform: scale(1.02);
+      }
+
+      .PQcomple-card-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: filter 0.3s ease;
+      }
+
+      .PQcomple-card-overlay {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100vh;
-        background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213336/SUITE_MATRIMONIAL3_yzbwbx.jpg");
-        background-size: cover;
-        background-position: center;
-        opacity: 0.1;
-        z-index: 0;
-      }
-
-      .habInfo-header {
-        position: relative;
-        z-index: 10;
-        padding: 40px 0;
-        text-align: center;
-      }
-
-      .habInfo-main-title {
-        font-family: "Lexend Zetta", sans-serif;
-        font-weight: 800;
-        font-size: 11px;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        height: 100%;
         background: linear-gradient(
-          0deg,
-          rgba(94, 64, 7, 1) 19%,
-          rgba(191, 128, 11, 1) 100%
+          45deg,
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0.4)
         );
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 50px;
-        letter-spacing: 2px;
-      }
-
-      .habInfo-cards-container {
-        position: relative;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        min-height: 800px;
-      }
-
-      .habInfo-cards-grid {
-        display: none;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease-in-out;
-      }
-
-      .habInfo-cards-grid.active {
-        display: block;
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .habInfo-section-intro {
-        text-align: center;
-        margin-bottom: 40px;
-        padding: 0 20px;
-      }
-
-      .habInfo-section-title {
-        font-family: "Lexend Zetta", sans-serif;
-        font-weight: 400;
-        font-size: 11px;
-        background: linear-gradient(
-          0deg,
-          rgba(94, 64, 7, 1) 19%,
-          rgba(191, 128, 11, 1) 100%
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 20px;
-        letter-spacing: 2px;
-      }
-
-      .habInfo-section-subtitle {
-        font-family: "Eras Medium ITC", Arial, sans-serif;
-        font-size: 40px;
-        color: #000;
-        margin-bottom: 20px;
-        font-weight: 400;
-      }
-
-      .habInfo-section-description {
-        font-family: "Eras Medium ITC", Arial, sans-serif;
-        font-size: 14px;
-        color: #000;
-        max-width: 610px;
-        margin: 0 auto 40px auto;
-        line-height: 1.6;
-      }
-
-      .habInfo-navigation {
-        display: flex;
-        justify-content: center;
-        gap: 50px;
-        margin-bottom: 50px;
-      }
-
-      .habInfo-nav-button {
-        font-family: "Lexend Zetta", sans-serif;
-        font-weight: 800;
-        font-size: 11px;
-        background: linear-gradient(
-          0deg,
-          rgba(94, 64, 7, 1) 19%,
-          rgba(191, 128, 11, 1) 100%
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border: none;
-        cursor: pointer;
-        padding: 10px 20px;
-        letter-spacing: 1px;
-        transition: all 0.3s ease;
-        position: relative;
-      }
-
-      .habInfo-nav-button:hover {
-        transform: scale(1.1);
-      }
-
-      .habInfo-nav-button.active::after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 30px;
-        height: 2px;
-        background: linear-gradient(
-          90deg,
-          rgba(185, 141, 28, 1) 8%,
-          rgba(213, 150, 49, 1) 57%,
-          rgba(143, 103, 0, 1) 100%
-        );
-      }
-
-      .habInfo-suites-grid,
-      .habInfo-business-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 40px;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .habInfo-card {
-        background: #ffffff;
-        border-radius: 15px;
-        box-shadow: 10px 8px 20px rgba(0, 0, 0, 0.15);
-        overflow: hidden;
-        transition: all 0.4s ease;
-        position: relative;
-      }
-
-      .habInfo-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.2);
-      }
-
-      .habInfo-card-content {
-        display: flex;
-        height: 400px;
-      }
-
-      .habInfo-card-info {
-        flex: 1;
-        padding: 40px 30px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-      }
-
-      .habInfo-card-image {
-        flex: 1;
-        background-size: cover;
-        background-position: center;
-        position: relative;
-      }
-
-      .habInfo-card-image::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-          135deg,
-          rgba(0, 0, 0, 0.1) 0%,
-          rgba(0, 0, 0, 0.05) 100%
-        );
-      }
-
-      .habInfo-card-title {
-        font-family: "Eras Medium ITC", Arial, sans-serif;
-        font-size: 24px;
-        font-weight: 400;
-        background: linear-gradient(
-          180deg,
-          rgba(173, 107, 22, 1) 0%,
-          rgba(95, 55, 3, 1) 85%
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        margin-bottom: 15px;
-      }
-
-      .habInfo-card-description {
-        font-family: "Eras Medium ITC", Arial, sans-serif;
-        font-size: 13px;
-        color: #333;
-        line-height: 1.5;
-        margin-bottom: 25px;
-        flex-grow: 1;
-      }
-
-      .habInfo-amenities {
-        display: flex;
+        justify-content: center;
         align-items: center;
-        gap: 15px;
-        margin-bottom: 25px;
-        padding: 15px 0;
-        border-top: 2px solid #f0f0f0;
-      }
-
-      .habInfo-amenity-icon {
-        width: 24px;
-        height: 24px;
-        opacity: 0.8;
+        opacity: 0;
         transition: opacity 0.3s ease;
+        padding: 40px;
+        text-align: center;
       }
 
-      .habInfo-amenity-icon:hover {
+      .PQcomple-card:hover .PQcomple-card-overlay {
         opacity: 1;
       }
 
-      .habInfo-buttons {
+      .PQcomple-card-icon {
+        font-size: 48px;
+        color: #ffffff;
+        margin-bottom: 20px;
+        text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      .PQcomple-card-title {
+        font-family: "Eras Medium ITC", Helvetica, sans-serif;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 32px;
+        line-height: 36px;
+        margin-bottom: 15px;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+      }
+
+      .PQcomple-card-description {
+        font-family: "Eras Medium ITC", Helvetica, sans-serif;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 16px;
+        line-height: 20px;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+        max-width: 280px;
+      }
+
+      .PQcomple-navigation {
         display: flex;
-        gap: 15px;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: 40px;
       }
 
-      .habInfo-button {
-        flex: 1;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-family: "Lexend Zetta", sans-serif;
-        font-weight: 700;
-        font-size: 10px;
-        color: #fff8f8;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      .PQcomple-nav-button {
         background: linear-gradient(
-          90deg,
-          rgba(185, 141, 28, 1) 8%,
-          rgba(213, 150, 49, 1) 57%,
-          rgba(143, 103, 0, 1) 100%
+          45deg,
+          rgba(94, 64, 7, 1),
+          rgba(191, 128, 11, 1)
         );
-        transition: all 0.3s ease;
-        letter-spacing: 0.5px;
+        border: none;
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 20px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
-      .habInfo-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(185, 141, 28, 0.4);
+      .PQcomple-nav-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 15px rgba(191, 128, 11, 0.4);
       }
 
-      .habInfo-button:active {
-        transform: translateY(0);
+      .PQcomple-nav-button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
       }
 
-      /* Responsive Design */
+      .PQcomple-indicators {
+        display: flex;
+        gap: 10px;
+        margin: 0 20px;
+      }
+
+      .PQcomple-indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(191, 128, 11, 0.3);
+        cursor: pointer;
+        transition: background 0.2s ease;
+      }
+
+      .PQcomple-indicator.active {
+        background: rgba(191, 128, 11, 1);
+      }
+
+      /* Responsive */
+      @media (max-width: 1200px) {
+        .PQcomple-card {
+          width: 350px;
+          height: 400px;
+        }
+      }
+
       @media (max-width: 768px) {
-        .habInfo-card-content {
-          flex-direction: column;
-          height: auto;
+        .PQcomple-title {
+          font-size: 14px;
         }
 
-        .habInfo-card-image {
-          height: 200px;
-        }
-
-        .habInfo-navigation {
-          gap: 30px;
-        }
-
-        .habInfo-nav-button {
-          font-size: 10px;
-        }
-
-        .habInfo-section-subtitle {
+        .PQcomple-subtitle {
           font-size: 28px;
         }
-      }
 
-      /* Loading Animation */
-      .habInfo-card {
-        animation: slideIn 0.6s ease-out;
-      }
-
-      @keyframes slideIn {
-        from {
-          opacity: 0;
-          transform: translateY(50px);
+        .PQcomple-card {
+          width: 300px;
+          height: 350px;
         }
-        to {
-          opacity: 1;
-          transform: translateY(0);
+
+        .PQcomple-card-title {
+          font-size: 24px;
         }
-      }
 
-      .habInfo-card:nth-child(2) {
-        animation-delay: 0.1s;
-      }
-
-      .habInfo-card:nth-child(3) {
-        animation-delay: 0.2s;
-      }
-
-      .habInfo-card:nth-child(4) {
-        animation-delay: 0.3s;
+        .PQcomple-card-description {
+          font-size: 14px;
+        }
       }
     </style>
   </head>
   <body>
-    <section class="habInfo-container">
-      <div class="habInfo-background-image"></div>
+    <section class="PQcomple-section">
+      <div class="PQcomple-header">
+        <h1 class="PQcomple-title">
+          Todo lo que tu evento necesita, en un solo lugar
+        </h1>
+        <h2 class="PQcomple-subtitle">Tu evento perfecto</h2>
+      </div>
 
-      <header class="habInfo-header">
-        <h1 class="habInfo-main-title">EL LUJO QUE MERECES</h1>
-      </header>
-
-      <main class="habInfo-cards-container">
-        <!-- SUITES SECTION -->
-        <div id="suites-section" class="habInfo-cards-grid active">
-          <div class="habInfo-section-intro">
-            <p class="habInfo-section-title">El lujo que mereces</p>
-            <h2 class="habInfo-section-subtitle">Suites</h2>
-            <p class="habInfo-section-description">
-              Nuestras suites combinan lujo y comodidad para ofrecerte una
-              experiencia exclusiva y única en La Paz. Espacios elegantes
-              pensados para tu descanso y bienestar.
-            </p>
-            <nav class="habInfo-navigation">
-              <button class="habInfo-nav-button active" data-section="suites">
-                SUITES
-              </button>
-              <button class="habInfo-nav-button" data-section="business">
-                BUSINESS
-              </button>
-            </nav>
+      <div class="PQcomple-slider-container">
+        <div class="PQcomple-slider" id="PQcomple-slider">
+          <!-- Card 1: Meseros -->
+          <div class="PQcomple-card">
+            <img
+              class="PQcomple-card-image"
+              src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758645918/cb536c0f-e1a0-4b45-8258-4354937b507e.png"
+              alt="Meseros profesionales"
+            />
+            <div class="PQcomple-card-overlay">
+              <i class="fas fa-user-tie PQcomple-card-icon"></i>
+              <h3 class="PQcomple-card-title">Meseros</h3>
+              <p class="PQcomple-card-description">
+                Personal de servicio profesional para atender a tus invitados
+                durante el evento
+              </p>
+            </div>
           </div>
 
-          <div class="habInfo-suites-grid">
-            <article class="habInfo-card">
-              <div class="habInfo-card-content">
-                <div class="habInfo-card-info">
-                  <div>
-                    <h3 class="habInfo-card-title">Suite Matrimonial</h3>
-                    <p class="habInfo-card-description">
-                      Nuestra Suite Matrimonial cuenta con una cama de dos
-                      plazas y media, un kitchenette completamente equipado con
-                      microondas, sala de recibidor, frigobar, un baño privado
-                      con box de vidrio, caja fuerte y calefacción centralizada.
-                    </p>
-                  </div>
-                  <div class="habInfo-amenities">
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317654/b77115ff-2eee-406a-83c6-cde8d276c509.png"
-                      alt="TV"
-                    />
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317677/c17885bc-b3d0-4f88-acf8-7b116af9f007.png"
-                      alt="WiFi"
-                    />
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317707/3765ab91-cd6e-4961-a4c5-584bb7d09f26.png"
-                      alt="Phone"
-                    />
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317784/c25579ca-810c-44aa-8a34-843699e6cb63.png"
-                      alt="Service"
-                    />
-                  </div>
-                  <div class="habInfo-buttons">
-                    <button class="habInfo-button">VER HABITACIÓN</button>
-                    <button class="habInfo-button">RESERVAR AHORA</button>
-                  </div>
-                </div>
-                <div
-                  class="habInfo-card-image"
-                  style="
-                    background-image: url('https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213336/SUITE_MATRIMONIAL3_yzbwbx.jpg');
-                  "
-                ></div>
-              </div>
-            </article>
+          <!-- Card 2: Micrófonos -->
+          <div class="PQcomple-card">
+            <img
+              class="PQcomple-card-image"
+              src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758645946/2764d8a5-19df-450f-87fa-99da62832f52.png"
+              alt="Micrófonos JBL UHF"
+            />
+            <div class="PQcomple-card-overlay">
+              <i class="fas fa-microphone PQcomple-card-icon"></i>
+              <h3 class="PQcomple-card-title">Micrófonos JBL UHF</h3>
+              <p class="PQcomple-card-description">
+                Cobertura >10m, 6h de autonomía y alta fidelidad (100 dB A) para
+                discursos y presentaciones claras
+              </p>
+            </div>
+          </div>
 
-            <article class="habInfo-card">
-              <div class="habInfo-card-content">
-                <div class="habInfo-card-info">
-                  <div>
-                    <h3 class="habInfo-card-title">Suite Familiar</h3>
-                    <p class="habInfo-card-description">
-                      Nuestra Suite Familiar está diseñada para familias y
-                      grupos pequeños. Cuenta con espacios amplios, múltiples
-                      camas, área de estar, kitchenette completo y todas las
-                      comodidades necesarias para una estancia familiar
-                      perfecta.
-                    </p>
-                  </div>
-                  <div class="habInfo-amenities">
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317654/b77115ff-2eee-406a-83c6-cde8d276c509.png"
-                      alt="TV"
-                    />
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317677/c17885bc-b3d0-4f88-acf8-7b116af9f007.png"
-                      alt="WiFi"
-                    />
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317707/3765ab91-cd6e-4961-a4c5-584bb7d09f26.png"
-                      alt="Phone"
-                    />
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317784/c25579ca-810c-44aa-8a34-843699e6cb63.png"
-                      alt="Service"
-                    />
-                  </div>
-                  <div class="habInfo-buttons">
-                    <button class="habInfo-button">VER HABITACIÓN</button>
-                    <button class="habInfo-button">RESERVAR AHORA</button>
-                  </div>
-                </div>
-                <div
-                  class="habInfo-card-image"
-                  style="
-                    background-image: url('https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213330/SUITE_FAMILIAR7_g9nnod.jpg');
-                  "
-                ></div>
-              </div>
-            </article>
+          <!-- Card 3: Fotografía -->
+          <div class="PQcomple-card">
+            <img
+              class="PQcomple-card-image"
+              src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213632/SalonRobles2.2_jpdgqx.jpg"
+              alt="Fotografía profesional"
+            />
+            <div class="PQcomple-card-overlay">
+              <i class="fas fa-camera PQcomple-card-icon"></i>
+              <h3 class="PQcomple-card-title">Fotografía Profesional</h3>
+              <p class="PQcomple-card-description">
+                Captura los momentos especiales de tu evento con nuestro
+                servicio de fotografía y edición de alta calidad
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4: Sonido -->
+          <div class="PQcomple-card">
+            <img
+              class="PQcomple-card-image"
+              src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758221087/parlante_n7cvzx_1_llzswe.jpg"
+              alt="Sonido Bose S1 Pro+"
+            />
+            <div class="PQcomple-card-overlay">
+              <i class="fas fa-volume-up PQcomple-card-icon"></i>
+              <h3 class="PQcomple-card-title">Sonido Bose S1 Pro+</h3>
+              <p class="PQcomple-card-description">
+                Calidad profesional para eventos exigentes. Potencia 160W RMS,
+                Bluetooth, USB-C, batería de 11h y 2 transmisores inalámbricos
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 5: Candy Bar -->
+          <div class="PQcomple-card">
+            <img
+              class="PQcomple-card-image"
+              src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213635/SalonRobles3.3_pm0ngr.jpg"
+              alt="Candy Bar"
+            />
+            <div class="PQcomple-card-overlay">
+              <i class="fas fa-candy-cane PQcomple-card-icon"></i>
+              <h3 class="PQcomple-card-title">Candy Bar</h3>
+              <p class="PQcomple-card-description">
+                Dulces y postres personalizados que complementan la temática de
+                tu evento y deleitan a tus invitados
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 6: Decoración -->
+          <div class="PQcomple-card">
+            <img
+              class="PQcomple-card-image"
+              src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213628/15-A%C3%91OS-ABRIL3_getirq.jpg"
+              alt="Decoración temática"
+            />
+            <div class="PQcomple-card-overlay">
+              <i class="fas fa-palette PQcomple-card-icon"></i>
+              <h3 class="PQcomple-card-title">Decoración Temática</h3>
+              <p class="PQcomple-card-description">
+                Transformamos el espacio según tu tema preferido, desde elegante
+                y minimalista hasta extravagante y colorido
+              </p>
+            </div>
           </div>
         </div>
+      </div>
 
-        <!-- BUSINESS SECTION -->
-        <div id="business-section" class="habInfo-cards-grid">
-          <div class="habInfo-section-intro">
-            <p class="habInfo-section-title">Business</p>
-            <h2 class="habInfo-section-subtitle">Business</h2>
-            <p class="habInfo-section-description">
-              Habitaciones que brindan un refugio de tranquilidad, con detalles
-              pensados para tu comodidad y descanso, haciendo que tu experiencia
-              en La Paz sea inolvidable.
-            </p>
-            <nav class="habInfo-navigation">
-              <button class="habInfo-nav-button" data-section="suites">
-                SUITES
-              </button>
-              <button class="habInfo-nav-button active" data-section="business">
-                BUSINESS
-              </button>
-            </nav>
-          </div>
+      <div class="PQcomple-navigation">
+        <button class="PQcomple-nav-button" id="PQcomple-prev-btn">
+          <i class="fas fa-chevron-left"></i>
+        </button>
 
-          <div class="habInfo-business-grid">
-            <article class="habInfo-card">
-              <div class="habInfo-card-content">
-                <div class="habInfo-card-info">
-                  <div>
-                    <h3 class="habInfo-card-title">Business Simple</h3>
-                    <p class="habInfo-card-description">
-                      Ideal para viajeros solos o de negocios, nuestra
-                      habitación Business Simple ofrece un espacio cómodo y
-                      funcional de 11 m². Cuenta con cama individual,
-                      calefacción regulable y baño privado, perfecto para una
-                      estancia productiva.
-                    </p>
-                  </div>
-                  <div class="habInfo-amenities">
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317654/b77115ff-2eee-406a-83c6-cde8d276c509.png"
-                      alt="TV"
-                    />
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317677/c17885bc-b3d0-4f88-acf8-7b116af9f007.png"
-                      alt="WiFi"
-                    />
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317707/3765ab91-cd6e-4961-a4c5-584bb7d09f26.png"
-                      alt="Phone"
-                    />
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317784/c25579ca-810c-44aa-8a34-843699e6cb63.png"
-                      alt="Service"
-                    />
-                  </div>
-                  <div class="habInfo-buttons">
-                    <button class="habInfo-button">VER HABITACIÓN</button>
-                    <button class="habInfo-button">RESERVAR AHORA</button>
-                  </div>
-                </div>
-                <div
-                  class="habInfo-card-image"
-                  style="
-                    background-image: url('https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213348/HAB_SIMPLE6_jbclbt.jpg');
-                  "
-                ></div>
-              </div>
-            </article>
-
-            <article class="habInfo-card">
-              <div class="habInfo-card-content">
-                <div class="habInfo-card-info">
-                  <div>
-                    <h3 class="habInfo-card-title">Business Matrimonial</h3>
-                    <p class="habInfo-card-description">
-                      Habitación matrimonial perfecta para parejas de negocios.
-                      Cuenta con cama matrimonial, área de trabajo, baño
-                      completo y todas las comodidades necesarias para el
-                      descanso y productividad.
-                    </p>
-                  </div>
-                  <div class="habInfo-amenities">
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317654/b77115ff-2eee-406a-83c6-cde8d276c509.png"
-                      alt="TV"
-                    />
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317677/c17885bc-b3d0-4f88-acf8-7b116af9f007.png"
-                      alt="WiFi"
-                    />
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317707/3765ab91-cd6e-4961-a4c5-584bb7d09f26.png"
-                      alt="Phone"
-                    />
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317784/c25579ca-810c-44aa-8a34-843699e6cb63.png"
-                      alt="Service"
-                    />
-                  </div>
-                  <div class="habInfo-buttons">
-                    <button class="habInfo-button">VER HABITACIÓN</button>
-                    <button class="habInfo-button">RESERVAR AHORA</button>
-                  </div>
-                </div>
-                <div
-                  class="habInfo-card-image"
-                  style="
-                    background-image: url('https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213329/HAB_MATRIMONIAL3_g5yl4e.jpg');
-                  "
-                ></div>
-              </div>
-            </article>
-
-            <article class="habInfo-card">
-              <div class="habInfo-card-content">
-                <div class="habInfo-card-info">
-                  <div>
-                    <h3 class="habInfo-card-title">Business Twin</h3>
-                    <p class="habInfo-card-description">
-                      Habitación con dos camas individuales, ideal para
-                      ejecutivos que viajan juntos. Diseñada con espacios
-                      funcionales, área de trabajo y comodidades premium para
-                      viajes de negocios.
-                    </p>
-                  </div>
-                  <div class="habInfo-amenities">
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317654/b77115ff-2eee-406a-83c6-cde8d276c509.png"
-                      alt="TV"
-                    />
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317677/c17885bc-b3d0-4f88-acf8-7b116af9f007.png"
-                      alt="WiFi"
-                    />
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317707/3765ab91-cd6e-4961-a4c5-584bb7d09f26.png"
-                      alt="Phone"
-                    />
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317784/c25579ca-810c-44aa-8a34-843699e6cb63.png"
-                      alt="Service"
-                    />
-                  </div>
-                  <div class="habInfo-buttons">
-                    <button class="habInfo-button">VER HABITACIÓN</button>
-                    <button class="habInfo-button">RESERVAR AHORA</button>
-                  </div>
-                </div>
-                <div
-                  class="habInfo-card-image"
-                  style="
-                    background-image: url('https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213356/HabDoble_tuwljl.jpg');
-                  "
-                ></div>
-              </div>
-            </article>
-
-            <article class="habInfo-card">
-              <div class="habInfo-card-content">
-                <div class="habInfo-card-info">
-                  <div>
-                    <h3 class="habInfo-card-title">Business Familiar</h3>
-                    <p class="habInfo-card-description">
-                      Amplia habitación familiar para ejecutivos que viajan con
-                      familia. Incluye múltiples camas, área de estar familiar,
-                      espacio de trabajo y todas las comodidades para una
-                      estancia cómoda.
-                    </p>
-                  </div>
-                  <div class="habInfo-amenities">
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317654/b77115ff-2eee-406a-83c6-cde8d276c509.png"
-                      alt="TV"
-                    />
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317677/c17885bc-b3d0-4f88-acf8-7b116af9f007.png"
-                      alt="WiFi"
-                    />
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317707/3765ab91-cd6e-4961-a4c5-584bb7d09f26.png"
-                      alt="Phone"
-                    />
-                    <img
-                      class="habInfo-amenity-icon"
-                      src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758317784/c25579ca-810c-44aa-8a34-843699e6cb63.png"
-                      alt="Service"
-                    />
-                  </div>
-                  <div class="habInfo-buttons">
-                    <button class="habInfo-button">VER HABITACIÓN</button>
-                    <button class="habInfo-button">RESERVAR AHORA</button>
-                  </div>
-                </div>
-                <div
-                  class="habInfo-card-image"
-                  style="
-                    background-image: url('https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213354/HAB_FAMILIAR7_okjpvp.jpg');
-                  "
-                ></div>
-              </div>
-            </article>
-          </div>
+        <div class="PQcomple-indicators" id="PQcomple-indicators">
+          <div class="PQcomple-indicator active"></div>
+          <div class="PQcomple-indicator"></div>
         </div>
-      </main>
+
+        <button class="PQcomple-nav-button" id="PQcomple-next-btn">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
     </section>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const navButtons = document.querySelectorAll(".habInfo-nav-button");
-        const sections = document.querySelectorAll(".habInfo-cards-grid");
+      class PQcompleteSlider {
+        constructor() {
+          this.slider = document.getElementById("PQcomple-slider");
+          this.prevBtn = document.getElementById("PQcomple-prev-btn");
+          this.nextBtn = document.getElementById("PQcomple-next-btn");
+          this.indicators = document.getElementById("PQcomple-indicators");
+          this.cards = document.querySelectorAll(".PQcomple-card");
 
-        navButtons.forEach((button) => {
-          button.addEventListener("click", function () {
-            const targetSection = this.getAttribute("data-section");
+          this.currentIndex = 0;
+          this.cardsPerView = 3;
+          this.totalCards = this.cards.length;
+          this.maxIndex = Math.ceil(this.totalCards / this.cardsPerView) - 1;
 
-            // Remove active class from all buttons and sections
-            navButtons.forEach((btn) => btn.classList.remove("active"));
-            sections.forEach((section) => section.classList.remove("active"));
+          this.init();
+        }
 
-            // Add active class to clicked button
-            this.classList.add("active");
+        init() {
+          this.createIndicators();
+          this.bindEvents();
+          this.updateSlider();
+          this.startAutoSlide();
+        }
 
-            // Show target section with animation
-            const targetElement = document.getElementById(
-              targetSection + "-section"
-            );
-            setTimeout(() => {
-              targetElement.classList.add("active");
-            }, 100);
+        createIndicators() {
+          this.indicators.innerHTML = "";
+          for (let i = 0; i <= this.maxIndex; i++) {
+            const indicator = document.createElement("div");
+            indicator.className = `PQcomple-indicator ${
+              i === 0 ? "active" : ""
+            }`;
+            indicator.addEventListener("click", () => this.goToSlide(i));
+            this.indicators.appendChild(indicator);
+          }
+        }
+
+        bindEvents() {
+          this.prevBtn.addEventListener("click", () => this.prevSlide());
+          this.nextBtn.addEventListener("click", () => this.nextSlide());
+
+          // Touch/swipe events
+          let startX = 0;
+          let isDragging = false;
+
+          this.slider.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
           });
-        });
 
-        // Add smooth hover effects to cards
-        const cards = document.querySelectorAll(".habInfo-card");
-        cards.forEach((card) => {
-          card.addEventListener("mouseenter", function () {
-            this.style.transform = "translateY(-10px) scale(1.02)";
-          });
-
-          card.addEventListener("mouseleave", function () {
-            this.style.transform = "translateY(0) scale(1)";
-          });
-        });
-
-        // Add click effects to buttons
-        const buttons = document.querySelectorAll(".habInfo-button");
-        buttons.forEach((button) => {
-          button.addEventListener("click", function (e) {
+          this.slider.addEventListener("touchmove", (e) => {
+            if (!isDragging) return;
             e.preventDefault();
-
-            // Create ripple effect
-            const ripple = document.createElement("span");
-            const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            const x = e.clientX - rect.left - size / 2;
-            const y = e.clientY - rect.top - size / 2;
-
-            ripple.style.width = ripple.style.height = size + "px";
-            ripple.style.left = x + "px";
-            ripple.style.top = y + "px";
-            ripple.classList.add("ripple");
-
-            this.appendChild(ripple);
-
-            setTimeout(() => {
-              ripple.remove();
-            }, 600);
           });
-        });
+
+          this.slider.addEventListener("touchend", (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+
+            const endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > 50) {
+              if (diff > 0) {
+                this.nextSlide();
+              } else {
+                this.prevSlide();
+              }
+            }
+          });
+
+          // Pause auto-slide on hover
+          this.slider.addEventListener("mouseenter", () =>
+            this.pauseAutoSlide()
+          );
+          this.slider.addEventListener("mouseleave", () =>
+            this.startAutoSlide()
+          );
+        }
+
+        updateSlider() {
+          const cardWidth = 415; // Width of each card
+          const gap = 20; // Gap between cards
+          const offset =
+            this.currentIndex * (cardWidth + gap) * this.cardsPerView;
+
+          this.slider.style.transform = `translateX(-${offset}px)`;
+
+          // Update indicators
+          const indicatorElements = this.indicators.querySelectorAll(
+            ".PQcomple-indicator"
+          );
+          indicatorElements.forEach((indicator, index) => {
+            indicator.classList.toggle("active", index === this.currentIndex);
+          });
+
+          // Update navigation buttons
+          this.prevBtn.disabled = this.currentIndex === 0;
+          this.nextBtn.disabled = this.currentIndex === this.maxIndex;
+        }
+
+        nextSlide() {
+          if (this.currentIndex < this.maxIndex) {
+            this.currentIndex++;
+          } else {
+            this.currentIndex = 0; // Loop back to start
+          }
+          this.updateSlider();
+        }
+
+        prevSlide() {
+          if (this.currentIndex > 0) {
+            this.currentIndex--;
+          } else {
+            this.currentIndex = this.maxIndex; // Loop to end
+          }
+          this.updateSlider();
+        }
+
+        goToSlide(index) {
+          this.currentIndex = index;
+          this.updateSlider();
+        }
+
+        startAutoSlide() {
+          this.autoSlideInterval = setInterval(() => {
+            this.nextSlide();
+          }, 4000);
+        }
+
+        pauseAutoSlide() {
+          clearInterval(this.autoSlideInterval);
+        }
+      }
+
+      // Initialize slider when DOM is loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        new PQcompleteSlider();
+      });
+
+      // Handle window resize
+      window.addEventListener("resize", () => {
+        // Reinitialize slider on resize to handle responsive changes
+        const slider = new PQcompleteSlider();
       });
     </script>
   </body>
