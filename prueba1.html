@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
-    <meta
-      name="description"
-      content="Paquete romántico premium con suite matrimonial, decoración exclusiva y servicios especiales"
-    />
-    <title>Paquete Romántico Premium</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Restaurante Cielo Urbano - Una experiencia culinaria en lo más alto
+    </title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@300;400&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
-    />
-    <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet"
     />
     <style>
+      :root {
+        --skyhero-primary: #2c3e50;
+        --skyhero-gold: #b8932b;
+        --skyhero-gold-gradient: linear-gradient(
+          135deg,
+          #b8932b 0%,
+          #d4af37 100%
+        );
+        --skyhero-white: #ffffff;
+        --skyhero-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+        --skyhero-bg: #f8f9fa;
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -24,640 +31,583 @@
       }
 
       body {
-        font-family: "Inter", sans-serif;
-        line-height: 1.6;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        background: var(--skyhero-bg);
         overflow-x: hidden;
+        min-height: 200vh;
       }
 
-      /* Sección principal del paquete */
-      .promInfo-section {
-        margin-top: 15%;
-        padding: 50px 0;
+      .skyhero-section {
         position: relative;
-        background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758726257/DIAMANTE2_ktvqz2.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 0 5%;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
       }
 
-      .promInfo-section::before {
+      /* Decorative background elements */
+      .skyhero-section::before {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(255, 255, 255, 0.85);
-        z-index: 1;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="25" cy="75" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="25" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>')
+          repeat;
+        pointer-events: none;
       }
 
-      .promInfo-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: start;
+      /* Left content container */
+      .skyhero-content {
         position: relative;
-        z-index: 2;
+        z-index: 10;
+        max-width: 45%;
+        color: var(--skyhero-primary);
       }
 
-      /* Parte izquierda */
-      .promInfo-left {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        opacity: 0;
-        transform: translateX(-100px);
-        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      }
-
-      .promInfo-left.animate {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      .promInfo-image {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        border-radius: 15px;
-        box-shadow: 0 15px 35px rgba(88, 4, 4, 0.3);
-        transform: scale(0.9);
-        transition: all 0.6s ease;
-      }
-
-      .promInfo-image.animate {
-        transform: scale(1);
-      }
-
-      .promInfo-card {
-        background: #ffffff;
-        padding: 40px;
-        border-radius: 20px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(88, 4, 4, 0.1);
-        transform: translateY(50px);
-        opacity: 0;
-        transition: all 0.8s ease;
-        transition-delay: 0.3s;
-      }
-
-      .promInfo-card.animate {
-        transform: translateY(0);
-        opacity: 1;
-      }
-
-      .promInfo-title {
-        font-family: "Lexend Zetta", sans-serif;
-        font-size: 24px;
-        font-weight: 600;
-        color: #580404;
-        text-align: center;
-        margin-bottom: 15px;
-        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-        position: relative;
-      }
-
-      .promInfo-title::after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 0;
-        width: 50%;
-        height: 3px;
-        background: linear-gradient(90deg, #580404, transparent);
-        border-radius: 2px;
-      }
-
-      .promInfo-features {
-        margin-top: 30px;
-      }
-
-      .promInfo-feature-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 18px;
-        padding: 10px;
-        border-radius: 10px;
-        transition: all 0.3s ease;
-        opacity: 0;
-        transform: translateX(-30px);
-      }
-
-      .promInfo-feature-item.animate {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      .promInfo-feature-item:hover {
-        background: rgba(88, 4, 4, 0.05);
-        transform: translateX(5px);
-      }
-
-      .promInfo-icon-wrapper {
-        width: 40px;
-        height: 40px;
-        background: rgba(91, 0, 0, 0.8);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 15px;
-        flex-shrink: 0;
-        transition: all 0.3s ease;
-      }
-
-      .promInfo-feature-item:hover .promInfo-icon-wrapper {
-        background: #580404;
-        transform: scale(1.1);
-      }
-
-      .promInfo-icon {
-        color: white;
-        font-size: 18px;
-      }
-
-      .promInfo-feature-text {
-        font-size: 16px;
-        color: #333;
-        font-weight: 400;
-        line-height: 1.4;
-      }
-
-      .promInfo-button {
-        background: linear-gradient(
-          90deg,
-          #810707 8%,
-          #810808 57%,
-          #4a0202 100%
-        );
-        border: none;
-        border-radius: 12px;
-        padding: 15px 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin-top: 30px;
-        width: 100%;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .promInfo-button::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.2),
-          transparent
-        );
-        transition: left 0.5s ease;
-      }
-
-      .promInfo-button:hover::before {
-        left: 100%;
-      }
-
-      .promInfo-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(88, 4, 4, 0.4);
-      }
-
-      .promInfo-button-text {
-        font-family: "Lexend Zetta", sans-serif;
+      .skyhero-title {
+        font-size: 3.5rem;
         font-weight: 300;
-        color: #fff8f8;
-        font-size: 14px;
-        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+        line-height: 1.1;
+        margin-bottom: 1rem;
+        letter-spacing: -1px;
+        transform: translateX(-100px);
+        opacity: 0;
       }
 
-      .promInfo-button-icon {
+      .skyhero-subtitle {
+        font-weight: 700;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        margin-bottom: 2rem;
+        color: var(--skyhero-gold);
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+
+      .skyhero-button {
+        display: inline-block;
+        padding: 15px 35px;
+        background: var(--skyhero-gold-gradient);
+        color: var(--skyhero-white);
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: var(--skyhero-shadow);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+
+      .skyhero-button:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 30px rgba(184, 147, 43, 0.4);
+      }
+
+      /* Social icons */
+      .skyhero-social {
+        position: absolute;
+        left: 5%;
+        bottom: 8%;
+        display: flex;
+        gap: 15px;
+        z-index: 10;
+      }
+
+      .skyhero-social-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: var(--skyhero-white);
+        border: 2px solid #e0e0e0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--skyhero-primary);
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(-100px);
+        opacity: 0;
+        box-shadow: var(--skyhero-shadow);
+      }
+
+      .skyhero-social-icon:hover {
+        background: var(--skyhero-gold);
+        color: var(--skyhero-white);
+        transform: translateY(-3px) scale(1.1);
+        box-shadow: 0 8px 25px rgba(184, 147, 43, 0.3);
+      }
+
+      /* New TripAdvisor icon */
+      .skyhero-tripadvisor {
+        position: absolute;
+        left: 5%;
+        bottom: 15%;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: var(--skyhero-white);
+        border: 2px solid #e0e0e0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--skyhero-shadow);
+        transform: translateX(-100px);
+        opacity: 0;
+        z-index: 10;
+      }
+
+      .skyhero-tripadvisor img {
         width: 24px;
         height: 24px;
-        filter: brightness(0) invert(1);
+        border-radius: 50%;
       }
 
-      /* Parte derecha */
-      .promInfo-right {
-        position: relative;
-        height: 600px;
-        overflow: hidden;
-        border-radius: 20px;
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-        opacity: 0;
-        transform: translateX(100px);
-        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        transition-delay: 0.4s;
+      /* Right side images */
+      .skyhero-images {
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50%;
+        height: 70%;
+        z-index: 5;
       }
 
-      .promInfo-right.animate {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      .promInfo-moving-image {
-        width: 120%;
-        height: 100%;
-        object-fit: cover;
-        animation: slideRight 15s linear infinite;
-        transition: transform 0.3s ease;
-      }
-
-      .promInfo-right:hover .promInfo-moving-image {
-        transform: scale(1.05);
-        animation-play-state: paused;
-      }
-
-      @keyframes slideRight {
-        0% {
-          transform: translateX(-10%);
-        }
-        50% {
-          transform: translateX(0%);
-        }
-        100% {
-          transform: translateX(-10%);
-        }
-      }
-
-      /* Efectos adicionales */
-      .promInfo-floating-particles {
+      .skyhero-main-image {
         position: absolute;
         top: 0;
-        left: 0;
+        right: 0;
         width: 100%;
         height: 100%;
-        pointer-events: none;
-        z-index: 0;
+        object-fit: cover;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        transform: scale(0) rotate(180deg);
+        opacity: 0;
       }
 
-      .promInfo-particle {
+      .skyhero-dish-image {
         position: absolute;
-        width: 4px;
-        height: 4px;
-        background: rgba(88, 4, 4, 0.3);
-        border-radius: 50%;
-        animation: float 6s ease-in-out infinite;
+        top: 50%;
+        left: -25%;
+        transform: translateY(-50%) scale(0) rotate(-180deg);
+        width: 80%;
+        height: auto;
+        opacity: 0;
+        filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.3));
+        z-index: 6;
       }
 
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px) rotate(0deg);
+      /* Card assembly animations */
+      @keyframes slideFromLeft {
+        0% {
+          transform: translateX(-100px);
           opacity: 0;
         }
-        50% {
-          transform: translateY(-20px) rotate(180deg);
+        100% {
+          transform: translateX(0);
           opacity: 1;
         }
       }
 
-      /* Responsivo */
-      @media (max-width: 1024px) {
-        .promInfo-container {
-          grid-template-columns: 1fr;
-          gap: 40px;
-          max-width: 800px;
+      @keyframes cardAssembly {
+        0% {
+          transform: scale(0) rotate(180deg);
+          opacity: 0;
+        }
+        50% {
+          transform: scale(0.5) rotate(90deg);
+          opacity: 0.7;
+        }
+        100% {
+          transform: scale(1) rotate(0deg);
+          opacity: 1;
+        }
+      }
+
+      @keyframes dishAssembly {
+        0% {
+          transform: translateY(-50%) scale(0) rotate(-180deg);
+          opacity: 0;
+        }
+        50% {
+          transform: translateY(-50%) scale(0.7) rotate(-90deg);
+          opacity: 0.7;
+        }
+        100% {
+          transform: translateY(-50%) scale(1) rotate(0deg);
+          opacity: 1;
+        }
+      }
+
+      @keyframes cardDisassembly {
+        0% {
+          transform: scale(1) rotate(0deg);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.2) rotate(45deg);
+          opacity: 0.5;
+        }
+        100% {
+          transform: scale(0) rotate(180deg);
+          opacity: 0;
+        }
+      }
+
+      @keyframes dishDisassembly {
+        0% {
+          transform: translateY(-50%) scale(1) rotate(0deg);
+          opacity: 1;
+        }
+        50% {
+          transform: translateY(-50%) scale(1.3) rotate(-45deg);
+          opacity: 0.3;
+        }
+        100% {
+          transform: translateY(-50%) scale(0) rotate(-180deg);
+          opacity: 0;
+        }
+      }
+
+      @keyframes slideToLeft {
+        0% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(-100px);
+          opacity: 0;
+        }
+      }
+
+      /* Animation states */
+      .animate-in .skyhero-title {
+        animation: slideFromLeft 0.8s ease-out 0.2s forwards;
+      }
+
+      .animate-in .skyhero-subtitle {
+        animation: slideFromLeft 0.8s ease-out 0.4s forwards;
+      }
+
+      .animate-in .skyhero-button {
+        animation: slideFromLeft 0.8s ease-out 0.6s forwards;
+      }
+
+      .animate-in .skyhero-social-icon:nth-child(1) {
+        animation: slideFromLeft 0.8s ease-out 0.8s forwards;
+      }
+
+      .animate-in .skyhero-social-icon:nth-child(2) {
+        animation: slideFromLeft 0.8s ease-out 1s forwards;
+      }
+
+      .animate-in .skyhero-social-icon:nth-child(3) {
+        animation: slideFromLeft 0.8s ease-out 1.2s forwards;
+      }
+
+      .animate-in .skyhero-tripadvisor {
+        animation: slideFromLeft 0.8s ease-out 1.4s forwards;
+      }
+
+      .animate-in .skyhero-main-image {
+        animation: cardAssembly 1.2s ease-out 0.5s forwards;
+      }
+
+      .animate-in .skyhero-dish-image {
+        animation: dishAssembly 1.2s ease-out 1s forwards;
+      }
+
+      /* Animation out states */
+      .animate-out .skyhero-title {
+        animation: slideToLeft 0.6s ease-in forwards;
+      }
+
+      .animate-out .skyhero-subtitle {
+        animation: slideToLeft 0.6s ease-in 0.1s forwards;
+      }
+
+      .animate-out .skyhero-button {
+        animation: slideToLeft 0.6s ease-in 0.2s forwards;
+      }
+
+      .animate-out .skyhero-social-icon {
+        animation: slideToLeft 0.6s ease-in forwards;
+      }
+
+      .animate-out .skyhero-tripadvisor {
+        animation: slideToLeft 0.6s ease-in 0.1s forwards;
+      }
+
+      .animate-out .skyhero-main-image {
+        animation: cardDisassembly 0.8s ease-in forwards;
+      }
+
+      .animate-out .skyhero-dish-image {
+        animation: dishDisassembly 0.8s ease-in 0.2s forwards;
+      }
+
+      /* Responsive design */
+      @media (max-width: 1200px) {
+        .skyhero-title {
+          font-size: 3rem;
+        }
+        .skyhero-dish-image {
+          left: -20%;
+          width: 75%;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .skyhero-section {
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
+          padding: 5%;
         }
 
-        .promInfo-right {
-          height: 400px;
+        .skyhero-content {
+          max-width: 100%;
+          margin-bottom: 2rem;
         }
 
-        .promInfo-title {
-          font-size: 20px;
+        .skyhero-images {
+          position: relative;
+          width: 80%;
+          height: 50vh;
+          right: auto;
+          top: auto;
+          transform: none;
+          margin: 0 auto;
+        }
+
+        .skyhero-dish-image {
+          left: -10%;
+          width: 60%;
+        }
+
+        .skyhero-social {
+          position: relative;
+          left: auto;
+          bottom: auto;
+          justify-content: center;
+          margin-top: 2rem;
+        }
+
+        .skyhero-tripadvisor {
+          position: relative;
+          left: auto;
+          bottom: auto;
         }
       }
 
       @media (max-width: 768px) {
-        .promInfo-section {
-          margin-top: 20%;
-          padding: 30px 0;
-          background-attachment: scroll;
+        .skyhero-title {
+          font-size: 2.5rem;
         }
 
-        .promInfo-container {
-          padding: 0 15px;
-          gap: 30px;
+        .skyhero-subtitle {
+          font-size: 1rem;
         }
 
-        .promInfo-right {
-          display: none;
+        .skyhero-button {
+          font-size: 0.9rem;
+          padding: 12px 25px;
         }
 
-        .promInfo-card {
-          padding: 30px 20px;
-        }
-
-        .promInfo-title {
-          font-size: 18px;
-        }
-
-        .promInfo-feature-text {
-          font-size: 14px;
-        }
-
-        .promInfo-image {
-          height: 250px;
+        .skyhero-images {
+          width: 90%;
+          height: 40vh;
         }
       }
 
-      @media (max-width: 480px) {
-        .promInfo-section {
-          margin-top: 25%;
+      @media (max-width: 576px) {
+        .skyhero-title {
+          font-size: 2rem;
         }
 
-        .promInfo-title {
-          font-size: 16px;
+        .skyhero-images {
+          width: 100%;
         }
 
-        .promInfo-feature-item {
-          margin-bottom: 15px;
-        }
-
-        .promInfo-icon-wrapper {
-          width: 35px;
-          height: 35px;
-        }
-
-        .promInfo-icon {
-          font-size: 16px;
+        .skyhero-dish-image {
+          width: 70%;
+          left: -5%;
         }
       }
 
-      /* Animaciones de entrada adicionales */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes slideInLeft {
-        from {
-          opacity: 0;
-          transform: translateX(-50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      @keyframes slideInRight {
-        from {
-          opacity: 0;
-          transform: translateX(50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
+      /* Demo content for scroll effect */
+      .demo-content {
+        height: 100vh;
+        background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2rem;
+        text-align: center;
       }
     </style>
   </head>
   <body>
-    <section class="promInfo-section" id="promInfo-section">
-      <!-- Partículas flotantes -->
-      <div class="promInfo-floating-particles" id="particles"></div>
+    <section class="skyhero-section" id="heroSection">
+      <div class="skyhero-content">
+        <h1 class="skyhero-title">
+          Una<br />experiencia culinaria<br />en lo más alto
+        </h1>
+        <h2 class="skyhero-subtitle">RESTAURANTE<br />CIELO URBANO</h2>
+        <a href="#" class="skyhero-button" id="reservarBtn">RESERVAR TU MENÚ</a>
+      </div>
 
-      <div class="promInfo-container">
-        <!-- Parte izquierda -->
-        <div class="promInfo-left" id="promInfo-left">
-          <!-- Imagen principal -->
-          <img
-            class="promInfo-image"
-            id="promInfo-image"
-            src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758726257/DIAMANTE2_ktvqz2.jpg"
-            alt="Suite matrimonial premium con decoración romántica"
-          />
+      <div class="skyhero-social">
+        <a href="#" class="skyhero-social-icon">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="skyhero-social-icon">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="skyhero-social-icon">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
 
-          <!-- Card con información -->
-          <div class="promInfo-card" id="promInfo-card">
-            <h2 class="promInfo-title">LO QUE INCLUYE EL PAQUETE</h2>
+      <div class="skyhero-tripadvisor">
+        <img
+          src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758812311/39a1eeed-78d1-4a3a-9610-ddc1d361b3fe.png"
+          alt="TripAdvisor"
+        />
+      </div>
 
-            <div class="promInfo-features">
-              <div class="promInfo-feature-item" style="animation-delay: 0.1s">
-                <div class="promInfo-icon-wrapper">
-                  <i class="fas fa-bed promInfo-icon"></i>
-                </div>
-                <span class="promInfo-feature-text"
-                  >Suite Matrimonial Premium con decoración exclusiva</span
-                >
-              </div>
-
-              <div class="promInfo-feature-item" style="animation-delay: 0.2s">
-                <div class="promInfo-icon-wrapper">
-                  <i class="fas fa-seedling promInfo-icon"></i>
-                </div>
-                <span class="promInfo-feature-text"
-                  >Pétalos de rosas frescas y elegante arreglo de cisnes en la
-                  cama</span
-                >
-              </div>
-
-              <div class="promInfo-feature-item" style="animation-delay: 0.3s">
-                <div class="promInfo-icon-wrapper">
-                  <i class="fas fa-star promInfo-icon"></i>
-                </div>
-                <span class="promInfo-feature-text"
-                  >Iluminación especial con letras "LOVE" e iniciales
-                  personalizadas</span
-                >
-              </div>
-
-              <div class="promInfo-feature-item" style="animation-delay: 0.4s">
-                <div class="promInfo-icon-wrapper">
-                  <i class="fas fa-camera promInfo-icon"></i>
-                </div>
-                <span class="promInfo-feature-text"
-                  >Decoración con fotografías de la pareja (coordinación
-                  previa)</span
-                >
-              </div>
-
-              <div class="promInfo-feature-item" style="animation-delay: 0.5s">
-                <div class="promInfo-icon-wrapper">
-                  <i class="fas fa-glass-cheers promInfo-icon"></i>
-                </div>
-                <span class="promInfo-feature-text"
-                  >Mesa romántica con pétalos y selección de piqueos
-                  gourmet</span
-                >
-              </div>
-
-              <div class="promInfo-feature-item" style="animation-delay: 0.6s">
-                <div class="promInfo-icon-wrapper">
-                  <i class="fas fa-coffee promInfo-icon"></i>
-                </div>
-                <span class="promInfo-feature-text"
-                  >Desayuno buffet completo para dos personas</span
-                >
-              </div>
-
-              <div class="promInfo-feature-item" style="animation-delay: 0.7s">
-                <div class="promInfo-icon-wrapper">
-                  <i class="fas fa-wine-bottle promInfo-icon"></i>
-                </div>
-                <span class="promInfo-feature-text"
-                  >Bebidas premium: Vino tinto o Espumante</span
-                >
-              </div>
-
-              <div class="promInfo-feature-item" style="animation-delay: 0.8s">
-                <div class="promInfo-icon-wrapper">
-                  <i class="fas fa-clock promInfo-icon"></i>
-                </div>
-                <span class="promInfo-feature-text"
-                  >Check out extendido hasta las 6:00 p.m.</span
-                >
-              </div>
-            </div>
-
-            <!-- Botón de reserva -->
-            <button class="promInfo-button" type="button">
-              <span class="promInfo-button-text">RESERVAR AHORA</span>
-              <img
-                class="promInfo-button-icon"
-                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758730166/fdaca82f-2b9f-432e-bc6e-4d83db728ea2.png"
-                alt=""
-              />
-            </button>
-          </div>
-        </div>
-
-        <!-- Parte derecha -->
-        <div class="promInfo-right" id="promInfo-right">
-          <img
-            class="promInfo-moving-image"
-            src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758726257/DIAMANTE2_ktvqz2.jpg"
-            alt="Habitación romántica con decoración especial"
-          />
-        </div>
+      <div class="skyhero-images">
+        <img
+          src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758216251/URBAN-SKY2_drvvlv.jpg"
+          alt="Ambiente del restaurante"
+          class="skyhero-main-image"
+        />
+        <img
+          src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758221099/plato5-removebg-preview_cenvpt.png"
+          alt="Plato gourmet"
+          class="skyhero-dish-image"
+        />
       </div>
     </section>
 
+    <div class="demo-content">
+      <div>
+        <h2>Scroll para ver los efectos</h2>
+        <p>Los elementos se desarman como flores al hacer scroll</p>
+      </div>
+    </div>
+
     <script>
-      // Intersection Observer para animaciones de entrada
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Animar elementos principales
-            const leftSection = document.getElementById("promInfo-left");
-            const rightSection = document.getElementById("promInfo-right");
-            const image = document.getElementById("promInfo-image");
-            const card = document.getElementById("promInfo-card");
-
-            if (leftSection) leftSection.classList.add("animate");
-            if (rightSection) rightSection.classList.add("animate");
-            if (image) image.classList.add("animate");
-            if (card) card.classList.add("animate");
-
-            // Animar items de características con delay
-            const featureItems = document.querySelectorAll(
-              ".promInfo-feature-item"
-            );
-            featureItems.forEach((item, index) => {
-              setTimeout(() => {
-                item.classList.add("animate");
-              }, 100 + index * 100);
-            });
-
-            // Crear partículas flotantes
-            createFloatingParticles();
-          }
+      // WhatsApp functionality
+      document
+        .getElementById("reservarBtn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          const phoneNumber = "61239790";
+          const message =
+            "Hola, me gustaría reservar en el restaurante Cielo Urbano. ¿Podrían ayudarme con la disponibilidad?";
+          const encodedMessage = encodeURIComponent(message);
+          const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+          window.open(whatsappURL, "_blank");
         });
-      }, observerOptions);
 
-      // Observar la sección principal
-      const section = document.getElementById("promInfo-section");
-      if (section) {
-        observer.observe(section);
-      }
+      // Animation controller
+      class ScrollAnimationController {
+        constructor() {
+          this.heroSection = document.getElementById("heroSection");
+          this.isAnimatedIn = false;
+          this.isAnimatedOut = false;
+          this.init();
+        }
 
-      // Función para crear partículas flotantes
-      function createFloatingParticles() {
-        const container = document.getElementById("particles");
-        const particleCount = 15;
-
-        for (let i = 0; i < particleCount; i++) {
+        init() {
+          // Initial animation on load
           setTimeout(() => {
-            const particle = document.createElement("div");
-            particle.className = "promInfo-particle";
-            particle.style.left = Math.random() * 100 + "%";
-            particle.style.animationDelay = Math.random() * 6 + "s";
-            particle.style.animationDuration = 3 + Math.random() * 6 + "s";
-            container.appendChild(particle);
+            this.animateIn();
+          }, 300);
 
-            // Remover partícula después de la animación
-            setTimeout(() => {
-              if (particle.parentNode) {
-                particle.parentNode.removeChild(particle);
-              }
-            }, 8000);
-          }, i * 200);
+          // Scroll event listener
+          window.addEventListener("scroll", () => {
+            this.handleScroll();
+          });
+
+          // Intersection Observer for more precise control
+          this.setupIntersectionObserver();
         }
-      }
 
-      // Efecto de paralaje para el fondo
-      window.addEventListener("scroll", () => {
-        const scrolled = window.pageYOffset;
-        const section = document.getElementById("promInfo-section");
-        if (section) {
-          const rate = scrolled * -0.5;
-          section.style.backgroundPosition = `center ${rate}px`;
-        }
-      });
-
-      // Efectos adicionales al hacer hover en el botón
-      const button = document.querySelector(".promInfo-button");
-      if (button) {
-        button.addEventListener("mouseenter", () => {
-          button.style.transform = "translateY(-3px) scale(1.02)";
-        });
-
-        button.addEventListener("mouseleave", () => {
-          button.style.transform = "translateY(0) scale(1)";
-        });
-      }
-
-      // Efecto de cursor personalizado para elementos interactivos
-      document.addEventListener("mousemove", (e) => {
-        const interactiveElements = document.querySelectorAll(
-          ".promInfo-feature-item, .promInfo-button"
-        );
-        interactiveElements.forEach((element) => {
-          const rect = element.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-
-          if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
-            element.style.boxShadow = `${(x - rect.width / 2) * 0.1}px ${
-              (y - rect.height / 2) * 0.1
-            }px 20px rgba(88, 4, 4, 0.1)`;
+        animateIn() {
+          if (!this.isAnimatedIn) {
+            this.heroSection.classList.remove("animate-out");
+            this.heroSection.classList.add("animate-in");
+            this.isAnimatedIn = true;
+            this.isAnimatedOut = false;
           }
-        });
+        }
+
+        animateOut() {
+          if (!this.isAnimatedOut) {
+            this.heroSection.classList.remove("animate-in");
+            this.heroSection.classList.add("animate-out");
+            this.isAnimatedOut = true;
+            this.isAnimatedIn = false;
+          }
+        }
+
+        handleScroll() {
+          const scrollPosition = window.scrollY;
+          const windowHeight = window.innerHeight;
+          const scrollThreshold = windowHeight * 0.3; // 30% of viewport
+
+          if (scrollPosition > scrollThreshold) {
+            this.animateOut();
+          } else {
+            this.animateIn();
+          }
+        }
+
+        setupIntersectionObserver() {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  if (entry.intersectionRatio > 0.7) {
+                    this.animateIn();
+                  }
+                } else {
+                  this.animateOut();
+                }
+              });
+            },
+            {
+              threshold: [0, 0.1, 0.3, 0.5, 0.7, 0.9, 1],
+              rootMargin: "-10% 0px -10% 0px",
+            }
+          );
+
+          observer.observe(this.heroSection);
+        }
+      }
+
+      // Initialize animation controller when DOM is loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        new ScrollAnimationController();
       });
+
+      // Additional smooth scroll enhancement
+      document.documentElement.style.scrollBehavior = "smooth";
     </script>
   </body>
 </html>
-<!--  -->

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Madero - Urban Sky</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@800;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Eras+Medium+ITC&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Outfit&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!--Iconos-->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav id="nav-center"></nav>
+    </header>
+    <main class="background-sky">
+      <section class="promHero-section">
+        <div
+          class="promHero-background promHero-background3"
+          id="promHeroBackground"
+        ></div>
+        <div class="promHero-content">
+          <div class="promHero-card" id="promHeroCard">
+            <h1 class="promHero-title">PAQUETE LUNA DE PLATA</h1>
+            <p class="promHero-description">
+              El Paquete Luna de Plata te invita a vivir una escapada romántica
+              llena de detalles cuidadosamente pensados. Disfruta de un ambiente
+              acogedor, momentos únicos y experiencias que harán que cada
+              instante con tu ser querido sea inolvidable.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!--Center info -->
+      <!-- First Section -->
+      <section class="centerInfo-section">
+        <div class="centerInfo-background"></div>
+
+        <div class="centerInfo-container">
+          <div class="centerInfo-card">
+            <h1 class="centerInfo-title">Urban Center Sport Bar</h1>
+
+            <div class="centerInfo-location">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>Ubicado en la planta baja del hotel</p>
+            </div>
+
+            <p class="centerInfo-description">
+              Sport Bar con un ambiente acogedor donde puedes encontrar las
+              siguientes opciones:
+            </p>
+
+            <div class="centerInfo-options-title">
+              <i class="fas fa-star"></i>
+              <h2>Horarios destacados</h2>
+            </div>
+
+            <ul class="centerInfo-options-list">
+              <li>
+                <i class="fas fa-check"></i> Desayuno buffet: 07:30 - 10:00
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Almuerzo ejecutivo: 12:00 - 14:45
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Snacks – Pizzas – Platos a la
+                carta: 16:00 - 22:30
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Cóctelería especial de creación:
+                16:00 - 22:30
+              </li>
+            </ul>
+
+            <div class="centerInfo-buttons">
+              <button class="centerInfo-button centerInfo-button-white">
+                <img
+                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758818949/33a390f7-8c17-42bf-9c59-91adaf9950d0.png"
+                  alt="Icono menú"
+                />
+                DESCUBRIR MENÚ
+              </button>
+              <button class="centerInfo-button centerInfo-button-gold">
+                <img
+                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758818920/7decd5dc-2d68-4506-af18-f41de1bd9040.png"
+                  alt="Icono reserva"
+                />
+                RESERVAR
+              </button>
+            </div>
+          </div>
+
+          <img
+            class="centerInfo-large-image"
+            src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213716/DESAYUNO_URBAN_CENTER7_mz8toi.jpg"
+            alt="Desayuno Urban Center"
+          />
+          <img
+            class="centerInfo-small-image"
+            src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213659/HAMBURGUESAS_URBAN_11_s6iqhq.jpg"
+            alt="Hamburguesa Urban Center"
+          />
+        </div>
+      </section>
+
+      <!-- Second Section -->
+      <section class="centerInfo-fullwidth-section">
+        <div class="centerInfo-fullwidth-container">
+          <div
+            class="centerInfo-tilted-image-container"
+            onclick="centerInfoOpenModal()"
+          >
+            <img
+              class="centerInfo-tilted-image"
+              src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213713/DESAYUNO_URBAN_CENTER3_nhdsry.jpg"
+              alt="Desayuno Urban Center"
+            />
+            <img
+              class="centerInfo-search-icon"
+              src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758916208/ea190cb9-8ba0-4c03-bbef-ee54e3e211d9.png"
+              alt="Buscar"
+            />
+          </div>
+
+          <div class="centerInfo-content">
+            <h2 class="centerInfo-main-title">Sabores para cada momento</h2>
+            <p class="centerInfo-subtitle">GASTRONOMÍA QUE SE ADAPTA A TI</p>
+            <p class="centerInfo-text">
+              En Urban Center Sport Bar encontrarás opciones para todos los
+              gustos y horarios: desayunos buffet, almuerzos ejecutivos, pizzas,
+              snacks y cócteles, perfectos para compartir con amigos.
+            </p>
+            <button class="centerInfo-special-button">
+              <i class="fas fa-bell"></i>
+              RESERVAR TU MENÚ ESPECIAL
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal -->
+      <div id="centerInfoModal" class="centerInfo-modal">
+        <div class="centerInfo-modal-content">
+          <span class="centerInfo-close" onclick="centerInfoCloseModal()"
+            >&times;</span
+          >
+          <div class="centerInfo-slider">
+            <div class="centerInfo-slide active">
+              <img
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213716/DESAYUNO_URBAN_CENTER7_mz8toi.jpg"
+                alt="Desayuno 1"
+              />
+            </div>
+            <div class="centerInfo-slide">
+              <img
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213713/DESAYUNO_URBAN_CENTER2_biqdcb.jpg"
+                alt="Desayuno 2"
+              />
+            </div>
+            <div class="centerInfo-slide">
+              <img
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213694/SAUCEGE_GRILLED_pkzbgu.jpg"
+                alt="Salchicha Grillada"
+              />
+            </div>
+            <div class="centerInfo-slide">
+              <img
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213679/HAMBURGUESAS_URBAN_d1qci4.jpg"
+                alt="Hamburguesas"
+              />
+            </div>
+            <div class="centerInfo-slide">
+              <img
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213639/37-LENGUAS6_tlksrp.jpg"
+                alt="Lenguas"
+              />
+            </div>
+            <button class="centerInfo-prev" onclick="centerInfoChangeSlide(-1)">
+              ❮
+            </button>
+            <button class="centerInfo-next" onclick="centerInfoChangeSlide(1)">
+              ❯
+            </button>
+          </div>
+          <div class="centerInfo-dots">
+            <span
+              class="centerInfo-dot active"
+              onclick="centerInfoCurrentSlide(1)"
+            ></span>
+            <span
+              class="centerInfo-dot"
+              onclick="centerInfoCurrentSlide(2)"
+            ></span>
+            <span
+              class="centerInfo-dot"
+              onclick="centerInfoCurrentSlide(3)"
+            ></span>
+            <span
+              class="centerInfo-dot"
+              onclick="centerInfoCurrentSlide(4)"
+            ></span>
+            <span
+              class="centerInfo-dot"
+              onclick="centerInfoCurrentSlide(5)"
+            ></span>
+          </div>
+        </div>
+      </div>
+      <!-- Sección SkyLast -->
+      <section class="skyLast-container">
+        <div class="skyLast-background"></div>
+        <div class="skyLast-overlay"></div>
+        <div class="skyLast-particles" id="particles-container"></div>
+      </section>
+    </main>
+
+    <!--Fotter-->
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="container-footer">
+          <!-- Sección Izquierda - Logo y Brand -->
+          <div class="footer-left">
+            <div class="footer-brand-header">
+              <img
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213618/LogoUrbanSky_fxsgln.png"
+                class="footer-logo"
+                alt="Logo oficial - Urban Sky"
+              />
+              <div class="footer-divider"></div>
+              <div class="footer-brand-text">
+                <h2 class="hotel-name">RESTOBAR</h2>
+                <span class="hotel-subtitle">URBAN SKY</span>
+              </div>
+            </div>
+            <p class="footer-description">
+              Vive la mejor <strong>experiencia de hospedaje</strong> en La Paz,
+              Bolivia. En Madero Hotel & Suites, te ofrecemos un
+              <strong>servicio excepcional</strong>.
+            </p>
+          </div>
+
+          <!-- Sección Derecha - 3 Columnas de Información -->
+          <div class="footer-right">
+            <!-- Dirección -->
+            <div class="info-section">
+              <h3 class="info-title">Dirección</h3>
+              <div class="info-content">
+                <div class="contact-item">
+                  <ion-icon name="location-outline"></ion-icon>
+                  <address>
+                    Calle México Nro. 1822, Zona Central La Paz, Bolivia
+                  </address>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contacto -->
+            <div class="info-section">
+              <h3 class="info-title">Contacto</h3>
+              <div class="info-content">
+                <div class="contact-item">
+                  <ion-icon name="call-outline"></ion-icon>
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=73501495&text=Hola%2C%20necesito%20más%20información."
+                    target="_blank"
+                    class="contact-link"
+                    >+591 77220181</a
+                  >
+                </div>
+                <div class="contact-item">
+                  <ion-icon name="mail-outline"></ion-icon>
+                  <a
+                    href="mailto:reservas@maderosuites.com"
+                    class="contact-link"
+                  >
+                    reservas@maderosuites.com
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="info-section">
+              <h3 class="info-title">Redes Sociales</h3>
+              <div class="info-content">
+                <div class="social-item">
+                  <ion-icon name="logo-tiktok"></ion-icon>
+                  <a
+                    href="https://www.tiktok.com/@maderohotelsuites?_t=ZM-8wNg5LJcS3y&_r=1"
+                    class="social-link"
+                    target="_blank"
+                    >TikTok</a
+                  >
+                </div>
+                <div class="social-item">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                  <a
+                    href="https://www.facebook.com/MaderoHotelySuites"
+                    class="social-link"
+                    target="_blank"
+                    >Facebook</a
+                  >
+                </div>
+                <div class="social-item">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                  <a
+                    href="https://www.instagram.com/maderohotelysuites?igsh=OWMxcXZqNXUxYmU0"
+                    class="social-link"
+                    target="_blank"
+                    >Instagram</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Métodos de Pago -->
+            <div class="payment-section">
+              <h3 class="payment-title">Transacción confiable</h3>
+              <div class="payment-methods">
+                <img
+                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758297601/2b50fbe8-82a5-4481-9e71-7b6c5698431c.png"
+                  alt="Visa"
+                  class="payment-icon"
+                />
+                <img
+                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758297702/8566f63b-299b-42f0-bb0c-7c3f8824e1f2.png"
+                  alt="Maestro"
+                  class="payment-icon"
+                />
+                <img
+                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758297641/5428dd4a-4297-44ff-a472-a388f78259b7.png"
+                  alt="Mastercard"
+                  class="payment-icon"
+                />
+                <img
+                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758297630/eec29b3e-5a2e-4ac9-8410-add268be81a5.png"
+                  alt="American Express"
+                  class="payment-icon"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="container-footer">
+          <div class="copyright">
+            &copy; 2025 Madero
+            <div class="footer-links"><a href="">Hotel & Suites.</a></div>
+            Todos los derechos reservados.
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/assets/script/scriptNuevo.js"></script>
+    <script src="/assets/script/scriptSky.js"></script>
+  </body>
+</html>

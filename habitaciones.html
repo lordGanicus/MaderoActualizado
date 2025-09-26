@@ -32,7 +32,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-     <!--Iconos-->
+    <!--Iconos-->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -458,7 +458,7 @@
       </main>
     </section>
 
-    <!-- Modal Suite Matrimonial - Rediseñado -->
+    <!-- Modal Suite Matrimonial - Corregir // -->
     <div id="habInfo-modal-suite-matrimonial" class="habInfo-modal">
       <div class="habInfo-modal-content">
         <button class="habInfo-modal-close">&times;</button>
@@ -574,7 +574,7 @@
                   </div>
                 </td>
                 <td>
-                  <div class="habInfo-detail-grid-item" >
+                  <div class="habInfo-detail-grid-item">
                     <i class="fas fa-wifi" id="habInfo-icon-othercolor"></i>
                     <span>Conexión a Wi-Fi</span>
                   </div>
@@ -613,6 +613,837 @@
       </div>
     </div>
 
+    <!-- Modal Suite Familiar -->
+    <div id="habInfo-modal-suite-familiar" class="habInfo-modal">
+      <div class="habInfo-modal-content">
+        <button class="habInfo-modal-close">&times;</button>
+        <div class="habInfo-modal-body">
+          <div class="habInfo-modal-slider">
+            <div class="habInfo-swiper swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213361/SUITE_FAMILIAR8_uzanc1.jpg"
+                    alt="Suite Familiar"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213330/SUITE_FAMILIAR7_g9nnod.jpg"
+                    alt="Suite Familiar"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213353/SUITE_FAMILIAR9_jsqlw8.jpg"
+                    alt="Suite Familiar"
+                  />
+                </div>
+              </div>
+              <div class="habInfo-swiper-button-next"></div>
+              <div class="habInfo-swiper-button-prev"></div>
+            </div>
+          </div>
+          <div class="habInfo-modal-form">
+            <div class="habInfo-modal-logo">
+              <img
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213618/LOGO_NEGRO_HOTEL_MADERO_yvbyeq.png"
+                alt="Madero Hotel"
+              />
+            </div>
+            <form id="habInfo-form-suite-familiar">
+              <div class="habInfo-form-group">
+                <label for="habInfo-entrada-familiar">Entrada</label>
+                <input
+                  type="date"
+                  id="habInfo-entrada-familiar"
+                  class="habInfo-form-input"
+                  required
+                />
+              </div>
+              <div class="habInfo-form-group">
+                <label for="habInfo-salida-familiar">Salida</label>
+                <input
+                  type="date"
+                  id="habInfo-salida-familiar"
+                  class="habInfo-form-input"
+                  required
+                />
+              </div>
+              <div class="habInfo-form-group">
+                <label for="habInfo-cantidad-familiar">Cantidad</label>
+                <input
+                  type="number"
+                  id="habInfo-cantidad-familiar"
+                  class="habInfo-form-input"
+                  min="3"
+                  max="5"
+                  value="3"
+                  required
+                />
+              </div>
+              <button type="submit" class="habInfo-form-submit">
+                Consultar disponibilidad
+              </button>
+            </form>
+          </div>
+          <div class="habInfo-modal-details">
+            <table class="habInfo-detail-table">
+              <tr>
+                <th>Habitación:</th>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-user-friends"></i>
+                    <span>Huésped: 3 a 5</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-bed"></i>
+                    <span>Cama: dos plazas y media</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Servicios y comodidades:</th>
+                <td>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Cama matrimonial</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Dos camas individuales o sofá cama</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Calefacción regulable</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Kitchenette completa con microondas y frigobar</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span
+                      >Baño privado con ducha, agua caliente y amenities</span
+                    >
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Espacios amplios y funcionales</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Parqueo gratuito y seguro</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-wifi" id="habInfo-icon-othercolor"></i>
+                    <span>Conexión a Wi-Fi</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-tv" id="habInfo-icon-othercolor"></i>
+                    <span>TV cable</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-phone" id="habInfo-icon-othercolor"></i>
+                    <span>Telefonía</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-headset" id="habInfo-icon-othercolor"></i>
+                    <span>Asistencia 24 horas</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Entrada y Salida:</th>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Entrada: 12:00 PM</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Salida: 01:00 PM</span>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Business Simple -->
+    <div id="habInfo-modal-business-simple" class="habInfo-modal">
+      <div class="habInfo-modal-content">
+        <button class="habInfo-modal-close">&times;</button>
+        <div class="habInfo-modal-body">
+          <div class="habInfo-modal-slider">
+            <div class="habInfo-swiper swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213337/HAB_SIMPLE10_l57u9h.jpg"
+                    alt="Business Simple"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213343/HAB_SIMPLE5_eim90p.jpg"
+                    alt="Business Simple"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213335/HAB_SIMPLE_ubegx3.jpg"
+                    alt="Business Simple"
+                  />
+                </div>
+              </div>
+              <div class="habInfo-swiper-button-next"></div>
+              <div class="habInfo-swiper-button-prev"></div>
+            </div>
+          </div>
+          <div class="habInfo-modal-form">
+            <div class="habInfo-modal-logo">
+              <img
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213618/LOGO_NEGRO_HOTEL_MADERO_yvbyeq.png"
+                alt="Madero Hotel"
+              />
+            </div>
+            <form id="habInfo-form-business-simple">
+              <div class="habInfo-form-group">
+                <label for="habInfo-entrada-simple">Entrada</label>
+                <input
+                  type="date"
+                  id="habInfo-entrada-simple"
+                  class="habInfo-form-input"
+                  required
+                />
+              </div>
+              <div class="habInfo-form-group">
+                <label for="habInfo-salida-simple">Salida</label>
+                <input
+                  type="date"
+                  id="habInfo-salida-simple"
+                  class="habInfo-form-input"
+                  required
+                />
+              </div>
+              <div class="habInfo-form-group">
+                <label for="habInfo-cantidad-simple">Cantidad</label>
+                <input
+                  type="number"
+                  id="habInfo-cantidad-simple"
+                  class="habInfo-form-input"
+                  min="1"
+                  max="1"
+                  value="1"
+                  required
+                />
+              </div>
+              <button type="submit" class="habInfo-form-submit">
+                Consultar disponibilidad
+              </button>
+            </form>
+          </div>
+          <div class="habInfo-modal-details">
+            <table class="habInfo-detail-table">
+              <tr>
+                <th>Habitación:</th>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-user-friends"></i>
+                    <span>Huésped: 1</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-bed"></i>
+                    <span>Cama: dos plazas y media</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Servicios y comodidades:</th>
+                <td>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Cama individual con ropa de cama de calidad</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span
+                      >Baño privado con ducha, toallas y artículos de
+                      tocador</span
+                    >
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Escritorio ideal para trabajo remoto</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Calefacción regulable</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Caja fuerte para objetos personales</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Parqueo gratuito disponible para huéspedes</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-wifi" id="habInfo-icon-othercolor"></i>
+                    <span>Conexión a Wi-Fi</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-tv" id="habInfo-icon-othercolor"></i>
+                    <span>TV cable</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-phone" id="habInfo-icon-othercolor"></i>
+                    <span>Telefonía</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-headset" id="habInfo-icon-othercolor"></i>
+                    <span>Asistencia 24 horas</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Entorno limpio, seguro y tranquilo</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Entrada y Salida:</th>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Entrada: 12:00 PM</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Salida: 01:00 PM</span>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Business Matrimonial -->
+    <div id="habInfo-modal-business-matrimonial" class="habInfo-modal">
+      <div class="habInfo-modal-content">
+        <button class="habInfo-modal-close">&times;</button>
+        <div class="habInfo-modal-body">
+          <div class="habInfo-modal-slider">
+            <div class="habInfo-swiper swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213364/HAB_MATRIMONIAL4_mjhrrf.jpg"
+                    alt="Business Matrimonial"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213353/HAB_MATRIMONIAL_yi2qkw.jpg"
+                    alt="Business Matrimonial"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213329/HAB_MATRIMONIAL3_g5yl4e.jpg"
+                    alt="Business Matrimonial"
+                  />
+                </div>
+              </div>
+              <div class="habInfo-swiper-button-next"></div>
+              <div class="habInfo-swiper-button-prev"></div>
+            </div>
+          </div>
+          <div class="habInfo-modal-form">
+            <div class="habInfo-modal-logo">
+              <img
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213618/LOGO_NEGRO_HOTEL_MADERO_yvbyeq.png"
+                alt="Madero Hotel"
+              />
+            </div>
+            <form id="habInfo-form-business-matrimonial">
+              <div class="habInfo-form-group">
+                <label for="habInfo-entrada-matrimonial-business"
+                  >Entrada</label
+                >
+                <input
+                  type="date"
+                  id="habInfo-entrada-matrimonial-business"
+                  class="habInfo-form-input"
+                  required
+                />
+              </div>
+              <div class="habInfo-form-group">
+                <label for="habInfo-salida-matrimonial-business">Salida</label>
+                <input
+                  type="date"
+                  id="habInfo-salida-matrimonial-business"
+                  class="habInfo-form-input"
+                  required
+                />
+              </div>
+              <div class="habInfo-form-group">
+                <label for="habInfo-cantidad-matrimonial-business"
+                  >Cantidad</label
+                >
+                <input
+                  type="number"
+                  id="habInfo-cantidad-matrimonial-business"
+                  class="habInfo-form-input"
+                  min="1"
+                  max="2"
+                  value="2"
+                  required
+                />
+              </div>
+              <button type="submit" class="habInfo-form-submit">
+                Consultar disponibilidad
+              </button>
+            </form>
+          </div>
+          <div class="habInfo-modal-details">
+            <table class="habInfo-detail-table">
+              <tr>
+                <th>Habitación:</th>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-user-friends"></i>
+                    <span>Huésped: 2</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-bed"></i>
+                    <span>Cama: dos plazas y media</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Servicios y comodidades:</th>
+                <td>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span
+                      >Cama Queen Size con colchón confortable y ropa de cama
+                      premium</span
+                    >
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Calefacción regulable para mayor comodidad</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span
+                      >Baño privado completo con ducha, agua caliente y
+                      amenities</span
+                    >
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Caja fuerte para tus objetos personales</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Espacio amplio con escritorio, lámpara y silla</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span
+                      >Parqueo gratuito y seguro dentro del
+                      establecimiento</span
+                    >
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Servicio diario de limpieza incluido</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-wifi" id="habInfo-icon-othercolor"></i>
+                    <span>Conexión a Wi-Fi</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-tv" id="habInfo-icon-othercolor"></i>
+                    <span>TV cable</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-phone" id="habInfo-icon-othercolor"></i>
+                    <span>Telefonía</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-headset" id="habInfo-icon-othercolor"></i>
+                    <span>Asistencia 24 horas</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Entrada y Salida:</th>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Entrada: 12:00 PM</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Salida: 01:00 PM</span>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Business Twin -->
+    <div id="habInfo-modal-business-twin" class="habInfo-modal">
+      <div class="habInfo-modal-content">
+        <button class="habInfo-modal-close">&times;</button>
+        <div class="habInfo-modal-body">
+          <div class="habInfo-modal-slider">
+            <div class="habInfo-swiper swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213356/HabDoble_tuwljl.jpg"
+                    alt="Business Twin"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213331/HAB_DOBLE2_wwmjyu.jpg"
+                    alt="Business Twin"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213362/HAB_DOBLE_ldlq1w.jpg"
+                    alt="Business Twin"
+                  />
+                </div>
+              </div>
+              <div class="habInfo-swiper-button-next"></div>
+              <div class="habInfo-swiper-button-prev"></div>
+            </div>
+          </div>
+          <div class="habInfo-modal-form">
+            <div class="habInfo-modal-logo">
+              <img
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213618/LOGO_NEGRO_HOTEL_MADERO_yvbyeq.png"
+                alt="Madero Hotel"
+              />
+            </div>
+            <form id="habInfo-form-business-twin">
+              <div class="habInfo-form-group">
+                <label for="habInfo-entrada-twin">Entrada</label>
+                <input
+                  type="date"
+                  id="habInfo-entrada-twin"
+                  class="habInfo-form-input"
+                  required
+                />
+              </div>
+              <div class="habInfo-form-group">
+                <label for="habInfo-salida-twin">Salida</label>
+                <input
+                  type="date"
+                  id="habInfo-salida-twin"
+                  class="habInfo-form-input"
+                  required
+                />
+              </div>
+              <div class="habInfo-form-group">
+                <label for="habInfo-cantidad-twin">Cantidad</label>
+                <input
+                  type="number"
+                  id="habInfo-cantidad-twin"
+                  class="habInfo-form-input"
+                  min="1"
+                  max="2"
+                  value="2"
+                  required
+                />
+              </div>
+              <button type="submit" class="habInfo-form-submit">
+                Consultar disponibilidad
+              </button>
+            </form>
+          </div>
+          <div class="habInfo-modal-details">
+            <table class="habInfo-detail-table">
+              <tr>
+                <th>Habitación:</th>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-user-friends"></i>
+                    <span>Huésped: 2</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-bed"></i>
+                    <span>Cama: dos plazas y media</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Servicios y comodidades:</th>
+                <td>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Dos camas individuales (twin)</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Calefacción regulable para climas fríos</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span
+                      >Baño privado con ducha, toallas y amenities de
+                      cortesía</span
+                    >
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Escritorio de trabajo y armario espaciosos</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Servicio de limpieza diario incluido</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span
+                      >Parqueo gratuito, seguro y dentro del
+                      establecimiento</span
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-wifi" id="habInfo-icon-othercolor"></i>
+                    <span>Conexión a Wi-Fi</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-tv" id="habInfo-icon-othercolor"></i>
+                    <span>TV cable</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-phone" id="habInfo-icon-othercolor"></i>
+                    <span>Telefonía</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-headset" id="habInfo-icon-othercolor"></i>
+                    <span>Asistencia 24 horas</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Entrada y Salida:</th>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Entrada: 12:00 PM</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Salida: 01:00 PM</span>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Business Familiar -->
+    <div id="habInfo-modal-business-familiar" class="habInfo-modal">
+      <div class="habInfo-modal-content">
+        <button class="habInfo-modal-close">&times;</button>
+        <div class="habInfo-modal-body">
+          <div class="habInfo-modal-slider">
+            <div class="habInfo-swiper swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213363/HAB_FAMILIAR_jxmwlb.jpg"
+                    alt="Business Familiar"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213335/HabFamiliar_gbnlug.jpg"
+                    alt="Business Familiar"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213339/HAB_FAMILIAR3_ykghgt.jpg"
+                    alt="Business Familiar"
+                  />
+                </div>
+              </div>
+              <div class="habInfo-swiper-button-next"></div>
+              <div class="habInfo-swiper-button-prev"></div>
+            </div>
+          </div>
+          <div class="habInfo-modal-form">
+            <div class="habInfo-modal-logo">
+              <img
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213618/LOGO_NEGRO_HOTEL_MADERO_yvbyeq.png"
+                alt="Madero Hotel"
+              />
+            </div>
+            <form id="habInfo-form-business-familiar">
+              <div class="habInfo-form-group">
+                <label for="habInfo-entrada-familiar-business">Entrada</label>
+                <input
+                  type="date"
+                  id="habInfo-entrada-familiar-business"
+                  class="habInfo-form-input"
+                  required
+                />
+              </div>
+              <div class="habInfo-form-group">
+                <label for="habInfo-salida-familiar-business">Salida</label>
+                <input
+                  type="date"
+                  id="habInfo-salida-familiar-business"
+                  class="habInfo-form-input"
+                  required
+                />
+              </div>
+              <div class="habInfo-form-group">
+                <label for="habInfo-cantidad-familiar-business">Cantidad</label>
+                <input
+                  type="number"
+                  id="habInfo-cantidad-familiar-business"
+                  class="habInfo-form-input"
+                  min="1"
+                  max="2"
+                  value="2"
+                  required
+                />
+              </div>
+              <button type="submit" class="habInfo-form-submit">
+                Consultar disponibilidad
+              </button>
+            </form>
+          </div>
+          <div class="habInfo-modal-details">
+            <table class="habInfo-detail-table">
+              <tr>
+                <th>Habitación:</th>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-user-friends"></i>
+                    <span>Huésped: 2</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-bed"></i>
+                    <span>Cama: dos plazas y media</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Servicios y comodidades:</th>
+                <td>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>1 cama Queen Size + 1 cama individual</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span
+                      >Baño privado con box de vidrio, ducha y agua
+                      caliente</span
+                    >
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Calefacción centralizada regulable</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span>Caja fuerte para objetos personales</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-check"></i>
+                    <span
+                      >Espacio organizado y funcional para toda la familia</span
+                    >
+                  </div>
+                </td>
+                <td>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-wifi" id="habInfo-icon-othercolor"></i>
+                    <span>Conexión a Wi-Fi</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-tv" id="habInfo-icon-othercolor"></i>
+                    <span>TV cable</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-phone" id="habInfo-icon-othercolor"></i>
+                    <span>Telefonía</span>
+                  </div>
+                  <div class="habInfo-detail-grid-item">
+                    <i class="fas fa-headset" id="habInfo-icon-othercolor"></i>
+                    <span>Asistencia 24 horas</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Entrada y Salida:</th>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Entrada: 12:00 PM</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="habInfo-detail-item">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Salida: 01:00 PM</span>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--hab otro seccion-->
     <section class="habPort-box" id="hotelSection">
       <div class="habPort-group">
@@ -633,7 +1464,7 @@
       </div>
     </section>
     <!--Fotter-->
-        <footer class="footer">
+    <footer class="footer">
       <div class="footer-main">
         <div class="container-footer">
           <!-- Sección Izquierda - Logo y Brand -->
@@ -764,10 +1595,11 @@
       <!-- Footer Bottom -->
       <div class="footer-bottom">
         <div class="container-footer">
-          <p class="copyright">
-            &copy; 2025 Madero <div class="footer-links"> <a href="">Hotel & Suites.</a> </div> Todos los derechos reservados.
-          </p>
-          
+          <div class="copyright">
+            &copy; 2025 Madero
+            <div class="footer-links"><a href="">Hotel & Suites.</a></div>
+            Todos los derechos reservados.
+          </div>
         </div>
       </div>
     </footer>

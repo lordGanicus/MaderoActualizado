@@ -32,31 +32,23 @@
   --text-light: #cccccc;
   --text-white: #ffffff;
 
-  --gold: #e4b074;
-
-  --ff-poppins: "Poppins", sans-serif;
-  --ff-montserrat: "Montserrat", sans-serif;
-
-  --fs-1: calc(20px + 3.5vw);
-  --fs-2: calc(18px + 1.6vw);
-  --fs-3: calc(16px + 0.45vw);
-  --fs-4: 15px;
-  --fs-5: 14px;
-  --fs-6: 13px;
-  --fs-7: 12px;
-  --fs-8: 11px;
-
-  --fw-500: 500;
-  --fw-600: 600;
-  --fw-700: 700;
-  --fw-800: 800;
-
   --transition: 0.25s ease-in-out;
 
   --section-padding: 15px;
 
-  --radius-15: 15px;
-  --radius-25: 25px;
+  --skyhero-primary: #101a24;
+  --skyhero-gold: linear-gradient(
+    144deg,
+    rgba(81, 54, 23, 1) 0%,
+    rgba(185, 147, 32, 1) 100%
+  );
+  --skyhero-gold-text: linear-gradient(
+    0deg,
+    rgba(94, 64, 7, 1) 27%,
+    rgba(163, 109, 10, 1) 100%
+  );
+  --skyhero-white: #ffffff;
+  --skyhero-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 /*-----------------------------------*\
@@ -5898,6 +5890,10 @@ address {
 .promHero-background3 {
   background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758726261/PLATA2_z2v1tu.jpg") !important;
 }
+/************Restaurante urban center ****************/
+.promHero-background4 {
+  background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213644/URBAN-CENTER2_qdulya.jpg") !important;
+}
 .promHero-content {
   position: absolute;
   width: 100%;
@@ -7243,5 +7239,2570 @@ address {
 @media (min-width: 769px) and (max-width: 1024px) {
   .promVip-buttons {
     gap: 1.5rem;
+  }
+}
+/*************************Restaurante Cielo urbano****************************/
+/*******************Restaurante hero***************************/
+.background-sky {
+  font-family: "Eras Medium ITC", "Helvetica", sans-serif;
+  background-image: url(https://res.cloudinary.com/ddqoou1fq/image/upload/v1758811058/591a8eb9-300b-43b9-8867-663582e6bf95_c_fill_w_1920_h_1000_npc34q.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.skyhero-section {
+  font-family: "Eras Medium ITC", "Helvetica", sans-serif;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 7%;
+}
+
+/* Decorative background elements */
+.skyhero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="25" cy="75" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="25" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>')
+    repeat;
+  pointer-events: none;
+}
+
+/* Left content container */
+.skyhero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 45%;
+}
+
+.skyhero-title {
+  color: #101a24;
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+.skyhero-subtitle {
+  font-family: "Lexend Zetta", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(
+    0deg,
+    rgba(94, 64, 7, 1) 19%,
+    rgba(191, 128, 11, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+.skyhero-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(
+    144deg,
+    rgba(81, 54, 23, 1) 0%,
+    rgba(185, 147, 32, 1) 100%
+  );
+  color: var(--text-white);
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+.skyhero-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(184, 147, 43, 0.4);
+}
+
+/* Social icons */
+.skyhero-social {
+  position: absolute;
+  left: 15%;
+  bottom: 15%;
+  display: flex;
+  gap: 15px;
+  z-index: 10;
+}
+
+.skyhero-social-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: var(--text-white);
+  border: 2px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #101a24;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-100px);
+  opacity: 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.skyhero-social-icon:hover {
+  background: linear-gradient(
+    144deg,
+    rgba(81, 54, 23, 1) 0%,
+    rgba(185, 147, 32, 1) 100%
+  );
+  color: var(--text-white);
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(184, 147, 43, 0.3);
+}
+
+/* Right side images */
+.skyhero-images {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  height: 85%;
+  z-index: 5;
+}
+
+.skyhero-main-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  transform: scale(0) rotate(180deg);
+  opacity: 0;
+}
+
+.skyhero-dish-image {
+  position: absolute;
+  top: 62%;
+  left: -40%;
+  transform: translateY(-50%) scale(0) rotate(-180deg);
+  width: 80%;
+  height: 100%;
+  opacity: 0;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.3));
+  z-index: 6;
+}
+
+/* Card assembly animations */
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cardAssembly {
+  0% {
+    transform: scale(0) rotate(180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0.5) rotate(90deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes dishAssembly {
+  0% {
+    transform: translateY(-50%) scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-50%) scale(0.7) rotate(-90deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-50%) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes cardDisassembly {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2) rotate(45deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes dishDisassembly {
+  0% {
+    transform: translateY(-50%) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-50%) scale(1.3) rotate(-45deg);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-50%) scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes slideToLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+}
+
+/* Animation states */
+.animate-in .skyhero-title {
+  animation: slideFromLeft 0.8s ease-out 0.2s forwards;
+}
+
+.animate-in .skyhero-subtitle {
+  animation: slideFromLeft 0.8s ease-out 0.4s forwards;
+}
+
+.animate-in .skyhero-button {
+  animation: slideFromLeft 0.8s ease-out 0.6s forwards;
+}
+
+.animate-in .skyhero-social-icon:nth-child(1) {
+  animation: slideFromLeft 0.8s ease-out 0.8s forwards;
+}
+
+.animate-in .skyhero-social-icon:nth-child(2) {
+  animation: slideFromLeft 0.8s ease-out 1s forwards;
+}
+
+.animate-in .skyhero-social-icon:nth-child(3) {
+  animation: slideFromLeft 0.8s ease-out 1.2s forwards;
+}
+
+.animate-in .skyhero-tripadvisor {
+  animation: slideFromLeft 0.8s ease-out 1.4s forwards;
+}
+
+.animate-in .skyhero-main-image {
+  animation: cardAssembly 1.2s ease-out 0.5s forwards;
+}
+
+.animate-in .skyhero-dish-image {
+  animation: dishAssembly 1.2s ease-out 1s forwards;
+}
+
+/* Animation out states */
+.animate-out .skyhero-title {
+  animation: slideToLeft 0.6s ease-in forwards;
+}
+
+.animate-out .skyhero-subtitle {
+  animation: slideToLeft 0.6s ease-in 0.1s forwards;
+}
+
+.animate-out .skyhero-button {
+  animation: slideToLeft 0.6s ease-in 0.2s forwards;
+}
+
+.animate-out .skyhero-social-icon {
+  animation: slideToLeft 0.6s ease-in forwards;
+}
+
+.animate-out .skyhero-tripadvisor {
+  animation: slideToLeft 0.6s ease-in 0.1s forwards;
+}
+
+.animate-out .skyhero-main-image {
+  animation: cardDisassembly 0.8s ease-in forwards;
+}
+
+.animate-out .skyhero-dish-image {
+  animation: dishDisassembly 0.8s ease-in 0.2s forwards;
+}
+@media (min-width: 1452px) {
+  .skyhero-social {
+    left: 15%;
+    bottom: 10% !important;
+  }
+}
+@media (max-width: 1451px) {
+  .skyhero-title {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+  .skyhero-subtitle {
+    font-size: 1rem;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+  }
+  .skyhero-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.8rem;
+  }
+  .skyhero-social-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+/* Responsive design */
+@media (max-width: 1200px) {
+  .skyhero-title {
+    font-size: 3rem;
+  }
+  .skyhero-dish-image {
+    left: -20%;
+    width: 75%;
+  }
+}
+
+@media (max-width: 992px) {
+  .skyhero-section {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 5%;
+  }
+
+  .skyhero-content {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .skyhero-images {
+    position: relative;
+    width: 80%;
+    height: 50vh;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .skyhero-dish-image {
+    left: -10%;
+    width: 60%;
+  }
+
+  .skyhero-social {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .skyhero-tripadvisor {
+    position: relative;
+    left: auto;
+    bottom: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .skyhero-title {
+    font-size: 2.5rem;
+  }
+
+  .skyhero-subtitle {
+    font-size: 1rem;
+  }
+
+  .skyhero-button {
+    font-size: 0.9rem;
+    padding: 12px 25px;
+  }
+
+  .skyhero-images {
+    width: 90%;
+    height: 40vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .skyhero-title {
+    font-size: 2rem;
+  }
+
+  .skyhero-images {
+    width: 100%;
+  }
+
+  .skyhero-dish-image {
+    width: 70%;
+    left: -5%;
+  }
+}
+
+/* Demo content for scroll effect */
+.skyhero-afterhero {
+  position: relative;
+  width: 100%;
+  height: 35vh;
+  background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758216298/BRUNCH-19_r6h1x0.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Efecto parallax */
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+
+  /* Estado inicial oculto */
+  opacity: 0;
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.skyhero-afterhero.visible {
+  opacity: 1;
+  /*transform: scale(1);*/ /* vuelve a tamaño normal */
+}
+/****************************Sky Menu -- Menu************************************/
+/* Sección principal */
+.skyMenu-section {
+  font-family: "Eras Medium ITC", "Helvetica", sans-serif;
+  line-height: 1.6;
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0px;
+  overflow: visible;
+  color: #fff;
+}
+
+/* Fondo con overlay */
+.skyMenu-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.skyMenu-background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #b79113;
+  opacity: 0.1;
+  z-index: 2;
+}
+/*
+
+/* Fondo para la segunda sección */
+.sportBar-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+}
+
+.sportBar-background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1a3a5f;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* Contenedor principal */
+.skyMenu-container {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+}
+
+.sportBar-container {
+  display: flex;
+  /*max-width: 1200px;*/
+  width: 100%;
+  position: relative;
+}
+
+/* Tarjeta de información - MÁS ANCHA */
+.skyMenu-card {
+  background-color: #333333;
+  padding: 40px;
+  border-radius: 10px;
+  width: 70%; /* Aumentado de 60% */
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.skyMenu-card.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Tarjeta de información para Sport Bar (invertida) */
+.sportBar-card {
+  background-color: #1a1a1a;
+  padding: 40px;
+  border-radius: 1px;
+  width: 73%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin-left: auto; /* Para alinear a la derecha */
+}
+
+.sportBar-card.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.skyMenu-title {
+  font-family: "Eras Medium ITC", "Helvetica", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1px;
+  position: relative;
+}
+
+.skyMenu-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40%;
+  height: 3px;
+  background-color: #b79113;
+}
+
+.sportBar-title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.sportBar-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #b79113;
+}
+
+.sportBar-tagline {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  color: #ccc;
+  font-style: italic;
+}
+
+.skyMenu-location {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  background: linear-gradient(
+    0deg,
+    rgb(124, 86, 14) 19%,
+    rgba(191, 128, 11, 1) 100%
+  );
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skyMenu-location i {
+  color: #b79113;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.skyMenu-description {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.sportBar-description {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.skyMenu-options-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.skyMenu-options-title i {
+  color: #b79113;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.skyMenu-options-list {
+  list-style: none;
+  margin-bottom: 30px;
+  position: relative;
+  left: 5%;
+}
+
+.skyMenu-options-list li {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.6s ease;
+}
+
+.skyMenu-options-list li.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skyMenu-options-list i {
+  color: #b79113;
+  margin-right: 10px;
+  font-size: 0.9rem;
+}
+
+.skyMenu-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.sportBar-button-container {
+  margin-top: 30px;
+}
+
+.skyMenu-button {
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  border: none;
+}
+
+.skyMenu-button-white {
+  background-color: #fff;
+  color: #333;
+}
+
+.skyMenu-button-white:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.skyMenu-button-gold {
+  background: linear-gradient(to right, #b79113, #d4af37);
+  color: #fff;
+}
+
+.skyMenu-button-gold:hover {
+  background: linear-gradient(to right, #a58210, #c19c30);
+  transform: translateY(-2px);
+}
+
+.sportBar-button {
+  background: linear-gradient(
+    144deg,
+    rgba(81, 54, 23, 1) 0%,
+    rgba(185, 147, 32, 1) 100%
+  );
+  color: var(--text-white);
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  border: none;
+}
+
+.sportBar-button:hover {
+  background: linear-gradient(to right, #15304d, #244672);
+  transform: translateY(-2px);
+}
+
+.skyMenu-button img {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+/* Imágenes - MÁS GRANDES y mejor posicionadas */
+.skyMenu-large-image {
+  position: absolute;
+  right: -10%; /* Ajustado para que invada más el card */
+  top: 50%;
+  transform: translateY(-50%) translateX(100px) scale(1.1); /* Aumentado el tamaño */
+  width: 55%; /* Aumentado de 60% */
+  height: 120%;
+  /*max-width: 900px; */
+  z-index: 3;
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+}
+
+.skyMenu-large-image.visible {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0) scale(1.1);
+}
+
+.skyMenu-small-image {
+  position: absolute;
+  right: -15%;
+  top: -20%;
+  width: 45%;
+  max-width: 450px;
+  z-index: 4;
+  opacity: 0;
+  transform: translateY(-50px) rotate(-10deg) scale(1.1); /* Aumentado el tamaño */
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+}
+
+.skyMenu-small-image.visible {
+  opacity: 1;
+  transform: translateY(0) rotate(0) scale(1.1);
+}
+
+/* Imágenes para Sport Bar (invertidas) */
+.sportBar-large-image {
+  position: absolute;
+  left: 12%; /* Invertido: ahora a la izquierda */
+  top: 50%;
+  transform: translateY(-50%) translateX(-100px) scale(1.1) rotate(-5deg); /* Añadido giro inicial */
+  width: 25%;
+  /*max-width: 650px;*/
+  height: 150%;
+  z-index: 3;
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+.sportBar-large-image.visible {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0) scale(1.1) rotate(0deg); /* Giro final */
+}
+
+.sportBar-small-image {
+  position: absolute;
+  left: 5%; /* Invertido: ahora a la izquierda */
+  top: 15%;
+  width: 45%;
+  max-width: 350px;
+  z-index: 4;
+  opacity: 0;
+  transform: translateY(-50px) rotate(10deg) scale(1.1); /* Giro invertido */
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+}
+
+.sportBar-small-image.visible {
+  opacity: 1;
+  transform: translateY(0) rotate(0) scale(1.1);
+}
+@media (min-width: 1024px) {
+  /* Tarjeta de información - MÁS ANCHA */
+  .skyMenu-card {
+    padding: 40px;
+    padding-right: 170px;
+  }
+  /* Tarjeta de información para Sport Bar (invertida) */
+  .sportBar-card {
+    padding-right: 80px;
+    padding-left: 240px;
+  }
+  .sportBar-subtitle,
+  .sportBar-tagline,
+  .sportBar-description,
+  .sportBar-button-container {
+    position: relative;
+    left: 5%;
+    width: 80%;
+  }
+}
+/* Responsive */
+@media (max-width: 992px) {
+  .skyMenu-card,
+  .sportBar-card {
+    width: 75%;
+  }
+
+  .skyMenu-large-image,
+  .sportBar-large-image {
+    width: 55%;
+    right: -5%;
+  }
+
+  .sportBar-large-image {
+    left: -5%;
+    right: auto;
+  }
+
+  .skyMenu-small-image,
+  .sportBar-small-image {
+    width: 40%;
+    right: 5%;
+  }
+
+  .sportBar-small-image {
+    left: 5%;
+    right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .skyMenu-section,
+  .sportBar-section {
+    padding: 40px 15px;
+  }
+
+  .skyMenu-container,
+  .sportBar-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skyMenu-card,
+  .sportBar-card {
+    width: 100%;
+    padding: 30px;
+    transform: translateY(50px);
+    margin-left: 0;
+  }
+
+  .skyMenu-card.visible,
+  .sportBar-card.visible {
+    transform: translateY(0);
+  }
+
+  .skyMenu-large-image,
+  .sportBar-large-image {
+    position: relative;
+    width: 85%;
+    max-width: 400px;
+    margin-top: 30px;
+    transform: translateY(50px) scale(1);
+    top: auto;
+    right: auto;
+    left: auto;
+  }
+
+  .skyMenu-large-image.visible,
+  .sportBar-large-image.visible {
+    transform: translateY(0) scale(1);
+  }
+
+  .skyMenu-small-image,
+  .sportBar-small-image {
+    position: relative;
+    width: 65%;
+    max-width: 250px;
+    margin-top: 20px;
+    top: auto;
+    right: auto;
+    left: auto;
+    transform: translateY(50px) rotate(-10deg) scale(1);
+  }
+
+  .sportBar-small-image {
+    transform: translateY(50px) rotate(10deg) scale(1);
+  }
+
+  .skyMenu-small-image.visible,
+  .sportBar-small-image.visible {
+    transform: translateY(0) rotate(0) scale(1);
+  }
+
+  .skyMenu-title,
+  .sportBar-title {
+    font-size: 2rem;
+  }
+
+  .skyMenu-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .skyMenu-card,
+  .sportBar-card {
+    padding: 20px;
+  }
+
+  .skyMenu-title,
+  .sportBar-title {
+    font-size: 1.8rem;
+  }
+
+  .skyMenu-button,
+  .sportBar-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .skyMenu-large-image,
+  .sportBar-large-image {
+    width: 95%;
+  }
+
+  .skyMenu-small-image,
+  .sportBar-small-image {
+    width: 75%;
+  }
+}
+
+/**************************Menu a la carta --- Slider********************************/
+.skyCarta-section {
+  width: 100%;
+  min-height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 60px 0px 0px 0px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skyCarta-container {
+  max-width: 1900px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skyCarta-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.skyCarta-title h1 {
+  font-family: "Eras Medium ITC", Helvetica, sans-serif;
+  font-size: 42px;
+  font-weight: 400;
+  background: linear-gradient(180deg, #925c05 0%, #2c1c01 6%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+
+.skyCarta-subtitle {
+  font-family: "Lexend Zetta", Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(0deg, #5e4007 19%, #bf800b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+.skyCarta-slider-container {
+  position: relative;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 100px;
+}
+
+.skyCarta-slider {
+  overflow: visible; /******aqui hice el cambio*******/
+  border-radius: 20px;
+  position: relative;
+}
+
+.skyCarta-slides {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skyCarta-slide {
+  min-width: 33.333%;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  height: 500px;
+}
+
+.skyCarta-card {
+  background: #ffffff;
+  border-radius: 20px;
+  /*overflow: hidden;*/
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  height: 100%;
+  position: relative;
+}
+
+.skyCarta-card.center {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.skyCarta-card-image {
+  width: 60%;
+  height: 70%;
+  /*object-fit: cover;*/
+  transition: transform 0.4s ease;
+  border-radius: 15px 15px 0 0;
+  position: relative;
+  left: 20%;
+  overflow: visible;
+}
+
+.skyCarta-card-image:hover {
+  animation: rotateImage 4.5s linear infinite;
+}
+
+@keyframes rotateImage {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.skyCarta-card-content {
+  padding: 25px;
+  text-align: center;
+}
+
+.skyCarta-card-title {
+  font-family: "Lexend Zetta", Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  background: linear-gradient(0deg, #5e4007 19%, #bf800b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.skyCarta-card-description {
+  font-family: "Eras Medium ITC", Helvetica, sans-serif;
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.skyCarta-card-category {
+  font-family: "Eras Medium ITC", Helvetica, sans-serif;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+
+.skyCarta-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(155deg, #0b0702 0%, #525050 100%);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skyCarta-nav-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.skyCarta-prev {
+  left: 20px;
+}
+
+.skyCarta-next {
+  right: 20px;
+}
+
+.skyCarta-reservation-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 60px auto;
+  padding: 15px 40px;
+  background: linear-gradient(155deg, #0b0702 0%, #525050 100%);
+  color: white;
+  border: none;
+  border-radius: 2px;
+  font-family: "Inter", Helvetica, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  max-width: 40%;
+}
+
+.skyCarta-reservation-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+.skyCarta-footer {
+  background: rgba(48, 41, 35, 0.9);
+  border-radius: 1px;
+  padding: 40px 180px;
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.skyCarta-footer-text {
+  flex: 1;
+  font-family: "Eras Medium ITC", Helvetica, sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  line-height: 1.6;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.skyCarta-footer-logo {
+  flex-shrink: 0;
+}
+
+.skyCarta-footer-logo img {
+  width: 250px;
+  height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .skyCarta-slider-container {
+    padding: 0 80px;
+  }
+
+  .skyCarta-title h1 {
+    font-size: 36px;
+  }
+
+  .skyCarta-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .skyCarta-section {
+    padding: 40px 15px;
+  }
+
+  .skyCarta-slider-container {
+    padding: 0 60px;
+  }
+
+  .skyCarta-slide {
+    flex: 0 0 33.333%; /* Show 2 slides on tablet */
+  }
+
+  .skyCarta-title h1 {
+    font-size: 28px;
+  }
+
+  .skyCarta-subtitle {
+    font-size: 12px;
+  }
+
+  .skyCarta-card-image {
+    height: 220px;
+  }
+
+  .skyCarta-footer-text {
+    font-size: 18px;
+  }
+
+  .skyCarta-footer-logo img {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skyCarta-slider-container {
+    padding: 0 40px;
+  }
+
+  .skyCarta-slide {
+    flex: 0 0 66.666%; /* Show 1.5 slides on mobile */
+  }
+
+  .skyCarta-title h1 {
+    font-size: 24px;
+  }
+
+  .skyCarta-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .skyCarta-prev {
+    left: 10px;
+  }
+
+  .skyCarta-next {
+    right: 10px;
+  }
+
+  .skyCarta-card-image {
+    height: 180px;
+  }
+
+  .skyCarta-card-content {
+    padding: 20px;
+  }
+
+  .skyCarta-reservation-btn {
+    padding: 12px 30px;
+    font-size: 14px;
+    gap: 10px;
+  }
+}
+
+.skyCarta-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.skyCarta-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(94, 64, 7, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.skyCarta-dot.active {
+  background: #5e4007;
+  transform: scale(1.2);
+}
+
+/*****************************Menu Restobar -- modal -- frame*********************/
+/* Hero Section */
+.skyResto-hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  min-height: 500px;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+    url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758216257/CAFES_pbxceq.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.skyResto-hero-title {
+  font-family: "Lexend", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #ffffff;
+  font-weight: 400;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.8s ease-out 0.3s forwards;
+}
+
+.skyResto-hero-subtitle {
+  font-family: "Lexend", sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 2s ease-out 0.6s forwards;
+}
+
+.skyResto-hero-btn {
+  padding: 15px 40px;
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-family: "Outfit", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 2.2s ease-out 0.9s forwards;
+}
+
+.skyResto-hero-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Main Content Section */
+.skyResto-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* Left Menu Section */
+.skyResto-menu {
+  background: #333333;
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.skyResto-menu-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.skyResto-menu-location {
+  font-family: "Lexend", sans-serif;
+  font-size: 0.8rem;
+  background: linear-gradient(45deg, #bf800b, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  margin-bottom: 15px;
+}
+
+.skyResto-menu-title {
+  font-family: "Eras Medium ITC", "Eras Medium ITC-Regular", Helvetica;
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.skyResto-menu-divider {
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #bf800b, transparent);
+  margin: 0 auto 30px;
+}
+
+.skyResto-menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.skyResto-menu-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.skyResto-menu-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  position: relative;
+  left: 15%;
+}
+
+.skyResto-menu-card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 2px solid #a67813;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.skyResto-menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(166, 120, 19, 0.3);
+}
+
+.skyResto-menu-card-header {
+  padding: 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skyResto-menu-card-title {
+  font-family: "Eras Medium ITC", "Eras Medium ITC-Regular", Helvetica;
+  font-size: 1.8rem;
+  color: #000000;
+  font-weight: 300;
+  padding-left: 40px;
+}
+
+.skyResto-menu-card-icon {
+  color: #a67813;
+  transition: transform 0.3s ease;
+}
+
+.skyResto-menu-card.active .skyResto-menu-card-icon {
+  transform: rotate(180deg);
+}
+
+.skyResto-menu-card-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  background: #f9f9f9;
+}
+
+.skyResto-menu-card.active .skyResto-menu-card-content {
+  max-height: 300px;
+  padding: 20px;
+}
+
+.skyResto-menu-card-list {
+  list-style: none;
+}
+
+.skyResto-menu-card-list li {
+  color: #333;
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.skyResto-menu-card-list li:before {
+  content: "•";
+  color: #a67813;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.skyResto-menu-footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.skyResto-menu-divider-bottom {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #bf800b, transparent);
+  margin: 20px 0;
+}
+
+.skyResto-menu-schedule {
+  font-family: "Lexend", sans-serif;
+  font-size: 0.9rem;
+  color: #ffffff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+}
+
+.skyResto-menu-btn {
+  background: #084774;
+  color: #ffffff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 6px;
+  font-family: "Lexend", sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  display: inline;
+}
+
+.skyResto-menu-btn:hover {
+  background: #0a5a8a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(8, 71, 116, 0.4);
+}
+
+/* Right Facebook Section */
+.skyResto-facebook {
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.skyResto-facebook-header {
+  background: linear-gradient(135deg, #2c3e50, #4a6491);
+  color: #ffffff;
+  padding: 25px;
+  text-align: center;
+}
+
+.skyResto-facebook-title {
+  font-family: "Lexend", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.skyResto-facebook-subtitle {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.skyResto-facebook-content {
+  height: 600px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.skyResto-facebook-frame {
+  /*width: 100%;*/
+  height: 100%;
+  border: none;
+  overflow: hidden;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Modal Styles */
+.skyResto-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skyResto-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.skyResto-modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  transform: scale(0.5);
+  transition: transform 0.3s ease;
+}
+
+.skyResto-modal.active .skyResto-modal-content {
+  transform: scale(1);
+}
+
+.skyResto-slider {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+}
+
+.skyResto-slider-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.skyResto-slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.skyResto-slide {
+  min-width: 100%;
+  height: 500px;
+}
+
+.skyResto-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.skyResto-slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.skyResto-slider-nav:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.skyResto-slider-nav.prev {
+  left: 10px;
+}
+
+.skyResto-slider-nav.next {
+  right: 10px;
+}
+
+.skyResto-modal-close {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.skyResto-modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Intersection Observer Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes staggerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skyResto-main {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 15px;
+  }
+
+  .skyResto-hero {
+    height: 60vh;
+    min-height: 400px;
+    background-attachment: scroll;
+  }
+
+  .skyResto-menu {
+    padding: 30px 20px;
+  }
+
+  .skyResto-menu-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .skyResto-menu-item img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .skyResto-facebook-content {
+    height: 500px;
+  }
+
+  .skyResto-slide {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skyResto-hero {
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .skyResto-menu {
+    padding: 20px 15px;
+  }
+
+  .skyResto-menu-title {
+    font-size: 2rem;
+  }
+
+  .skyResto-slide {
+    height: 250px;
+  }
+}
+
+/* Visibility classes for intersection observer */
+.skyResto-visible {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.skyResto-visible-left {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.skyResto-visible-right {
+  animation: slideInRight 1s ease-out forwards;
+}
+
+.skyResto-stagger {
+  animation: staggerFadeIn 0.8s ease-out forwards;
+}
+/*****************************Last urban center************************************/
+/* Estilos para la sección SkyLast */
+.skyLast-container {
+  width: 100%;
+  height: 40vh; /* 40% del alto de la ventana */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4d3d30;
+}
+
+/* Efecto de fondo animado */
+.skyLast-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758216250/URBAN-SKY3_m92iwu.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.2) rotate(5deg);
+  filter: brightness(0.7) sepia(0.3) hue-rotate(5deg);
+  transition: all 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Efecto de superposición con gradiente */
+.skyLast-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(77, 61, 48, 0.384) 0%,
+    rgba(51, 51, 51, 0.24) 50%,
+    rgba(255, 247, 238, 0.3) 100%
+  );
+  opacity: 0.1;
+  transition: opacity 1.5s ease 0.5s;
+  z-index: 1;
+}
+
+/* Estados activos para la animación */
+.skyLast-container.active .skyLast-background {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  filter: brightness(0.9) sepia(0) hue-rotate(0deg);
+}
+
+.skyLast-container.active .skyLast-overlay {
+  opacity: 1;
+}
+
+/* Efecto de partículas sutiles */
+.skyLast-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.skyLast-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  opacity: 0;
+  animation: float 5s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100px) translateX(20px);
+    opacity: 0;
+  }
+}
+
+/* Media Queries para responsividad */
+/* Tablets */
+@media (max-width: 1024px) {
+  .skyLast-container {
+    height: 45vh; /* Un poco más alto en tablets */
+  }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+  .skyLast-container {
+    height: 50vh; /* Más alto en móviles para mejor visualización */
+  }
+
+  .skyLast-background {
+    transform: scale(1.1) rotate(3deg);
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .skyLast-container {
+    height: 55vh;
+  }
+}
+/**************************Urban center  menu info*******************************/
+/* First Section - Card with images */
+.centerInfo-section {
+  font-family: "Eras Medium ITC", "Helvetica", sans-serif;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  overflow: hidden;
+}
+
+.centerInfo-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213639/URBAN-CENTER_ba9p31.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.centerInfo-background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 2;
+}
+
+.centerInfo-container {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+.centerInfo-card {
+  background-color: #333333;
+  padding: 40px;
+  border-radius: 10px;
+  width: 70%;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.centerInfo-card.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.centerInfo-title {
+  font-family: "Eras Medium ITC", "Helvetica", sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  position: relative;
+  color: #fff;
+}
+
+.centerInfo-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40%;
+  height: 3px;
+  background-color: #b79113;
+}
+
+.centerInfo-location {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  color: #b79113;
+  font-size: 0.9rem;
+}
+
+.centerInfo-location i {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.centerInfo-description {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.centerInfo-options-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.centerInfo-options-title i {
+  color: #b79113;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.centerInfo-options-title h2 {
+  font-family: "Lexend Zetta", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.centerInfo-options-list {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.centerInfo-options-list li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.6s ease;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.centerInfo-options-list li.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.centerInfo-options-list i {
+  color: #b79113;
+  margin-right: 10px;
+  font-size: 0.8rem;
+}
+
+.centerInfo-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.centerInfo-button {
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  border: none;
+  text-decoration: none;
+}
+
+.centerInfo-button-white {
+  background-color: #fff;
+  color: #333;
+}
+
+.centerInfo-button-white:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.centerInfo-button-gold {
+  background: linear-gradient(to right, #b79113, #d4af37);
+  color: #fff;
+}
+
+.centerInfo-button-gold:hover {
+  background: linear-gradient(to right, #a58210, #c19c30);
+  transform: translateY(-2px);
+}
+
+.centerInfo-button img {
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+}
+
+/* Images */
+.centerInfo-large-image {
+  position: absolute;
+  right: -10%;
+  top: 50%;
+  transform: translateY(-50%) translateX(100px) scale(1.1);
+  width: 45%;
+  height: auto;
+  z-index: 4;
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+  border-radius: 10px;
+}
+
+.centerInfo-large-image.visible {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0) scale(1.1);
+}
+
+.centerInfo-small-image {
+  position: absolute;
+  right: -15%;
+  bottom: -10%;
+  width: 35%;
+  z-index: 5;
+  opacity: 0;
+  transform: translateY(50px) rotate(-5deg) scale(1.1);
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+  border-radius: 10px;
+}
+
+.centerInfo-small-image.visible {
+  opacity: 1;
+  transform: translateY(0) rotate(0) scale(1.1);
+}
+
+/* Second Section - Full width card with tilted image */
+.centerInfo-fullwidth-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 20px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.centerInfo-fullwidth-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.centerInfo-tilted-image-container {
+  position: relative;
+  width: 60%;
+  height: 500px;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 1s ease;
+}
+
+.centerInfo-tilted-image-container.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.centerInfo-tilted-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  transform: rotate(-3deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.centerInfo-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 6;
+}
+
+.centerInfo-search-icon:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.centerInfo-content {
+  width: 40%;
+  padding-left: 60px;
+  color: #333;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 1s ease 0.3s;
+}
+
+.centerInfo-content.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.centerInfo-main-title {
+  font-family: "Eras Medium ITC", "Helvetica", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.centerInfo-subtitle {
+  font-family: "Lexend Zetta", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #b79113;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.centerInfo-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.centerInfo-special-button {
+  background: linear-gradient(
+    144deg,
+    rgba(81, 54, 23, 1) 0%,
+    rgba(185, 147, 32, 1) 100%
+  );
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  border: none;
+  text-decoration: none;
+}
+
+.centerInfo-special-button:hover {
+  background: linear-gradient(
+    144deg,
+    rgba(71, 44, 13, 1) 0%,
+    rgba(165, 127, 22, 1) 100%
+  );
+  transform: translateY(-2px);
+}
+
+.centerInfo-special-button i {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+/* Modal styles */
+.centerInfo-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.centerInfo-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  margin: 5% auto;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.centerInfo-slider {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.centerInfo-slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.centerInfo-slide.active {
+  display: block;
+}
+
+.centerInfo-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.centerInfo-prev,
+.centerInfo-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.centerInfo-prev {
+  left: 0;
+}
+
+.centerInfo-next {
+  right: 0;
+}
+
+.centerInfo-prev:hover,
+.centerInfo-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.centerInfo-close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.centerInfo-close:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.centerInfo-dots {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #f5f5f5;
+}
+
+.centerInfo-dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.centerInfo-dot.active,
+.centerInfo-dot:hover {
+  background-color: #b79113;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .centerInfo-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .centerInfo-card {
+    width: 90%;
+    margin-bottom: 30px;
+  }
+
+  .centerInfo-large-image,
+  .centerInfo-small-image {
+    position: relative;
+    right: 0;
+    transform: none;
+    width: 80%;
+    max-width: 400px;
+    margin: 10px auto;
+    display: block;
+  }
+
+  .centerInfo-fullwidth-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .centerInfo-tilted-image-container {
+    width: 90%;
+    margin-bottom: 30px;
+  }
+
+  .centerInfo-content {
+    width: 90%;
+    padding-left: 0;
+  }
+
+  .centerInfo-main-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .centerInfo-section {
+    min-height: auto;
+    padding: 40px 15px;
+  }
+
+  .centerInfo-card {
+    width: 100%;
+    padding: 30px 25px;
+  }
+
+  .centerInfo-title {
+    font-size: 1.8rem;
+  }
+
+  .centerInfo-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .centerInfo-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .centerInfo-fullwidth-section {
+    padding: 60px 15px;
+  }
+
+  .centerInfo-tilted-image-container {
+    height: 300px;
+  }
+
+  .centerInfo-content {
+    padding-left: 0;
+  }
+
+  .centerInfo-main-title {
+    font-size: 1.8rem;
+  }
+
+  .centerInfo-modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
+
+  .centerInfo-slider {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .centerInfo-title {
+    font-size: 1.5rem;
+  }
+
+  .centerInfo-main-title {
+    font-size: 1.5rem;
+  }
+
+  .centerInfo-text {
+    font-size: 1rem;
+  }
+
+  .centerInfo-button {
+    padding: 10px 15px;
+    font-size: 0.8rem;
+  }
+
+  .centerInfo-special-button {
+    padding: 12px 20px;
+    font-size: 0.9rem;
   }
 }

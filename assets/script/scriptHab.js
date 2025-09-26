@@ -86,8 +86,8 @@ document.querySelectorAll(".habInfo-button[data-modal]").forEach((button) => {
 
     if (modal) {
       modal.style.display = "block";
-
-      // Inicializar Swiper para el slider de imágenes
+      /*EL primer*/
+      //Inicializar Swiper para el slider de imágenes
       new Swiper(".habInfo-swiper", {
         loop: true,
         navigation: {

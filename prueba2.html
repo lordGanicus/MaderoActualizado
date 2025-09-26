@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Plan Luna de Miel - Paquete V.I.P</title>
+    <title>Urban Center Sport Bar</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Eras+Medium+ITC:wght@400&display=swap"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <style>
       * {
@@ -15,148 +15,385 @@
         box-sizing: border-box;
       }
 
-      .promVip-section {
+      body {
+        font-family: "Eras Medium ITC", "Helvetica", sans-serif;
+        line-height: 1.6;
+      }
+
+      /* Sección principal */
+      .centerInfo-section {
         position: relative;
-        width: 100%;
-        min-height: 70vh;
-        height: auto;
+        min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
-        background: #000;
-        padding: 3rem 0;
+        padding: 60px 20px;
+        overflow: visible;
+        color: #fff;
       }
 
-      .promVip-background {
+      /* Fondo con overlay */
+      .centerInfo-background {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758208689/3eb5ee62-c7be-4e13-bcc5-6caf5a23f9ae.png");
+        background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213639/URBAN-CENTER_ba9p31.jpg");
         background-size: cover;
         background-position: center;
-        background-repeat: no-repeat;
+        background-attachment: fixed;
         z-index: 1;
       }
 
-      .promVip-overlay {
+      .centerInfo-background::after {
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.4);
+        background-color: rgba(255, 255, 255, 0.8);
         z-index: 2;
       }
 
-      .promVip-content {
+      /* Contenedor principal */
+      .centerInfo-container {
+        display: flex;
+        max-width: 1200px;
+        width: 100%;
         position: relative;
         z-index: 3;
-        text-align: center;
-        color: white;
-        padding: 2rem;
-        opacity: 0;
-        transform: translateY(50px);
-        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        gap: 30px;
+        align-items: center;
       }
 
-      .promVip-content.animate {
+      /* Tarjeta de información */
+      .centerInfo-card {
+        background-color: #333333;
+        padding: 40px;
+        border-radius: 10px;
+        width: 65%;
+        position: relative;
+        z-index: 4;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .centerInfo-card.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .centerInfo-title {
+        font-family: "Eras Medium ITC", "Helvetica", sans-serif;
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        position: relative;
+        color: #fff;
+      }
+
+      .centerInfo-title::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 40%;
+        height: 3px;
+        background-color: #b79113;
+      }
+
+      .centerInfo-location {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+        color: #b79113;
+        font-weight: 600;
+      }
+
+      .centerInfo-location i {
+        color: #b79113;
+        margin-right: 10px;
+        font-size: 1.2rem;
+      }
+
+      .centerInfo-description {
+        margin-bottom: 25px;
+        font-size: 1.1rem;
+        line-height: 1.5;
+      }
+
+      .centerInfo-options-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .centerInfo-options-title i {
+        color: #b79113;
+        margin-right: 10px;
+        font-size: 1.2rem;
+      }
+
+      .centerInfo-options-title h2 {
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+
+      .centerInfo-options-list {
+        list-style: none;
+        margin-bottom: 30px;
+        padding-left: 20px;
+      }
+
+      .centerInfo-options-list li {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        transform: translateY(15px);
+        transition: all 0.6s ease;
+      }
+
+      .centerInfo-options-list li.visible {
         opacity: 1;
         transform: translateY(0);
       }
 
-      .promVip-title {
-        font-family: "Eras Medium ITC", "Times New Roman", serif;
-        font-size: clamp(2rem, 5vw, 3.2rem);
-        font-weight: 400;
-        letter-spacing: 1px;
-        margin-bottom: 1.5rem;
-        text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
-        animation-delay: 0.2s;
+      .centerInfo-options-list i {
+        color: #b79113;
+        margin-right: 10px;
+        font-size: 0.9rem;
       }
 
-      .promVip-subtitle-container {
-        position: relative;
+      .centerInfo-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .centerInfo-button {
+        padding: 12px 25px;
+        border-radius: 5px;
+        font-weight: 600;
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 1.5rem 0;
-        gap: 1rem;
-        animation-delay: 0.4s;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+        border: none;
+        text-decoration: none;
       }
 
-      .promVip-line {
-        width: clamp(60px, 15vw, 120px);
-        height: 1px;
-        background: white;
-        opacity: 0.8;
+      .centerInfo-button-white {
+        background-color: #fff;
+        color: #333;
       }
 
-      .promVip-subtitle {
-        font-family: "Lexend Zetta", "Arial Black", sans-serif;
-        font-size: clamp(1rem, 2.5vw, 1.25rem);
-        font-weight: 700;
-        letter-spacing: 2px;
-        color: #fff8f8;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
-        white-space: nowrap;
+      .centerInfo-button-white:hover {
+        background-color: #f0f0f0;
+        transform: translateY(-2px);
       }
 
-      .promVip-description {
-        font-family: "Eras Medium ITC", "Times New Roman", serif;
-        font-size: clamp(0.9rem, 2vw, 1rem);
-        font-weight: 400;
-        line-height: 1.6;
-        margin: 1.5rem auto;
-        max-width: 400px;
-        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-        animation-delay: 0.6s;
+      .centerInfo-button-gold {
+        background: linear-gradient(to right, #b79113, #d4af37);
+        color: #fff;
       }
 
-      .promVip-buttons {
+      .centerInfo-button-gold:hover {
+        background: linear-gradient(to right, #a58210, #c19c30);
+        transform: translateY(-2px);
+      }
+
+      .centerInfo-button img {
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+      }
+
+      /* Imágenes laterales */
+      .centerInfo-images {
+        position: relative;
+        width: 35%;
+        height: 500px;
+      }
+
+      .centerInfo-large-image {
+        position: absolute;
+        right: -20px;
+        top: 20px;
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
+        z-index: 3;
+        opacity: 0;
+        transform: translateX(100px) scale(0.9);
+        transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .centerInfo-large-image.visible {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+
+      .centerInfo-small-image {
+        position: absolute;
+        right: 40px;
+        bottom: -30px;
+        width: 70%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        z-index: 4;
+        opacity: 0;
+        transform: translateY(50px) rotate(-5deg) scale(0.9);
+        transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+      }
+
+      .centerInfo-small-image.visible {
+        opacity: 1;
+        transform: translateY(0) rotate(0) scale(1);
+      }
+
+      /* Segunda sección - Sabores */
+      .centerInfo-flavors-section {
+        position: relative;
+        padding: 80px 20px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      }
+
+      .centerInfo-flavors-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .centerInfo-flavors-card {
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         display: flex;
-        gap: 2rem;
-        justify-content: center;
-        margin-top: 2rem;
-        flex-wrap: wrap;
-        animation-delay: 0.8s;
+        min-height: 500px;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 1s ease;
       }
 
-      .promVip-button {
-        background: transparent;
-        border: 2px solid white;
-        border-radius: 4px;
-        color: white;
-        padding: 1rem 2rem;
-        font-family: "Lexend Zetta", "Arial Black", sans-serif;
-        font-weight: 700;
-        font-size: clamp(0.8rem, 1.5vw, 1rem);
-        letter-spacing: 1px;
+      .centerInfo-flavors-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .centerInfo-flavors-image {
+        position: relative;
+        width: 60%;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      .centerInfo-flavors-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: rotate(-3deg) scale(1.1);
+        transition: transform 0.5s ease;
+      }
+
+      .centerInfo-flavors-image:hover img {
+        transform: rotate(0deg) scale(1.15);
+      }
+
+      .centerInfo-zoom-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
         transition: all 0.3s ease;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
+      }
+
+      .centerInfo-zoom-icon:hover {
+        background: rgba(255, 255, 255, 1);
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+
+      .centerInfo-zoom-icon img {
+        width: 40px;
+        height: 40px;
+        transform: none !important;
+      }
+
+      .centerInfo-flavors-content {
+        width: 40%;
+        padding: 60px 40px;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
-        min-width: 200px;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+        color: #333;
       }
 
-      .promVip-button:hover {
-        background-color: rgba(255, 255, 255, 0.15);
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      .centerInfo-flavors-title {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: #333;
+        font-weight: bold;
       }
 
-      .promVip-button:active {
-        transform: translateY(-1px);
-        background-color: rgba(255, 255, 255, 0.25);
+      .centerInfo-flavors-subtitle {
+        font-size: 0.9rem;
+        color: #b79113;
+        font-weight: 600;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
       }
 
-      /* Modal Styles */
-      .promVip-modal {
+      .centerInfo-flavors-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        color: #666;
+      }
+
+      .centerInfo-reserve-button {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(135deg, #333 0%, #555 100%);
+        color: #fff;
+        padding: 15px 25px;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        justify-content: center;
+      }
+
+      .centerInfo-reserve-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .centerInfo-reserve-button i {
+        margin-right: 10px;
+        font-size: 1.2rem;
+      }
+
+      /* Modal para galería */
+      .centerInfo-modal {
         display: none;
         position: fixed;
         top: 0;
@@ -165,492 +402,493 @@
         height: 100%;
         background: rgba(0, 0, 0, 0.9);
         z-index: 1000;
-        justify-content: center;
-        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
       }
 
-      .promVip-modal.show {
+      .centerInfo-modal.active {
         display: flex;
-        animation: fadeIn 0.3s ease;
+        opacity: 1;
+        align-items: center;
+        justify-content: center;
       }
 
-      .promVip-modal-content {
+      .centerInfo-modal-content {
         position: relative;
-        width: 90%;
-        max-width: 600px;
-        aspect-ratio: 1;
-        background: white;
-        border-radius: 8px;
-        overflow: hidden;
+        max-width: 90%;
+        max-height: 90%;
       }
 
-      .promVip-close {
+      .centerInfo-modal-image {
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+        object-fit: contain;
+      }
+
+      .centerInfo-modal-close {
         position: absolute;
-        top: 15px;
-        right: 20px;
-        font-size: 2rem;
-        font-weight: bold;
+        top: -40px;
+        right: 0;
         color: white;
+        font-size: 2rem;
         cursor: pointer;
-        z-index: 1001;
-        background: rgba(0, 0, 0, 0.7);
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        transition: color 0.3s ease;
+      }
+
+      .centerInfo-modal-close:hover {
+        color: #b79113;
+      }
+
+      .centerInfo-modal-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 15px;
+        font-size: 1.5rem;
+        cursor: pointer;
         transition: all 0.3s ease;
       }
 
-      .promVip-close:hover {
-        background: rgba(0, 0, 0, 0.9);
-        transform: scale(1.1);
+      .centerInfo-modal-nav:hover {
+        background: rgba(0, 0, 0, 0.8);
       }
 
-      .promVip-slider-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
+      .centerInfo-modal-prev {
+        left: -60px;
       }
 
-      .promVip-slider {
-        display: flex;
-        width: 300%;
-        height: 100%;
-        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      .centerInfo-modal-next {
+        right: -60px;
       }
 
-      .promVip-slide {
-        flex: 0 0 33.333%;
-        height: 100%;
-      }
-
-      .promVip-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .promVip-nav {
+      .centerInfo-modal-indicators {
         position: absolute;
-        bottom: 20px;
+        bottom: -30px;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
         gap: 10px;
       }
 
-      .promVip-dot {
-        width: 12px;
-        height: 12px;
+      .centerInfo-modal-dot {
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.5);
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: background 0.3s ease;
       }
 
-      .promVip-dot.active {
-        background: white;
-        transform: scale(1.2);
+      .centerInfo-modal-dot.active {
+        background: #b79113;
       }
 
-      .promVip-arrows {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 2rem;
-        color: white;
-        cursor: pointer;
-        background: rgba(0, 0, 0, 0.5);
-        padding: 10px 15px;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-        user-select: none;
-      }
-
-      .promVip-prev {
-        left: 20px;
-      }
-
-      .promVip-next {
-        right: 20px;
-      }
-
-      .promVip-arrows:hover {
-        background: rgba(0, 0, 0, 0.8);
-        transform: translateY(-50%) scale(1.1);
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      /* Responsive Design */
+      /* Responsive */
       @media (max-width: 768px) {
-        .promVip-content {
-          padding: 1rem;
-        }
-
-        .promVip-buttons {
+        .centerInfo-container {
           flex-direction: column;
-          align-items: center;
-          gap: 1rem;
+          gap: 30px;
         }
 
-        .promVip-button {
+        .centerInfo-card {
           width: 100%;
-          max-width: 300px;
-          padding: 1rem;
+          padding: 30px 20px;
         }
 
-        .promVip-subtitle-container {
+        .centerInfo-title {
+          font-size: 2rem;
+        }
+
+        .centerInfo-images {
+          width: 100%;
+          height: 300px;
+          margin-top: 30px;
+        }
+
+        .centerInfo-large-image {
+          position: relative;
+          right: 0;
+          top: 0;
+          width: 100%;
+          height: 250px;
+        }
+
+        .centerInfo-small-image {
+          position: absolute;
+          right: 20px;
+          bottom: -20px;
+          width: 60%;
+          height: 150px;
+        }
+
+        .centerInfo-buttons {
           flex-direction: column;
-          gap: 0.5rem;
+          gap: 10px;
         }
 
-        .promVip-line {
-          width: 80px;
+        .centerInfo-button {
+          width: 100%;
+          justify-content: center;
         }
 
-        .promVip-modal-content {
-          width: 95%;
-          margin: 1rem;
+        .centerInfo-flavors-card {
+          flex-direction: column;
+          min-height: auto;
         }
 
-        .promVip-arrows {
-          font-size: 1.5rem;
-          padding: 8px 12px;
+        .centerInfo-flavors-image {
+          width: 100%;
+          height: 300px;
         }
 
-        .promVip-prev {
-          left: 10px;
+        .centerInfo-flavors-content {
+          width: 100%;
+          padding: 40px 20px;
         }
 
-        .promVip-next {
-          right: 10px;
+        .centerInfo-flavors-title {
+          font-size: 2rem;
+        }
+
+        .centerInfo-modal-nav {
+          display: none;
+        }
+
+        .centerInfo-modal-content {
+          max-width: 95%;
         }
       }
 
       @media (max-width: 480px) {
-        .promVip-section {
-          min-height: 60vh;
-          padding: 2rem 0;
+        .centerInfo-section {
+          padding: 40px 10px;
         }
 
-        .promVip-title {
+        .centerInfo-card {
+          padding: 20px 15px;
+        }
+
+        .centerInfo-title {
           font-size: 1.8rem;
-          margin-bottom: 1rem;
         }
 
-        .promVip-description {
-          font-size: 0.9rem;
-          margin: 1rem auto;
+        .centerInfo-flavors-content {
+          padding: 30px 15px;
         }
 
-        .promVip-buttons {
-          margin-top: 1.5rem;
-        }
-      }
-
-      @media (min-width: 769px) and (max-width: 1024px) {
-        .promVip-buttons {
-          gap: 1.5rem;
+        .centerInfo-flavors-title {
+          font-size: 1.8rem;
         }
       }
     </style>
   </head>
   <body>
-    <section class="promVip-section" id="promVipSection">
-      <div class="promVip-background"></div>
-      <div class="promVip-overlay"></div>
+    <!-- Sección principal -->
+    <section class="centerInfo-section">
+      <div class="centerInfo-background"></div>
 
-      <div class="promVip-content" id="promVipContent">
-        <h1 class="promVip-title">Plan Luna de miel</h1>
+      <div class="centerInfo-container">
+        <div class="centerInfo-card">
+          <h1 class="centerInfo-title">Urban Center Sport Bar</h1>
 
-        <div class="promVip-subtitle-container">
-          <div class="promVip-line"></div>
-          <h2 class="promVip-subtitle">PAQUETE V.I.P</h2>
-          <div class="promVip-line"></div>
+          <div class="centerInfo-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Ubicado en la planta baja del hotel</p>
+          </div>
+
+          <p class="centerInfo-description">
+            Sport Bar con un ambiente acogedor donde puedes encontrar las
+            siguientes opciones:
+          </p>
+
+          <div class="centerInfo-options-title">
+            <i class="fas fa-star"></i>
+            <h2>Horarios destacados</h2>
+          </div>
+
+          <ul class="centerInfo-options-list">
+            <li><i class="fas fa-check"></i> Desayuno buffet: 07:30 - 10:00</li>
+            <li>
+              <i class="fas fa-check"></i> Almuerzo ejecutivo: 12:00 - 14:45
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Snacks – Pizzas – Platos a la carta:
+              16:00 - 22:30
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Cóctelería especial de creación:
+              16:00 - 22:30
+            </li>
+          </ul>
+
+          <div class="centerInfo-buttons">
+            <button class="centerInfo-button centerInfo-button-white">
+              <img
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758818949/33a390f7-8c17-42bf-9c59-91adaf9950d0.png"
+                alt="Icono menú"
+              />
+              DESCUBRIR MENÚ
+            </button>
+            <button class="centerInfo-button centerInfo-button-gold">
+              <img
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758818920/7decd5dc-2d68-4506-af18-f41de1bd9040.png"
+                alt="Icono reserva"
+              />
+              RESERVAR
+            </button>
+          </div>
         </div>
 
-        <p class="promVip-description">
-          La experiencia de luna de miel que redefine el romance
-        </p>
-
-        <div class="promVip-buttons">
-          <button class="promVip-button" id="promVipReserve">
-            RESERVAR PAQUETE
-          </button>
-          <button class="promVip-button" id="promVipExplore">
-            EXPLORAR DETALLES
-          </button>
+        <div class="centerInfo-images">
+          <img
+            class="centerInfo-large-image"
+            src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213716/DESAYUNO_URBAN_CENTER7_mz8toi.jpg"
+            alt="Desayuno Urban Center"
+          />
+          <img
+            class="centerInfo-small-image"
+            src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213659/HAMBURGUESAS_URBAN_11_s6iqhq.jpg"
+            alt="Hamburguesa Urban"
+          />
         </div>
       </div>
     </section>
 
-    <!-- Modal para el slider -->
-    <div class="promVip-modal" id="promVipModal">
-      <div class="promVip-modal-content">
-        <span class="promVip-close" id="promVipClose">&times;</span>
-
-        <div class="promVip-slider-container">
-          <div class="promVip-slider" id="promVipSlider">
-            <div class="promVip-slide">
+    <!-- Sección de sabores -->
+    <section class="centerInfo-flavors-section">
+      <div class="centerInfo-flavors-container">
+        <div class="centerInfo-flavors-card">
+          <div class="centerInfo-flavors-image" onclick="openModal()">
+            <img
+              src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213713/DESAYUNO_URBAN_CENTER3_nhdsry.jpg"
+              alt="Desayuno Urban Center"
+            />
+            <div class="centerInfo-zoom-icon">
               <img
-                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758285833/7085aa70-01c6-4c21-96a1-f2f58868d7ac.png"
-                alt="Imagen 1 del paquete"
-              />
-            </div>
-            <div class="promVip-slide">
-              <img
-                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758285818/7a9390e1-e9f2-45ea-bb12-97e3efc805a8.png"
-                alt="Imagen 2 del paquete"
-              />
-            </div>
-            <div class="promVip-slide">
-              <img
-                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758285801/cd22fcab-c633-44fd-bb10-89307154f39b.png"
-                alt="Imagen 3 del paquete"
+                src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758916208/ea190cb9-8ba0-4c03-bbef-ee54e3e211d9.png"
+                alt="Zoom"
               />
             </div>
           </div>
 
-          <div class="promVip-arrows promVip-prev" id="promVipPrev">
-            &#10094;
-          </div>
-          <div class="promVip-arrows promVip-next" id="promVipNext">
-            &#10095;
-          </div>
-
-          <div class="promVip-nav">
-            <div class="promVip-dot active" data-slide="0"></div>
-            <div class="promVip-dot" data-slide="1"></div>
-            <div class="promVip-dot" data-slide="2"></div>
+          <div class="centerInfo-flavors-content">
+            <h2 class="centerInfo-flavors-title">Sabores para cada momento</h2>
+            <p class="centerInfo-flavors-subtitle">
+              GASTRONOMÍA QUE SE ADAPTA A TI
+            </p>
+            <p class="centerInfo-flavors-description">
+              En Urban Center Sport Bar encontrarás opciones para todos los
+              gustos y horarios: desayunos buffet, almuerzos ejecutivos, pizzas,
+              snacks y cócteles, perfectos para compartir con amigos.
+            </p>
+            <a href="#" class="centerInfo-reserve-button">
+              <i class="fas fa-bell"></i>
+              RESERVAR TU MENÚ ESPECIAL
+            </a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Modal para galería -->
+    <div class="centerInfo-modal" id="imageModal">
+      <div class="centerInfo-modal-content">
+        <span class="centerInfo-modal-close" onclick="closeModal()"
+          >&times;</span
+        >
+        <button
+          class="centerInfo-modal-nav centerInfo-modal-prev"
+          onclick="previousImage()"
+        >
+          &#10094;
+        </button>
+        <img class="centerInfo-modal-image" id="modalImage" src="" alt="" />
+        <button
+          class="centerInfo-modal-nav centerInfo-modal-next"
+          onclick="nextImage()"
+        >
+          &#10095;
+        </button>
+        <div class="centerInfo-modal-indicators" id="modalIndicators"></div>
       </div>
     </div>
 
     <script>
-      class HoneymoonVIP {
-        constructor() {
-          this.currentSlide = 0;
-          this.totalSlides = 3;
-          this.touchStartX = 0;
-          this.touchEndX = 0;
-          this.init();
-        }
+      // Imágenes para la galería
+      const galleryImages = [
+        "https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213716/DESAYUNO_URBAN_CENTER7_mz8toi.jpg",
+        "https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213713/DESAYUNO_URBAN_CENTER2_biqdcb.jpg",
+        "https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213694/SAUCEGE_GRILLED_pkzbgu.jpg",
+        "https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213679/HAMBURGUESAS_URBAN_d1qci4.jpg",
+        "https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213639/37-LENGUAS6_tlksrp.jpg",
+      ];
 
-        init() {
-          this.setupIntersectionObserver();
-          this.setupEventListeners();
-        }
+      let currentImageIndex = 0;
+      let startX = 0;
+      let startY = 0;
 
-        setupIntersectionObserver() {
-          const observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  setTimeout(() => {
-                    document
-                      .getElementById("promVipContent")
-                      .classList.add("animate");
-                  }, 200);
+      // Función para detectar cuando los elementos entran en el viewport
+      function observeElements() {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+
+                // Animar lista items con delay
+                if (
+                  entry.target.classList.contains("centerInfo-options-list")
+                ) {
+                  const items = entry.target.querySelectorAll("li");
+                  items.forEach((item, index) => {
+                    setTimeout(() => {
+                      item.classList.add("visible");
+                    }, index * 100);
+                  });
                 }
-              });
-            },
-            {
-              threshold: 0.3,
-            }
-          );
-
-          observer.observe(document.getElementById("promVipSection"));
-        }
-
-        setupEventListeners() {
-          // Botón reservar
-          document
-            .getElementById("promVipReserve")
-            .addEventListener("click", () => {
-              this.openWhatsApp();
-            });
-
-          // Botón explorar detalles
-          document
-            .getElementById("promVipExplore")
-            .addEventListener("click", () => {
-              this.openModal();
-            });
-
-          // Cerrar modal
-          document
-            .getElementById("promVipClose")
-            .addEventListener("click", () => {
-              this.closeModal();
-            });
-
-          // Cerrar modal al hacer clic fuera
-          document
-            .getElementById("promVipModal")
-            .addEventListener("click", (e) => {
-              if (e.target.id === "promVipModal") {
-                this.closeModal();
               }
             });
-
-          // Navegación del slider
-          document
-            .getElementById("promVipPrev")
-            .addEventListener("click", () => {
-              this.prevSlide();
-            });
-
-          document
-            .getElementById("promVipNext")
-            .addEventListener("click", () => {
-              this.nextSlide();
-            });
-
-          // Dots navigation
-          document.querySelectorAll(".promVip-dot").forEach((dot, index) => {
-            dot.addEventListener("click", () => {
-              this.goToSlide(index);
-            });
-          });
-
-          // Touch events para móvil
-          const slider = document.getElementById("promVipSlider");
-          slider.addEventListener(
-            "touchstart",
-            (e) => {
-              this.touchStartX = e.touches[0].clientX;
-            },
-            { passive: true }
-          );
-
-          slider.addEventListener(
-            "touchend",
-            (e) => {
-              this.touchEndX = e.changedTouches[0].clientX;
-              this.handleSwipe();
-            },
-            { passive: true }
-          );
-
-          // Keyboard navigation
-          document.addEventListener("keydown", (e) => {
-            if (
-              document.getElementById("promVipModal").classList.contains("show")
-            ) {
-              if (e.key === "ArrowLeft") this.prevSlide();
-              if (e.key === "ArrowRight") this.nextSlide();
-              if (e.key === "Escape") this.closeModal();
-            }
-          });
-
-          // Auto-slide (opcional)
-          this.autoSlideInterval = null;
-        }
-
-        openWhatsApp() {
-          const phoneNumber = "67160315";
-          const message =
-            "Hola! Estoy interesado en reservar el Paquete V.I.P que vi en la página web. ¿Podrían brindarme más información?";
-          const whatsappURL = `https://wa.me/591${phoneNumber}?text=${encodeURIComponent(
-            message
-          )}`;
-          window.open(whatsappURL, "_blank");
-        }
-
-        openModal() {
-          document.getElementById("promVipModal").classList.add("show");
-          document.body.style.overflow = "hidden";
-          this.startAutoSlide();
-        }
-
-        closeModal() {
-          document.getElementById("promVipModal").classList.remove("show");
-          document.body.style.overflow = "auto";
-          this.stopAutoSlide();
-        }
-
-        prevSlide() {
-          this.currentSlide =
-            this.currentSlide === 0
-              ? this.totalSlides - 1
-              : this.currentSlide - 1;
-          this.updateSlider();
-        }
-
-        nextSlide() {
-          this.currentSlide =
-            this.currentSlide === this.totalSlides - 1
-              ? 0
-              : this.currentSlide + 1;
-          this.updateSlider();
-        }
-
-        goToSlide(slideIndex) {
-          this.currentSlide = slideIndex;
-          this.updateSlider();
-        }
-
-        updateSlider() {
-          const slider = document.getElementById("promVipSlider");
-          const translateX = -this.currentSlide * (100 / this.totalSlides);
-          slider.style.transform = `translateX(${translateX}%)`;
-
-          // Update dots
-          document.querySelectorAll(".promVip-dot").forEach((dot, index) => {
-            dot.classList.toggle("active", index === this.currentSlide);
-          });
-        }
-
-        handleSwipe() {
-          const swipeThreshold = 50;
-          const diff = this.touchStartX - this.touchEndX;
-
-          if (Math.abs(diff) > swipeThreshold) {
-            if (diff > 0) {
-              this.nextSlide();
-            } else {
-              this.prevSlide();
-            }
+          },
+          {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px",
           }
-        }
+        );
 
-        startAutoSlide() {
-          this.stopAutoSlide();
-          this.autoSlideInterval = setInterval(() => {
-            this.nextSlide();
-          }, 4000);
-        }
-
-        stopAutoSlide() {
-          if (this.autoSlideInterval) {
-            clearInterval(this.autoSlideInterval);
-            this.autoSlideInterval = null;
-          }
-        }
+        // Observar elementos
+        document
+          .querySelectorAll(
+            ".centerInfo-card, .centerInfo-large-image, .centerInfo-small-image, .centerInfo-flavors-card, .centerInfo-options-list"
+          )
+          .forEach((el) => {
+            observer.observe(el);
+          });
       }
 
-      // Inicializar cuando el DOM esté listo
-      document.addEventListener("DOMContentLoaded", () => {
-        new HoneymoonVIP();
-      });
+      // Funciones del modal
+      function openModal() {
+        const modal = document.getElementById("imageModal");
+        modal.classList.add("active");
+        showImage(0);
+        createIndicators();
+        document.body.style.overflow = "hidden";
+      }
 
-      // Pausar auto-slide cuando el usuario interactúa
-      document.addEventListener("visibilitychange", () => {
-        if (document.hidden) {
-          // Pausar cuando la pestaña no está visible
+      function closeModal() {
+        const modal = document.getElementById("imageModal");
+        modal.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+
+      function showImage(index) {
+        currentImageIndex = index;
+        const modalImage = document.getElementById("modalImage");
+        modalImage.src = galleryImages[index];
+        updateIndicators();
+      }
+
+      function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+        showImage(currentImageIndex);
+      }
+
+      function previousImage() {
+        currentImageIndex =
+          (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+        showImage(currentImageIndex);
+      }
+
+      function createIndicators() {
+        const indicatorsContainer = document.getElementById("modalIndicators");
+        indicatorsContainer.innerHTML = "";
+
+        galleryImages.forEach((_, index) => {
+          const dot = document.createElement("div");
+          dot.classList.add("centerInfo-modal-dot");
+          dot.onclick = () => showImage(index);
+          indicatorsContainer.appendChild(dot);
+        });
+      }
+
+      function updateIndicators() {
+        const dots = document.querySelectorAll(".centerInfo-modal-dot");
+        dots.forEach((dot, index) => {
+          dot.classList.toggle("active", index === currentImageIndex);
+        });
+      }
+
+      // Touch events para móviles
+      function handleTouchStart(event) {
+        startX = event.touches[0].clientX;
+        startY = event.touches[0].clientY;
+      }
+
+      function handleTouchEnd(event) {
+        if (!startX || !startY) return;
+
+        const endX = event.changedTouches[0].clientX;
+        const endY = event.changedTouches[0].clientY;
+
+        const deltaX = startX - endX;
+        const deltaY = startY - endY;
+
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+          if (Math.abs(deltaX) > 50) {
+            if (deltaX > 0) {
+              nextImage();
+            } else {
+              previousImage();
+            }
+          }
         }
+
+        startX = 0;
+        startY = 0;
+      }
+
+      // Event listeners
+      document.addEventListener("DOMContentLoaded", function () {
+        observeElements();
+
+        // Touch events para el modal
+        const modal = document.getElementById("imageModal");
+        modal.addEventListener("touchstart", handleTouchStart, {
+          passive: true,
+        });
+        modal.addEventListener("touchend", handleTouchEnd, { passive: true });
+
+        // Cerrar modal con ESC
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            closeModal();
+          }
+        });
+
+        // Navegación con teclado
+        document.addEventListener("keydown", function (event) {
+          if (
+            document.getElementById("imageModal").classList.contains("active")
+          ) {
+            if (event.key === "ArrowLeft") {
+              previousImage();
+            } else if (event.key === "ArrowRight") {
+              nextImage();
+            }
+          }
+        });
+
+        // Cerrar modal al hacer click fuera de la imagen
+        document
+          .getElementById("imageModal")
+          .addEventListener("click", function (event) {
+            if (event.target === this) {
+              closeModal();
+            }
+          });
       });
     </script>
   </body>
