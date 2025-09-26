@@ -7691,7 +7691,10 @@ address {
   opacity: 0;
   transition: opacity 1.2s ease, transform 1.2s ease;
 }
-
+/******************Efecto parallax para urban center*******************/
+#centerParallax {
+  background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213639/URBAN-CENTER3_twbkeb.jpg") !important;
+}
 .skyhero-afterhero.visible {
   opacity: 1;
   /*transform: scale(1);*/ /* vuelve a tamaño normal */
@@ -8430,7 +8433,9 @@ address {
   align-items: center;
   gap: 40px;
 }
-
+#centerCarta-footer {
+  margin-top: 0 !important;
+}
 .skyCarta-footer-text {
   flex: 1;
   font-family: "Eras Medium ITC", Helvetica, sans-serif;
@@ -9125,7 +9130,9 @@ address {
   filter: brightness(0.7) sepia(0.3) hue-rotate(5deg);
   transition: all 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-
+#centerLast-container {
+  background-image: url("https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213639/URBAN-CENTER_ba9p31.jpg");
+}
 /* Efecto de superposición con gradiente */
 .skyLast-overlay {
   position: absolute;
@@ -10016,3 +10023,5 @@ address {
     font-size: 0.9rem;
   }
 }
+
+/***********************************/

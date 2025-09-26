@@ -233,10 +233,137 @@
           </div>
         </div>
       </div>
+      <!--seccion de imagen con efecto parallax-->
+      <div class="skyhero-afterhero" id="centerParallax">
+        <div></div>
+      </div>
+      <!--seccion de informacion despues del parallax-->
+      <div class="skyCarta-footer" id="centerCarta-footer">
+        <div class="skyCarta-footer-text">
+          Urban Center Sport Bar es el restaurante en planta baja del Hotel
+          Madero, con un ambiente moderno y casual. Ofrece buffet, almuerzos
+          ejecutivos, pizzas, platos a la carta, snacks y cocteles , siendo un
+          espacio ideal para compartir entre amigos, disfrutar de un partido o
+          tener un encuentro relajado en el corazón de La Paz.
+        </div>
+        <div class="skyCarta-footer-logo">
+          <img
+            src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758213618/LogoUrbanCenter_ftymu3.png"
+            alt="Logo del urban center"
+          />
+        </div>
+      </div>
+      <!--seccion de frame // de facebook-->
+      <section class="skyResto-bg2">
+        <!-- Main Content -->
+        <div class="skyResto-main">
+          <!-- Left Menu Section -->
+          <div class="skyResto-menu">
+            <div class="skyResto-menu-header">
+              <p class="skyResto-menu-location">PISO 7 – VISTA PANORÁMICA</p>
+              <div class="skyResto-menu-divider"></div>
+              <p class="skyResto-menu-title">Cielo Urbano</p>
+            </div>
+
+            <div class="skyResto-menu-items">
+              <!-- Mañana -->
+              <div class="skyResto-menu-item" data-delay="0">
+                <img
+                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758221037/BOM_BON-removebg-preview_au5m2k.png"
+                  alt="Menú Mañana"
+                />
+                <div class="skyResto-menu-card" onclick="toggleCard(this)">
+                  <div class="skyResto-menu-card-header">
+                    <h3 class="skyResto-menu-card-title">Mañana</h3>
+                    <i class="fas fa-chevron-down skyResto-menu-card-icon"></i>
+                  </div>
+                  <div class="skyResto-menu-card-content">
+                    <ul class="skyResto-menu-card-list">
+                      <li>4 opciones de Desayuno Brunch</li>
+                      <li>1 opción vegetariana</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Almuerzo -->
+              <div class="skyResto-menu-item" data-delay="200">
+                <img
+                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758221099/plato5-removebg-preview_cenvpt.png"
+                  alt="Menú Almuerzo"
+                />
+                <div class="skyResto-menu-card" onclick="toggleCard(this)">
+                  <div class="skyResto-menu-card-header">
+                    <h3 class="skyResto-menu-card-title">Almuerzo</h3>
+                    <i class="fas fa-chevron-down skyResto-menu-card-icon"></i>
+                  </div>
+                  <div class="skyResto-menu-card-content">
+                    <ul class="skyResto-menu-card-list">
+                      <li>Buffet Parrillero</li>
+                      <li>4 tipos de carne a elección</li>
+                      <li>Ensalada buffet + guarniciones</li>
+                      <li>Postre de la casa</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tardes -->
+              <div class="skyResto-menu-item" data-delay="400">
+                <img
+                  src="https://res.cloudinary.com/ddqoou1fq/image/upload/v1758221022/PLATO_5-removebg-preview_irhabb.png"
+                  alt="Menú Tardes"
+                />
+                <div class="skyResto-menu-card" onclick="toggleCard(this)">
+                  <div class="skyResto-menu-card-header">
+                    <h3 class="skyResto-menu-card-title">Tardes</h3>
+                    <i class="fas fa-chevron-down skyResto-menu-card-icon"></i>
+                  </div>
+                  <div class="skyResto-menu-card-content">
+                    <ul class="skyResto-menu-card-list">
+                      <li>Menú gourmet a la carta</li>
+                      <li>Coctelería de autor</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skyResto-menu-footer">
+              <div class="skyResto-menu-divider-bottom"></div>
+              <p class="skyResto-menu-schedule">HORARIO: 12:00 PM - 14:45 PM</p>
+              <button class="skyResto-menu-btn">VER MENU COMPLETO</button>
+            </div>
+          </div>
+
+          <!-- Right Facebook Section -->
+          <div class="skyResto-facebook">
+            <div class="skyResto-facebook-header">
+              <h3 class="skyResto-facebook-title">Menú del Día</h3>
+              <p class="skyResto-facebook-subtitle">
+                Actualizado en nuestra página de Facebook
+              </p>
+            </div>
+            <div class="skyResto-facebook-content">
+              <iframe
+                class="skyResto-facebook-frame"
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRestobarCieloUrbano&tabs=timeline&small_header=true&hide_cover=false&show_facepile=false&adapt_container_width=true"
+                scrolling="no"
+                frameborder="0"
+                allowfullscreen="true"
+                loading="lazy"
+                allow="encrypted-media"
+                title="Facebook Page Plugin"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- Sección SkyLast -->
       <section class="skyLast-container">
-        <div class="skyLast-background"></div>
+        <div class="skyLast-background" id="centerLast-container"></div>
         <div class="skyLast-overlay"></div>
         <div class="skyLast-particles" id="particles-container"></div>
       </section>
