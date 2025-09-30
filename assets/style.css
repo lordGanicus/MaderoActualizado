@@ -7803,49 +7803,6 @@ address {
   overflow: visible;
   color: #fff;
 }
-/*
-.skyMenu-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-}
-.skyMenu-background::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #b79113;
-  opacity: 0.1;
-  z-index: 2;
-}
-*/
-
-/*
-.sportBar-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  z-index: 2;
-}
-
-.sportBar-background::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #1a3a5f;
-  opacity: 0.3;
-  z-index: -1;
-}*/
 
 /* Contenedor principal */
 .skyMenu-container {
@@ -8104,7 +8061,7 @@ address {
 
 .skyMenu-small-image {
   position: absolute;
-  right: -15%;
+  right: -5%;
   top: -20%;
   width: 45%;
   max-width: 450px;
@@ -8140,22 +8097,36 @@ address {
   transform: translateY(-50%) translateX(0) scale(1.1) rotate(0deg); /* Giro final */
 }
 
-.sportBar-small-image {
+.skyMenu-large-image {
   position: absolute;
-  left: 5%; /* Invertido: ahora a la izquierda */
-  top: 15%;
+  right: 0%;
+  top: 50%;
+  transform: translateY(-50%) translateX(100px) scale(1.1);
   width: 45%;
-  max-width: 350px;
-  z-index: 4;
+  height: 100%;
+  /* max-width: 900px; */
+  z-index: 3;
   opacity: 0;
-  transform: translateY(-50px) rotate(10deg) scale(1.1); /* Giro invertido */
-  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s;
-  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
 }
 
 .sportBar-small-image.visible {
   opacity: 1;
   transform: translateY(0) rotate(0) scale(1.1);
+}
+@media (min-witth: 1500px) {
+  .sportBar-small-image {
+    position: absolute;
+    left: 5%; /* Invertido: ahora a la izquierda */
+    top: 15%;
+    width: 45%;
+    max-width: 350px;
+    z-index: 4;
+    opacity: 0;
+    transform: translateY(-50px) rotate(10deg) scale(1.1); /* Giro invertido */
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+  }
 }
 @media (min-width: 1024px) {
   /* Tarjeta de información - MÁS ANCHA */
