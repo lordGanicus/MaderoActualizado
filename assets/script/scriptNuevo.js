@@ -152,6 +152,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function showSlide(index) {
+    // protección por si no hay slides
+    if (!slides || slides.length === 0) return;
+
+    // Normalizar índice (wrap)
+    index = ((index % slides.length) + slides.length) % slides.length;
+
     // Ocultar todas las slides
     slides.forEach((slide) => {
       slide.classList.remove("active");
@@ -160,11 +166,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Mostrar la slide actual
     slides[index].classList.add("active");
 
-    // Actualizar dots
-    dots.forEach((dot) => {
-      dot.classList.remove("active");
-    });
-    dots[index].classList.add("active");
+    // Actualizar dots (si existen)
+    if (dots && dots.length === slides.length) {
+      dots.forEach((dot) => {
+        dot.classList.remove("active");
+      });
+      dots[index].classList.add("active");
+    }
 
     currentSlide = index;
   }
@@ -173,22 +181,89 @@ document.addEventListener("DOMContentLoaded", function () {
   dots.forEach((dot) => {
     dot.addEventListener("click", function () {
       const index = parseInt(this.getAttribute("data-index"));
-      showSlide(index);
+      if (!isNaN(index)) showSlide(index);
     });
   });
 
   // Navegación con flechas
-  leftArrow.addEventListener("click", function () {
-    let newIndex = currentSlide - 1;
-    if (newIndex < 0) newIndex = slides.length - 1;
-    showSlide(newIndex);
-  });
+  if (leftArrow) {
+    leftArrow.addEventListener("click", function () {
+      let newIndex = currentSlide - 1;
+      if (newIndex < 0) newIndex = slides.length - 1;
+      showSlide(newIndex);
+    });
+  }
+  if (rightArrow) {
+    rightArrow.addEventListener("click", function () {
+      let newIndex = currentSlide + 1;
+      if (newIndex >= slides.length) newIndex = 0;
+      showSlide(newIndex);
+    });
+  }
 
-  rightArrow.addEventListener("click", function () {
-    let newIndex = currentSlide + 1;
-    if (newIndex >= slides.length) newIndex = 0;
-    showSlide(newIndex);
-  });
+  // --- AÑADIDO: Soporte touch / swipe ---
+  // Selecciona el contenedor del slider (prueba varios selectores por si tu estructura es distinta)
+  const sliderContainer =
+    document.querySelector(".pqt-slider") ||
+    document.querySelector(".pqt-slides") ||
+    (slides[0] && slides[0].parentElement) ||
+    null;
+
+  if (sliderContainer && slides.length > 0) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const SWIPE_THRESHOLD = 50; // px mínimos para considerar swipe
+
+    sliderContainer.addEventListener(
+      "touchstart",
+      function (e) {
+        if (e.touches && e.touches.length === 1) {
+          touchStartX = e.touches[0].clientX;
+        }
+      },
+      { passive: true }
+    );
+
+    sliderContainer.addEventListener(
+      "touchmove",
+      function (e) {
+        if (e.touches && e.touches.length === 1) {
+          touchEndX = e.touches[0].clientX;
+        }
+      },
+      { passive: true }
+    );
+
+    sliderContainer.addEventListener(
+      "touchend",
+      function (e) {
+        // si no hubo touchmove, usar changedTouches
+        if (!touchEndX && e.changedTouches && e.changedTouches.length === 1) {
+          touchEndX = e.changedTouches[0].clientX;
+        }
+        const diff = touchEndX - touchStartX;
+        // reset para la siguiente interacción
+        touchStartX = 0;
+        touchEndX = 0;
+
+        if (Math.abs(diff) > SWIPE_THRESHOLD) {
+          if (diff > 0) {
+            // swipe derecha -> anterior
+            let newIndex = currentSlide - 1;
+            if (newIndex < 0) newIndex = slides.length - 1;
+            showSlide(newIndex);
+          } else {
+            // swipe izquierda -> siguiente
+            let newIndex = currentSlide + 1;
+            if (newIndex >= slides.length) newIndex = 0;
+            showSlide(newIndex);
+          }
+        }
+      },
+      { passive: true }
+    );
+  }
+  // --- FIN touch support ---
 
   // Inicializar el slider
   initializeSlider();
@@ -203,6 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }, 5000);
 });
+
 /*****************************Seccion de cada detalle **********************************/
 // Función para verificar si un elemento está en el viewport
 function isInViewport(element) {
@@ -247,6 +323,10 @@ class HabitacionesSlider {
     this.autoSlideInterval = null;
     this.isScrolling = false;
 
+    // para detectar el swipe
+    this.touchStartX = 0;
+    this.touchEndX = 0;
+
     this.init();
   }
 
@@ -254,6 +334,7 @@ class HabitacionesSlider {
     this.setupElements();
     this.setupScrollEffect();
     this.setupSlider();
+    this.setupTouchEvents(); // 👈 nuevo
     this.startAutoSlide();
   }
 
@@ -289,12 +370,10 @@ class HabitacionesSlider {
       });
     });
 
-    // También manejar el redimensionamiento
     window.addEventListener("resize", () => {
       this.handleScrollResize();
     });
 
-    // Inicializar
     this.handleScrollResize();
   }
 
@@ -302,18 +381,15 @@ class HabitacionesSlider {
     const rect = this.section.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
-    // Calcular el progreso del scroll cuando la sección está visible
     let progress = 0;
 
     if (rect.top <= windowHeight && rect.bottom >= 0) {
-      // La sección está en viewport
       const visibleHeight =
         Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
       const sectionHeight = rect.height;
       progress = Math.min(visibleHeight / sectionHeight, 1);
     }
 
-    // Interpolar entre 70% y 100% basado en el progreso
     const startWidth = 70;
     const endWidth = 100;
     const currentWidth = startWidth + (endWidth - startWidth) * progress;
@@ -322,7 +398,6 @@ class HabitacionesSlider {
   }
 
   setupSlider() {
-    // Configurar eventos para los indicadores
     this.indicators.forEach((indicator, index) => {
       indicator.addEventListener("click", () => {
         this.goToSlide(index);
@@ -330,7 +405,6 @@ class HabitacionesSlider {
       });
     });
 
-    // Configurar eventos para los elementos de navegación
     this.navItems.forEach((item, index) => {
       item.addEventListener("click", (e) => {
         e.preventDefault();
@@ -339,7 +413,6 @@ class HabitacionesSlider {
       });
     });
 
-    // Configurar el indicador de navegación
     this.updateNavIndicator();
   }
 
@@ -354,15 +427,12 @@ class HabitacionesSlider {
   }
 
   goToSlide(index) {
-    // Validar índice
     if (index < 0) index = this.slides.length - 1;
     if (index >= this.slides.length) index = 0;
 
-    // Ocultar slide actual
     this.slides[this.currentSlide].classList.remove("active");
     this.indicators[this.currentSlide].classList.remove("active");
 
-    // Mostrar nuevo slide
     this.slides[index].classList.add("active");
     this.indicators[index].classList.add("active");
 
@@ -373,12 +443,50 @@ class HabitacionesSlider {
   startAutoSlide() {
     this.autoSlideInterval = setInterval(() => {
       this.goToSlide(this.currentSlide + 1);
-    }, 5000); // Cambia cada 5 segundos
+    }, 5000);
   }
 
   resetAutoSlide() {
     clearInterval(this.autoSlideInterval);
     this.startAutoSlide();
+  }
+
+  // 👇 soporte para swipe táctil
+  setupTouchEvents() {
+    if (!this.section) return;
+
+    this.section.addEventListener(
+      "touchstart",
+      (e) => {
+        this.touchStartX = e.changedTouches[0].clientX;
+      },
+      false
+    );
+
+    this.section.addEventListener(
+      "touchend",
+      (e) => {
+        this.touchEndX = e.changedTouches[0].clientX;
+        this.handleSwipe();
+      },
+      false
+    );
+  }
+
+  handleSwipe() {
+    const swipeThreshold = 50; // mínimo en px para considerar swipe
+    const deltaX = this.touchEndX - this.touchStartX;
+
+    if (Math.abs(deltaX) > swipeThreshold) {
+      if (deltaX > 0) {
+        // 👉 swipe derecha → slide anterior
+        this.goToSlide(this.currentSlide - 1);
+      } else {
+        // 👈 swipe izquierda → siguiente slide
+        this.goToSlide(this.currentSlide + 1);
+      }
+      this.resetAutoSlide();
+    }
   }
 }
 
@@ -387,12 +495,10 @@ document.addEventListener("DOMContentLoaded", () => {
   new HabitacionesSlider();
 });
 
-// Manejar redimensionamiento de ventana
 let resizeTimeout;
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(() => {
-    // Re-calcular el efecto de scroll en resize
     const event = new Event("scroll");
     window.dispatchEvent(event);
   }, 100);
@@ -407,6 +513,10 @@ class PromSlider {
     this.nextBtn = document.querySelector(".prom-nav-next");
     this.totalSlides = this.slides.length;
     this.isAnimating = false;
+
+    // para swipe
+    this.touchStartX = 0;
+    this.touchEndX = 0;
 
     this.init();
   }
@@ -442,6 +552,9 @@ class PromSlider {
         }
       }, 8000);
     });
+
+    // 👇 soporte para swipe táctil
+    this.setupTouchEvents(section);
   }
 
   initializeSlide(slide) {
@@ -490,6 +603,43 @@ class PromSlider {
     const prevIndex =
       (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
     this.goToSlide(prevIndex);
+  }
+
+  // 👇 nuevo: soporte para swipe táctil
+  setupTouchEvents(section) {
+    if (!section) return;
+
+    section.addEventListener(
+      "touchstart",
+      (e) => {
+        this.touchStartX = e.changedTouches[0].clientX;
+      },
+      false
+    );
+
+    section.addEventListener(
+      "touchend",
+      (e) => {
+        this.touchEndX = e.changedTouches[0].clientX;
+        this.handleSwipe();
+      },
+      false
+    );
+  }
+
+  handleSwipe() {
+    const swipeThreshold = 50; // px mínimos para considerar swipe
+    const deltaX = this.touchEndX - this.touchStartX;
+
+    if (Math.abs(deltaX) > swipeThreshold) {
+      if (deltaX > 0) {
+        // 👉 swipe derecha
+        this.prevSlide();
+      } else {
+        // 👈 swipe izquierda
+        this.nextSlide();
+      }
+    }
   }
 }
 
@@ -803,3 +953,35 @@ function checkScroll() {
 window.addEventListener("load", checkScroll);
 window.addEventListener("scroll", checkScroll);
 /*******Habitacion dentro // info  y modal ********/
+// ================= TOUCH EVENTS PARA EL SLIDER =================
+const sliderContainer = document.getElementById("slider-container");
+let startX = 0;
+let isDragging = false;
+
+sliderContainer.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+  isDragging = true;
+});
+
+sliderContainer.addEventListener("touchmove", (e) => {
+  if (!isDragging) return;
+  const currentX = e.touches[0].clientX;
+  const diff = currentX - startX;
+  const translateX =
+    -currentSlideIndex * (100 / totalSlides) +
+    (diff / sliderContainer.offsetWidth) * 100;
+  sliderContainer.style.transform = `translateX(${translateX}%)`;
+});
+
+sliderContainer.addEventListener("touchend", (e) => {
+  isDragging = false;
+  const endX = e.changedTouches[0].clientX;
+  const diffX = endX - startX;
+  const threshold = 50; // mínimo swipe para cambiar slide
+
+  if (diffX > threshold) changeSlide(-1); // swipe derecha
+  else if (diffX < -threshold) changeSlide(1); // swipe izquierda
+  else updateSlider(); // si no alcanzó el threshold, vuelve al slide actual
+});
+
+/***********************************************************************/

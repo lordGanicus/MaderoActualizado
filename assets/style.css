@@ -100,11 +100,6 @@ ion-icon {
   pointer-events: none;
 }
 
-html {
-  font-family: var(--ff-poppins);
-  scroll-behavior: smooth;
-}
-
 body {
   background: rgb(250, 246, 246);
   overflow-x: hidden;
@@ -150,7 +145,7 @@ nav {
 .logo-divider {
   height: 40px;
   width: 2px;
-  background-color: var(--white);
+  background-color: var(--dorado-suave);
   margin: 0 15px;
   opacity: 0.7;
 }
@@ -279,7 +274,7 @@ nav {
   position: fixed;
   top: 0;
   left: -70%;
-  width: 50%;
+  width: 60%;
   height: 100vh;
   background: var(--background-gradient);
   z-index: 1000;
@@ -320,7 +315,7 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(116, 116, 116, 0.788);
   z-index: 1;
 }
 
@@ -513,7 +508,7 @@ nav {
 /* Pantallas grandes: asegura que cubra completamente */
 @media (min-width: 1200px) {
   .video-background iframe {
-    width: 140vw;
+    /*width: 100vw;*/
     height: 78.75vw;
   }
   .menu-links {
@@ -537,8 +532,10 @@ nav {
   .menu-image {
     display: none;
   }
-
-  .submenu-content {
+  .menu-links li {
+    width: 200px;
+  }
+  /*.submenu-content {
     position: static;
     opacity: 1;
     visibility: visible;
@@ -549,7 +546,7 @@ nav {
     overflow: hidden;
     transition: max-height 0.3s ease;
     border-left: none;
-  }
+  }*/
 
   .menu-item.active .submenu-content {
     max-height: 500px;
@@ -577,11 +574,24 @@ nav {
   .menu-lateral {
     width: 85%;
     left: -85%;
-    padding: 5rem 1rem 2rem;
+    padding: 5rem 0.2rem 2rem;
   }
 
   .menu-content {
-    padding: 0 1rem;
+    padding: 0 0.1rem;
+  }
+  .menu-links li {
+    width: 150px;
+  }
+  .submenu-content {
+    width: 150px !important;
+    left: 110%;
+  }
+
+  .submenu {
+    list-style: none;
+    position: relative;
+    left: -16%;
   }
 
   .logo-img {
@@ -607,11 +617,12 @@ nav {
   .reserva-btn {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
+    display: none;
   }
 
   .menu-links a,
   .menu-links .menu-item {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 
   .menu-links i {
@@ -627,9 +638,9 @@ nav {
     left: -100%;
   }
 
-  .logo-container {
+  /*.logo-container {
     left: 45%;
-  }
+  }*/
 
   .hotel-name {
     font-size: 1rem;
@@ -641,13 +652,19 @@ nav {
 }
 /******************************--------Seccion info---***************************************/
 /* Contenedor principal */
+
 .sec-info-container {
   width: 100%;
   height: 30vh; /* 30% de la altura de la pantalla */
   position: relative;
   overflow: hidden;
 }
-
+@media (max-width: 1024px) {
+  .sec-info-container {
+    padding: 60px 20px;
+    height: auto;
+  }
+}
 /* Fondo con opacidad */
 .sec-info-bg {
   position: absolute;
@@ -759,7 +776,6 @@ nav {
 
   .sec-info-container {
     height: auto;
-    min-height: 30vh;
     padding: 40px 0;
   }
 }
@@ -1083,9 +1099,9 @@ nav {
 }
 
 @media (max-width: 576px) {
-  .pqt-slider {
+  /*.pqt-slider {
     height: 400px;
-  }
+  }*/
 
   .pqt-slide-title {
     font-size: 28px;
@@ -1513,10 +1529,6 @@ nav {
   .habi-nav-item a {
     font-size: 10px !important;
   }
-
-  .habi-slider-indicators {
-    bottom: 50px !important;
-  }
 }
 
 /* Móvil: 320px a 767px */
@@ -1721,11 +1733,11 @@ nav {
 }
 
 .prom-slider-container {
-  /*position: absolute;*/
-  top: 177px;
+  position: relative;
+  /*top: 177px;*/
   left: 0;
   width: 100%;
-  height: 721px;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -1833,7 +1845,11 @@ nav {
   transition: transform 0.8s ease-out, opacity 0.8s ease-out;
   transition-delay: 1.2s;
 }
-
+@media (max-width: 1200px) {
+  .prom-button-container {
+    flex-direction: column;
+  }
+}
 .prom-slide.active .prom-package-title,
 .prom-slide.active .prom-package-description,
 .prom-slide.active .prom-button-container {
@@ -2058,9 +2074,11 @@ nav {
   }
 
   .prom-navigation {
+    display: none;
     position: relative;
     bottom: auto;
-    margin: 20px 0 40px;
+    margin: 20px auto;
+    transform: translateX(0%);
   }
 
   .prom-dots {
@@ -2907,7 +2925,7 @@ nav {
 
 .ubi-slide {
   width: 33.333%;
-  height: 100%;
+  /*height: 100%;*/
   position: relative;
 }
 
@@ -3192,7 +3210,7 @@ nav {
     transition-delay: 0.5s;
   }
 }
-/********************Fotter here !  ***********************/
+/********************Fotter here !!  ***********************/
 
 .footer {
   font-family: "Segoe UI", sans-serif;
@@ -3239,10 +3257,10 @@ nav {
 }
 
 .footer-divider {
-  width: 2px;
+  width: 3px;
   height: 80px;
-  background: linear-gradient(to bottom, var(--gold), rgba(197, 164, 126, 0.3));
-  border-radius: 1px;
+  background-color: var(--dorado-suave);
+  border-radius: 3px;
 }
 
 .footer-brand-text {
@@ -3392,6 +3410,8 @@ address {
 }
 
 .copyright {
+  display: flex;
+  flex-direction: row;
   font-size: 14px;
   color: var(--text-light);
 }
@@ -3425,6 +3445,10 @@ address {
   .footer-left {
     max-width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .footer-description {
@@ -3432,24 +3456,32 @@ address {
   }
 
   .footer-right {
-    grid-template-columns: repeat(2, 1fr);
+    /*grid-template-columns: repeat(2, 1fr);*/
     gap: 30px;
   }
-
+  /*
   .payment-section {
     grid-column: span 2;
-  }
+  }*/
 }
 
 @media (max-width: 768px) {
   .footer-right {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
 
   .payment-section {
     grid-column: span 1;
     margin-top: 20px;
+    border-top: 0px solid rgba(197, 164, 126, 0.3);
+    padding: 0;
+  }
+  .payment-methods {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 15px;
+    place-content: center;
   }
 
   .info-section {
@@ -3492,6 +3524,9 @@ address {
 
   .payment-icon {
     height: 25px;
+  }
+  .copyright {
+    display: block;
   }
 }
 /************************seccion hero hab dentro de la habitacion***********************/
@@ -4629,9 +4664,10 @@ address {
   opacity: 0;
   transform: translateY(30px);
   animation: heroPQ-fadeInUp 1s ease forwards;
-  width: 22%;
-  min-width: 150px;
-  flex-grow: 1;
+  animation-delay: 0s;
+  width: 15%;
+  min-width: 100px;
+  flex-grow: 0;
 }
 
 .heroPQ-feature-icon {
@@ -4679,7 +4715,16 @@ address {
 .heroPQ-feature-item:nth-child(4) {
   animation-delay: 1.2s;
 }
-
+@media (max-width: 992px) {
+  .heroPQ-feature-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .heroPQ-feature-text {
+    font-size: clamp(0.4rem, 2vw, 0.7rem);
+    line-height: 1.4;
+  }
+}
 /* Media queries para dispositivos móviles */
 @media (max-width: 768px) {
   .heroPQ-section {
@@ -4689,9 +4734,9 @@ address {
   }
 
   .heroPQ-features-container {
-    flex-direction: column;
     align-items: center;
     gap: 30px;
+    position: relative;
   }
 
   .heroPQ-feature-item {
@@ -4704,7 +4749,12 @@ address {
     height: 70px;
   }
 }
-
+@media (max-width: 572px) {
+  .heroPQ-feature-item {
+    width: 100%;
+    max-width: 150px;
+  }
+}
 @media (max-width: 480px) {
   .heroPQ-hotel-name {
     letter-spacing: 3px;
@@ -4716,6 +4766,10 @@ address {
 
   .heroPQ-reserve-btn {
     padding: 12px 30px;
+  }
+  .heroPQ-feature-icon {
+    width: 40px;
+    height: 40px;
   }
 }
 /********************PQ info dentro**********************/
@@ -4879,6 +4933,7 @@ address {
 .PQinfo-slide-header {
   text-align: center;
   margin-bottom: 40px;
+  margin-top: 20px;
 }
 
 .PQinfo-slide-subtitle {
@@ -4945,7 +5000,7 @@ address {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
+  opacity: 0.5;
   transition: opacity 0.3s ease;
 }
 
@@ -5204,7 +5259,7 @@ address {
   }
   .PQinfo-image-container {
     height: 300px;
-    max-height: 30%;
+    min-height: 45%;
   }
   .PQinfo-amenity-title {
     font-size: 10px;
@@ -5235,7 +5290,7 @@ address {
 
   .PQinfo-left-fixed {
     width: 100%;
-    height: 40vh;
+    height: 20vh;
     position: relative;
   }
 
@@ -5265,21 +5320,27 @@ address {
   }
 
   .PQinfo-salon-image {
-    height: 70%;
-    top: 10%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
   }
 
   .PQinfo-content {
-    padding: 20px;
+    padding: 60px;
   }
 
   .PQinfo-title {
     font-size: 32px;
+    color: #000000;
   }
 
   .PQinfo-description {
     font-size: 14px;
     line-height: 20px;
+    color: #ffffff;
+    display: none;
   }
 
   .PQinfo-slider-slide {
@@ -5300,17 +5361,22 @@ address {
   }
 
   .PQinfo-amenities {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
-
+  .PQinfo-image-container {
+    min-height: 50%;
+  }
   .PQinfo-amenity-card {
     padding: 15px;
   }
 
   .PQinfo-cta-button {
-    font-size: 16px;
+    font-size: 18px;
     padding: 12px 20px;
+    margin: 20px auto; /* ✅ centra horizontalmente */
+    width: 300px;
   }
 }
 
@@ -5320,7 +5386,8 @@ address {
   }
 
   .PQinfo-salon-image {
-    height: 60%;
+    height: 100%;
+    top: 0;
   }
 
   .PQinfo-title {
@@ -5620,7 +5687,6 @@ address {
 .setup-gallery img:nth-child(3) {
   animation-delay: 1s;
 }
-
 /* Responsive */
 @media (max-width: 768px) {
   .corporate-grid {
@@ -5629,15 +5695,32 @@ address {
   }
 
   .setup-options {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
+    grid-template-rows: repeat(2, auto); /* 2 filas (altura automática) */
+    gap: 1.5rem;
   }
 
+  .setup-gallery {
+    grid-template-columns: 2fr 1fr;
+  }
+  .setup-gallery img:nth-child(2) {
+    height: 200%;
+  }
   .setup-gallery img:first-child {
     grid-column: span 1;
   }
 
   .corporate-section .heading h2 {
     font-size: 2rem;
+  }
+  @media (max-width: 380px) {
+    .setup-option {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      padding: 0.5rem;
+      border-radius: 5px;
+    }
   }
 }
 /******************Salones slider**********************/
@@ -5999,6 +6082,12 @@ address {
 }
 
 @media (max-width: 768px) {
+  .promHero-card.visible {
+    transform: translateY(50px);
+  }
+  .promHero-background {
+    height: 100%;
+  }
   .promHero-card {
     width: 95%;
     padding: 25px;
@@ -6342,7 +6431,7 @@ address {
   .promInfo-container {
     grid-template-columns: 1fr;
     gap: 40px;
-    max-width: 800px;
+    max-width: 900px;
   }
 
   .promInfo-right {
@@ -6359,6 +6448,7 @@ address {
     margin-top: 20%;
     padding: 30px 0;
     background-attachment: scroll;
+    min-height: 80vh;
   }
 
   .promInfo-container {

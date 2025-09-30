@@ -18,9 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 /************************* efectos para los servicios**********************************************/
-
 // Scroll Reveal
-
 /******errores del plugin de facebook */
 window.addEventListener("error", function (e) {
   if (
