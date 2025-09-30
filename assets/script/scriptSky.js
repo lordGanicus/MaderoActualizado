@@ -945,6 +945,34 @@ try {
     }
   });
 
+  // --- Soporte Touch para el Slider ---
+  let startX = 0;
+  let endX = 0;
+
+  const track = document.getElementById("sliderTrack");
+  if (track) {
+    track.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    track.addEventListener("touchmove", (e) => {
+      endX = e.touches[0].clientX;
+    });
+
+    track.addEventListener("touchend", () => {
+      const deltaX = endX - startX;
+      if (Math.abs(deltaX) > 50) {
+        if (deltaX > 0) {
+          prevSlide();
+        } else {
+          nextSlide();
+        }
+      }
+      startX = 0;
+      endX = 0;
+    });
+  }
+
   // Desplazamiento suave
   try {
     document.documentElement.style.scrollBehavior = "smooth";
@@ -967,7 +995,6 @@ try {
 } catch (error) {
   console.error("Error en la sección Sky Modal:", error);
 }
-
 /********************************Restaurante last ********************************/
 try {
   // Detectar cuando la sección SkyLast entra en la vista
