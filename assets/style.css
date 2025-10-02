@@ -4509,27 +4509,218 @@ address {
     font-size: 18px;
   }
 }
-/* Responsive Design */
-@media (max-width: 768px) {
-  .habInfo-card-content {
-    flex-direction: column;
-    height: auto;
+/* ===== TABLETS (768px - 1024px) ===== */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .habInfo-container {
+    padding: 0 15px;
   }
 
-  .habInfo-card-image {
-    height: 200px;
+  .habInfo-cards-container {
+    padding: 0 15px;
+    max-width: 100%;
+  }
+
+  .habInfo-card-content {
+    height: 400px;
+  }
+
+  .habInfo-card-info {
+    padding: 30px 40px;
+  }
+
+  .habInfo-card-title {
+    font-size: 22px;
+  }
+
+  .habInfo-card-description {
+    font-size: 12px;
+  }
+
+  .habInfo-section-subtitle {
+    font-size: 32px;
+  }
+
+  .habInfo-section-description {
+    font-size: 13px;
+    max-width: 500px;
   }
 
   .habInfo-navigation {
-    gap: 30px;
+    gap: 40px;
+    margin-bottom: 40px;
   }
 
-  .habInfo-nav-button {
+  .habInfo-modal-content {
+    width: 95%;
+    margin: 30px auto;
+  }
+
+  .habInfo-modal-body {
+    padding: 15px;
+  }
+
+  .habInfo-modal-slider {
+    min-width: 350px;
+    max-height: 400px;
+  }
+
+  .habInfo-modal-form {
+    flex: 0 0 280px;
+  }
+
+  .habInfo-detail-table th,
+  .habInfo-detail-table td {
+    padding: 10px 12px;
+  }
+
+  .habInfo-detail-item span {
+    font-size: 14px;
+  }
+
+  .habInfo-detail-grid-item span {
+    font-size: 14px;
+  }
+}
+
+/* ===== TABLETS PEQUEÑAS (768px - 900px) ===== */
+@media (max-width: 900px) and (min-width: 769px) {
+  .habInfo-card-content {
+    height: 380px;
+  }
+
+  .habInfo-card-info {
+    padding: 25px 30px;
+  }
+
+  .habInfo-card-title {
+    font-size: 20px;
+  }
+
+  .habInfo-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .habInfo-button {
+    padding: 10px 15px;
+    font-size: 9px;
+  }
+
+  .habInfo-amenities {
+    gap: 20px;
+  }
+
+  .habInfo-amenity-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ===== MÓVILES GRANDES (576px - 768px) ===== */
+@media (max-width: 768px) and (min-width: 577px) {
+  .habInfo-container {
+    padding: 0 10px;
+  }
+
+  .habInfo-header {
+    padding: 30px 0 5px;
+  }
+
+  .habInfo-main-title {
     font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .habInfo-cards-container {
+    padding: 0 10px;
+  }
+
+  .habInfo-section-intro {
+    margin-bottom: 30px;
+    padding: 0 15px;
   }
 
   .habInfo-section-subtitle {
     font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .habInfo-section-description {
+    font-size: 12px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+
+  .habInfo-navigation {
+    gap: 30px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+  }
+
+  .habInfo-nav-button {
+    font-size: 9px;
+    padding: 8px 16px;
+  }
+
+  .habInfo-section-indicator {
+    font-size: 10px;
+    top: -25px;
+  }
+
+  .habInfo-card-content {
+    flex-direction: column;
+    height: auto;
+    min-height: 500px;
+  }
+
+  .habInfo-card-info {
+    padding: 30px 25px;
+    flex: none;
+    order: 2;
+  }
+
+  .habInfo-card-image {
+    flex: none;
+    height: 250px;
+    order: 1;
+  }
+
+  .habInfo-card-title {
+    font-size: 22px;
+  }
+
+  .habInfo-card-description {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .habInfo-amenities {
+    gap: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+
+  .habInfo-amenity-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .habInfo-buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .habInfo-button {
+    padding: 12px 20px;
+    font-size: 9px;
+    text-align: center;
+  }
+
+  /* Modal para tablets */
+  .habInfo-modal-content {
+    width: 98%;
+    margin: 20px auto;
   }
 
   .habInfo-modal-body {
@@ -4537,37 +4728,371 @@ address {
     padding: 10px;
   }
 
+  .habInfo-modal-slider {
+    min-width: 100%;
+    max-height: 350px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
   .habInfo-modal-form {
-    border-left: none;
-    border-top: 1px solid #e0e0e0;
-    margin-top: 20px;
+    flex: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .habInfo-form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .habInfo-form-group label {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .habInfo-form-input {
+    width: 100%;
+  }
+
+  .habInfo-detail-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .habInfo-detail-table th,
+  .habInfo-detail-table td {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .habInfo-detail-item span {
+    font-size: 13px;
+  }
+
+  .habInfo-detail-grid-item span {
+    font-size: 13px;
+  }
+}
+
+/* ===== MÓVILES MEDIANOS (481px - 576px) ===== */
+@media (max-width: 576px) and (min-width: 481px) {
+  .habInfo-container {
+    padding: 0 8px;
+  }
+
+  .habInfo-header {
+    padding: 25px 0 5px;
+  }
+
+  .habInfo-main-title {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .habInfo-cards-container {
+    padding: 0 8px;
+  }
+
+  .habInfo-section-intro {
+    margin-bottom: 25px;
+    padding: 0 10px;
+  }
+
+  .habInfo-section-subtitle {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .habInfo-section-description {
+    font-size: 11px;
+    margin-bottom: 25px;
+  }
+
+  .habInfo-navigation {
+    gap: 25px;
+    margin-bottom: 30px;
+  }
+
+  .habInfo-nav-button {
+    font-size: 8px;
+    padding: 7px 14px;
+  }
+
+  .habInfo-suites-grid,
+  .habInfo-business-grid {
+    gap: 40px;
+  }
+
+  .habInfo-card-content {
+    min-height: 450px;
+  }
+
+  .habInfo-card-info {
+    padding: 25px 20px;
+  }
+
+  .habInfo-card-title {
+    font-size: 20px;
+  }
+
+  .habInfo-card-description {
+    font-size: 11px;
+  }
+
+  .habInfo-amenities {
+    gap: 15px;
+  }
+
+  .habInfo-amenity-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .habInfo-button {
+    padding: 11px 18px;
+    font-size: 8px;
   }
 
   .habInfo-modal-slider {
     max-height: 300px;
-    min-width: 100%;
-    margin-right: 0;
   }
 
-  .habInfo-card-info,
-  .habInfo-card-image {
-    transform: translateY(50px);
-    opacity: 0;
-    transition: transform 0.8s, opacity 0.8s;
+  .habInfo-modal-form {
+    padding: 15px;
   }
 
-  .habInfo-card.visible .habInfo-card-info,
-  .habInfo-card.visible .habInfo-card-image {
-    transform: translateY(0);
-    opacity: 1;
+  .habInfo-form-input {
+    padding: 8px;
+    font-size: 14px;
   }
 
-  .habInfo-detail-grid {
-    grid-template-columns: 1fr;
+  .habInfo-form-submit {
+    padding: 10px;
+    font-size: 14px;
   }
 }
-.swiper-slide img {
-  width: 100%;
+
+/* ===== MÓVILES PEQUEÑOS (hasta 480px) ===== */
+@media (max-width: 480px) {
+  .habInfo-container {
+    padding: 0 5px;
+  }
+
+  .habInfo-header {
+    padding: 20px 0 5px;
+  }
+
+  .habInfo-main-title {
+    font-size: 8px;
+    letter-spacing: 0.8px;
+  }
+
+  .habInfo-cards-container {
+    padding: 0 5px;
+  }
+
+  .habInfo-section-intro {
+    margin-bottom: 20px;
+    padding: 0 8px;
+  }
+
+  .habInfo-section-subtitle {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .habInfo-section-description {
+    font-size: 10px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  .habInfo-navigation {
+    gap: 20px;
+    margin-bottom: 25px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .habInfo-nav-button {
+    font-size: 8px;
+    padding: 6px 12px;
+  }
+
+  .habInfo-section-indicator {
+    position: relative;
+    top: 0;
+    margin-bottom: 10px;
+    font-size: 9px;
+  }
+
+  .habInfo-suites-grid,
+  .habInfo-business-grid {
+    gap: 30px;
+  }
+
+  .habInfo-card {
+    margin: 0 5px;
+  }
+
+  .habInfo-card-content {
+    min-height: 400px;
+  }
+
+  .habInfo-card-info {
+    padding: 20px 15px;
+  }
+
+  .habInfo-card-title {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .habInfo-card-description {
+    font-size: 10px;
+    margin-bottom: 15px;
+  }
+
+  .habInfo-card-description::after {
+    bottom: -15px;
+  }
+
+  .habInfo-amenities {
+    gap: 12px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .habInfo-amenity-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .habInfo-buttons {
+    gap: 10px;
+  }
+
+  .habInfo-button {
+    padding: 10px 15px;
+    font-size: 7px;
+  }
+
+  /* Modal para móviles pequeños */
+  .habInfo-modal-content {
+    width: 100%;
+    margin: 10px auto;
+    border-radius: 0;
+  }
+
+  .habInfo-modal-body {
+    padding: 5px;
+  }
+
+  .habInfo-modal-close {
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    font-size: 24px;
+  }
+
+  .habInfo-modal-slider {
+    max-height: 250px;
+    border-radius: 5px;
+  }
+
+  .habInfo-modal-form {
+    padding: 12px;
+  }
+
+  .habInfo-modal-logo img {
+    max-width: 120px;
+  }
+
+  .habInfo-form-group {
+    margin-bottom: 15px;
+  }
+
+  .habInfo-form-input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .habInfo-form-submit {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .habInfo-detail-table {
+    font-size: 12px;
+  }
+
+  .habInfo-detail-table th,
+  .habInfo-detail-table td {
+    padding: 6px 8px;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .habInfo-detail-table tr {
+    display: block;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+  }
+
+  .habInfo-detail-table th {
+    font-size: 16px;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+
+  .habInfo-detail-item {
+    margin-bottom: 8px;
+  }
+
+  .habInfo-detail-item span {
+    font-size: 12px;
+  }
+
+  .habInfo-detail-grid-item span {
+    font-size: 12px;
+  }
+}
+
+/* ===== ORIENTACIÓN HORIZONTAL EN MÓVILES ===== */
+@media (max-height: 500px) and (max-width: 768px) {
+  .habInfo-card-content {
+    min-height: 350px;
+  }
+
+  .habInfo-card-image {
+    height: 180px;
+  }
+
+  .habInfo-card-info {
+    padding: 15px 20px;
+  }
+
+  .habInfo-modal-slider {
+    max-height: 200px;
+  }
+
+  .habInfo-modal-content {
+    margin: 10px auto;
+  }
+}
+
+/* ===== AJUSTES PARA TECLADOS VIRTUALES ===== */
+@media (max-height: 400px) {
+  .habInfo-modal-content {
+    margin: 5px auto;
+    max-height: 95vh;
+    overflow-y: auto;
+  }
 }
 /***********************Paqutes*************************/
 
@@ -7717,7 +8242,7 @@ address {
   .skyhero-social {
     position: relative;
     left: auto;
-    bottom: auto;
+    bottom: 10px;
     justify-content: center;
     margin-top: 2rem;
   }
@@ -8114,20 +8639,20 @@ address {
   opacity: 1;
   transform: translateY(0) rotate(0) scale(1.1);
 }
-@media (min-witth: 1500px) {
+/*@media (min-width: 1500px) {
   .sportBar-small-image {
     position: absolute;
-    left: 5%; /* Invertido: ahora a la izquierda */
+    left: 5%; 
     top: 15%;
     width: 45%;
     max-width: 350px;
     z-index: 4;
     opacity: 0;
-    transform: translateY(-50px) rotate(10deg) scale(1.1); /* Giro invertido */
+    transform: translateY(-50px) rotate(10deg) scale(1.1); 
     transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s;
     filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
   }
-}
+}*/
 @media (min-width: 1024px) {
   /* Tarjeta de información - MÁS ANCHA */
   .skyMenu-card {
@@ -8179,6 +8704,9 @@ address {
 }
 
 @media (max-width: 768px) {
+  .skyMenu-location {
+    margin: 20px 10px 10px;
+  }
   .skyMenu-section,
   .sportBar-section {
     padding: 40px 15px;
@@ -8219,6 +8747,7 @@ address {
   .sportBar-large-image.visible {
     transition: transform 0.3s ease; /* animación suave */
     transform: translateY(0%) !important;
+    display: none;
   }
 
   .skyMenu-large-image.visible:hover,
@@ -8245,6 +8774,7 @@ address {
   .skyMenu-small-image.visible,
   .sportBar-small-image.visible {
     transform: translateY(0) rotate(0) scale(1);
+    display: none;
   }
 
   .skyMenu-title,
@@ -8253,7 +8783,12 @@ address {
   }
 
   .skyMenu-buttons {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .skyMenu-title::after {
+    height: 1px;
+    width: 100%;
   }
 }
 
@@ -8265,13 +8800,14 @@ address {
 
   .skyMenu-title,
   .sportBar-title {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
+    text-align: center;
   }
 
   .skyMenu-button,
   .sportBar-button {
     padding: 10px 20px;
-    font-size: 0.9rem;
+    font-size: 0.6rem;
   }
 
   .skyMenu-large-image,
@@ -8359,10 +8895,10 @@ address {
 }
 
 .skyCarta-slide {
-  min-width: 33.333%;
-  padding: 20px 20px;
+  min-width: 50%;
+  padding: 10px 10px;
   box-sizing: border-box;
-  height: 500px;
+  height: 420px;
 }
 
 .skyCarta-card {
@@ -8382,6 +8918,7 @@ address {
 }
 
 .skyCarta-card-image {
+  top: 2%;
   width: 60%;
   height: 70%;
   /*object-fit: cover;*/
@@ -8552,7 +9089,7 @@ address {
   }
 
   .skyCarta-slide {
-    flex: 0 0 33.333%; /* Show 2 slides on tablet */
+    flex: 0 0 100%; /* Show 2 slides on tablet */
   }
 
   .skyCarta-title h1 {
